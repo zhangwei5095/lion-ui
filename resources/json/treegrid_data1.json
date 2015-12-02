@@ -1,0 +1,117 @@
+[{
+	"id":1,
+    "inp":"<input type=\"checkbox\">",
+	"name":"应用资源",
+	"type":"应用层",
+	"path":"Application",
+    "authority":"",
+    "rank":"0",
+  	"children":[{
+	  "id":2,
+	  "inp":"<input type=\"checkbox\">",
+	  "name":"系统设置",
+	  "type":"菜单项",
+	  "path":"SystemConfig",
+	  "authority":"",
+	  "rank":"1",
+	  "children":[{
+		  "id":3,
+		  "inp":"<input type=\"checkbox\">",
+		  "name":"DataGrid管理",
+		  "type":"菜单项",
+		  "path":"DataGridManage",
+		  "authority":"",
+		  "rank":"5",
+		  "children":[{
+			  "id":31,
+			  "inp":"<input type=\"checkbox\">",
+			  "name":"DataColumn管理",
+			  "type":"菜单子项",
+			  "path":"/system/datacolumn/index.htm",
+			  "authority":"",
+			  "rank":"2"
+		  },{
+			  "id":32,
+			  "inp":"<input type=\"checkbox\">",
+			  "name":"DataGrid",
+			  "type":"菜单子项",
+			  "path":"/system/datagrid/index.htm",
+			  "authority":"",
+			  "rank":"0"
+		  }]
+	  },{
+		"id":33,
+		"inp":"<input type=\"checkbox\">",
+		"name":"部门管理",
+		"type":"菜单子项",
+		"path":"/system/department/index.htm",
+		"authority":"",
+		"rank":"1"
+	  },{
+		  "id":4,
+		  "inp":"<input type=\"checkbox\">",
+		  "name":"系统监控",
+		  "type":"菜单项",
+		  "path":"SYSTEM_MONITOR",
+		  "authority":"",
+		  "rank":"5",
+		  "children":[{
+			  "id":41,
+			  "inp":"<input type=\"checkbox\">",
+			  "name":"用户会话监控",
+			  "type":"菜单子项",
+			  "path":"/sessions/index.htm",
+			  "authority":"",
+			  "rank":"1"
+		  },{
+			  "id":42,
+			  "inp":"<input type=\"checkbox\">",
+			  "name":"JVM内存监控",
+			  "type":"菜单子项",
+			  "path":"/monitor/jvm/memory.htm",
+			  "authority":"",
+			  "rank":"2"
+		  },{
+			  "id":43,
+			  "inp":"<input type=\"checkbox\">",
+			  "name":"JVM监控",
+			  "type":"菜单子项",
+			  "path":"/monitor/jvm/index.htm",
+			  "authority":"",
+			  "rank":"3"
+		  },{
+			"id":44,
+			"inp":"<input type=\"checkbox\">",
+			"name":"Hibernate监控",
+			"type":"菜单子项",
+			"path":"/monitor/hibernate/index.htm",
+			"authority":"",
+			"rank":"5"
+		  },{
+			"id":45,
+			"inp":"<input type=\"checkbox\">",
+			"name":"数据库连接池",
+			"type":"菜单子项",
+			"path":"/druid/index.htm",
+			"authority":"",
+			"rank":"7"
+		  },{
+			"id":43,
+			"inp":"<input type=\"checkbox\">",
+			"name":"JVM线程监控",
+			"type":"菜单子项",
+			"path":"/monitor/jvm/thread.htm",
+			"authority":"",
+			"rank":"4"
+		  },{
+			"id":43,
+			"inp":"<input type=\"checkbox\">",
+			"name":"缓存监控",
+			"type":"菜单子项",
+			"path":"monitor/cache/index.htm",
+			"authority":"",
+			"rank":"8"
+		  }]
+	  }]
+	}]
+}]

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/panel/panel.js" type="text/javascript"></script>
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/panel.css" rel="stylesheet" type="text/css">
+    <!--该文件为当前页面按钮所需，非本组件所需-->
+    <link href="../../../src/css/ui/button.css" rel="stylesheet">
+    <title></title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 230);
+            cursor: url('../../../resources/image/finger.png'), auto;
+
+        }
+        .top{
+            margin:20px;
+        }
+    </style>
+    <script>
+        $(function()
+        {
+            panel=one.ui.panel(".one_panel");
+            panel_left=panel.eq(0);
+            panel_right=panel.eq(1);
+
+
+            $("#set1").click(function(){
+                $("#container").css("float","right");
+                panel_left.open("left");
+            });
+
+            //right
+            $("#set2").click(function(){
+                $("#container").css("float","left");
+                panel_right.open("right");
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="top">Panel 侧边弹出框演示</div>
+
+    <div class="one_panel one_panel_animate" id="panel1" style="width:70%;">
+        <div class="one_panel_content">
+            <h1>panel left</h1>
+                <p>
+                    <ul>
+                        <li>1.isArray(o)</li><li>2.isObject(o)</li><li>3.isString(o)</li><li>4.isFunction(o)</li><li>5.isBoolean(o)</li><li>6.setElementCss(element,options)</li><li>7.setElementStyle(element,value)</li><li>8.setElementData(element,attributes,values)</li><li>9.getElementData(element,attribute)</li><li>10.getParams(param,attributes)</li><li>11.getElementParams(elementId,attributes)</li><li>12.log(msg)</li><li>13.coreOneUrl</li><li>14.existJsCssFile(fileName)</li><li>15.loadJsCssFile(params)</li><li>16.getQueryString(names,urls)</li><li>17.setLocalStorage(key,value,isJson)</li><li>18.getLocalStorage(key,isJson)</li><li>19.removelocalStorage(key)</li><li>20.setSessionStorage(key,value,isJson)</li><li>21.getSessionStorage(key,isJson)</li><li>22.removeSessionStorage(key)</li><li>23.getCookie(key)</li><li>24.removeCookie(param)</li><li>25.getPlatform()</li><li>26.getAssemblyCache(moduleId)</li><li>27.addAssemblyCache(moduleId,object)</li><li>28.convertBool(v)</li>
+                    </ul>
+                </p>
+        </div>
+    </div>
+
+
+    <div class="one_panel one_panel_animate" id="panel2"  style="width:70%;">
+        <div class="one_panel_content">
+            <h1>panel right</h1>
+                <p>
+                    <ul>
+                        <li>1.isArray(o)</li><li>2.isObject(o)</li><li>3.isString(o)</li><li>4.isFunction(o)</li><li>5.isBoolean(o)</li><li>6.setElementCss(element,options)</li><li>7.setElementStyle(element,value)</li><li>8.setElementData(element,attributes,values)</li><li>9.getElementData(element,attribute)</li><li>10.getParams(param,attributes)</li><li>11.getElementParams(elementId,attributes)</li><li>12.log(msg)</li><li>13.coreOneUrl</li><li>14.existJsCssFile(fileName)</li><li>15.loadJsCssFile(params)</li><li>16.getQueryString(names,urls)</li><li>17.setLocalStorage(key,value,isJson)</li><li>18.getLocalStorage(key,isJson)</li><li>19.removelocalStorage(key)</li><li>20.setSessionStorage(key,value,isJson)</li><li>21.getSessionStorage(key,isJson)</li><li>22.removeSessionStorage(key)</li><li>23.getCookie(key)</li><li>24.removeCookie(param)</li><li>25.getPlatform()</li><li>26.getAssemblyCache(moduleId)</li><li>27.addAssemblyCache(moduleId,object)</li><li>28.convertBool(v)</li>
+                    </ul>
+                </p>
+        </div>
+    </div>
+
+    <div class="one_list">
+        <div class="one-g one_item">
+            <button class="one_button" id="set1"> 从左边显示</button>
+        </div>
+
+        <div class="one-g one_item">
+            <button class="one_button" id="set2"> 从右边显示</button>
+        </div>
+    </div>
+
+
+</body>
+</html>

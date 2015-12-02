@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/flipSwitch/flipSwitch.js"></script>
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/flipSwitch.css" rel="stylesheet">
+
+    <title></title>
+    <style>
+        body{
+            background-color: rgba(188, 188, 188, 0.10);
+        }
+    </style>
+    <!--用于修改组件默认样式，供js动态调用-->
+    <style title="changeThemes">
+        /*可供修改组件的样式,占位使用，通过此选择器可以使用js复写css文件中已经定义的样式*/
+        .one_switch__input:checked + .one_switch__toggle{
+            background: #574BDB;
+        }
+        .one_item{
+
+        }
+
+        .one_item_1{
+
+        }
+        .one_list{
+
+        }
+        .one_item:first-child{
+
+        }
+
+    </style>
+    <script>
+
+
+        //供父页面调用的方法，名字与参数不能变更
+        function changeStyle(key,value){
+            if(key=="highlight2"){//此处的key为父页面当中每个input的data-style值
+                //每个页面根据组件的情况进行调整
+                one.util.changeThemes({
+                    ".one_switch__input:checked + .one_switch__toggle":{"background":value}
+                });
+            }else if(key=="background"){
+                one.util.changeThemes({
+                    ".one_list":{"background":value}
+                });
+            }else if(key=="color"){
+                one.util.changeThemes({
+                    ".one_item_1":{"color":value}
+                });
+            }else if(key=="border-color"){
+                var bordervalue ="0.1rem solid "+value;
+                one.util.changeThemes({
+                    ".one_item:first-child":{"border-top":bordervalue},
+                    ".one_item":{"border-bottom":bordervalue,"border-left":bordervalue
+                    ,"border-right":bordervalue}
+                });
+            }
+        }
+
+        $(function(){
+            var switch1=one.ui.flipSwitch("#switch-1");
+            switch1.status("on");
+            //通知父窗口当前页面已经加载完成，可以调用本页面的方法
+            if(window.parent.receiveFromIframe){
+                window.parent.receiveFromIframe();
+            }
+
+        })
+    </script>
+</head>
+<body>
+
+<div class="one_list">
+    <div class="one-g one_item">
+        <div class="one-u-sm-9 one_item_1">开启3G</div>
+        <div class="one-u-sm-3 one_item_1">
+            <label class="one_switch"  style="margin-top:3px;">
+                <input type="checkbox" id="switch-1" class="one_switch__input"/>
+                <div class="one_switch__toggle"/>
+            </label>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

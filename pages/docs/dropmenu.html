@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .doc_dialog_ml{
+            font-size:16px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Drop Menu 下拉框</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">说明</a></li>
+                <li><a uri="#doc_dialog_qztj">前置条件</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_yyzywj">页面引用JS与CSS文件</a></li>
+                    </ul>
+                </li>
+                <li><a uri="#doc_dialog_syfs">使用方式</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_dyhtml">定义HTML</a></li>
+                        <li><a uri="#doc_dialog_syjs2">使用JavaScript调用</a></li>
+                    </ul>
+
+                <li><a uri="#doc_dialog_gjsy">高级使用</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_mrkq">默认设置</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">说明</h4>
+    <p>
+        删除菜单
+    </p>
+    <h4 id="doc_dialog_qztj">前置条件</h4>
+
+    <p id="doc_dialog_yyzywj">页面引用JS与CSS文件</p>
+   <pre class="prettyprint">
+&lt;!--整个框架依赖的JS文件--&gt;
+&lt;script src="../../src/js/zepto.min.js"&gt;&lt;/script&gt;
+&lt;!--当前组件依赖的JS文件--&gt;
+&lt;script src="../../src/js/one.js"&gt;&lt;/script&gt;
+&lt;!--当前组件JS文件--&gt;
+&lt;script src="../../src/js/ui/dropmenu/dropmenu.js"&gt;&lt;/script&gt;
+&lt;!--当前组件依赖的CSS文件--&gt;
+&lt;link href="../../src/css/one.css" rel="stylesheet"&gt;
+&lt;!--当前组件CSS文件--&gt;
+&lt;link href="../../src/css/ui/dropmenu.css" rel="stylesheet"&gt;
+      </pre>
+
+    <h4 id="doc_dialog_syfs">使用方式</h4>
+
+    <p id="doc_dialog_dyhtml">1.定义HTML</p>
+      <pre class="prettyprint">
+          
+
+ 
+          
+          
+      </pre>
+
+    <p id="doc_dialog_syjs2">2.使用JavaScript调用</p>
+      <pre class="prettyprint">
+    $(function(){
+       //初始化组件
+        
+     })
+     </pre>
+    <h4 id="doc_dialog_gjsy">高级使用</h4>
+    <p id="doc_dialog_mrkq">1.默认设置</p>
+ <pre class="prettyprint">
+    $(function(){
+      
+     
+     })
+     </pre>
+</div>
+
+</body>
+</html>

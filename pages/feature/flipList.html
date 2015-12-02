@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Pad版本-卡式滑动效果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--基础依赖js文件-->
+    <script src="../../src/js/zepto.min.js"></script>
+    <!--应用框架基础工具js文件-->
+    <script src="../../src/js/one.js"></script>
+    <!--对话框组件JS文件-->
+    <script src="../../src/js/ui/dialog/dialog.js"></script>
+    <!--广告轮播组件js文件-->
+    <script src="../../src/js/ui/slider/slider.js"></script>
+    <!--滑动开关组件JS文件-->
+    <script src="../../src/js/ui/flipSwitch/flipSwitch.js"></script>
+
+
+    <!--组件与布局基础样式-->
+    <link href="../../src/css/one.css" rel="stylesheet">
+    <!--当前演示页面布局需要的样式，与组件无关-->
+    <link href="../../src/css/patterns/patterns.css" rel="stylesheet">
+    <!--对话框样式-->
+    <link href="../../src/css/ui/dialog.css" rel="stylesheet">
+    <!--按钮样式-->
+    <link href="../../src/css/ui/button.css" rel="stylesheet">
+    <!--广告轮播组件CSS文件-->
+    <link href="../../src/css/ui/slider.css" rel="stylesheet">
+    <!--滑动开关组件CSS文件-->
+    <link href="../../src/css/ui/flipSwitch.css" rel="stylesheet">
+
+    <!--字体图片-->
+    <link href="../../src/plugin/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <link href="flipList.css" rel="stylesheet">
+
+    <script>
+
+        $(function () {
+
+            $("div.card_button").click(function(){
+                var card = $(this).parent();
+                card.animate({ top:"600px"},{ duration: 3000, easing: "ease-out", complete: function(){
+                    console.log("ok");
+                } });
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+<header class="header-fixed-top header">
+    <ul class="one-g">
+        <li class="one-u-sm-1">
+            <div class="header-title-left">
+                <div class="one-icon ion-android-arrow-dropleft-circle"></div>
+            </div>
+        </li>
+        <li class="one-u-sm-10">
+            <div class="header-title-center">知心</div>
+        </li>
+        <li class="one-u-sm-1">
+            <div class="ion-power header-title-right"></div>
+        </li>
+    </ul>
+    <div class="clear-both"></div>
+</header>
+
+<section class="center">
+    <div class="center_main">
+        <div class="card card_left_1">
+            <div class="card_header card_header_color1">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访1</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+           <div class="card_button">排入</div>
+        </div>
+
+        <div class="card card_left_2">
+            <div class="card_header card_header_color3">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访2</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+
+        <div class="card card_center">
+            <div class="card_header card_header_color2">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访3</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+
+        <div class="card card_right_1">
+            <div class="card_header card_header_color1">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访4</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+
+        <div class="card card_right_2">
+            <div class="card_header card_header_color3">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访5</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+        <div class="clear-both"></div>
+
+    </div>
+    <div class="clear-both"></div>
+</section>
+
+
+</body>
+</html>

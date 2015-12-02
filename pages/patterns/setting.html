@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>个人设置</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<!--基础依赖js文件-->
+<script src="../../src/js/zepto.min.js"></script>
+<!--应用框架基础工具js文件-->
+<script src="../../src/js/one.js"></script>
+<!--对话框组件JS文件-->
+<script src="../../src/js/ui/dialog/dialog.js"></script>
+<!--广告轮播组件js文件-->
+<script src="../../src/js/ui/slider/slider.js"></script>
+<!--滑动开关组件JS文件-->
+<script src="../../src/js/ui/flipSwitch/flipSwitch.js"></script>
+
+
+<!--组件与布局基础样式-->
+<link href="../../src/css/one.css" rel="stylesheet">
+<!--当前演示页面布局需要的样式，与组件无关-->
+<link href="../../src/css/patterns/patterns.css" rel="stylesheet">
+<!--对话框样式-->
+<link href="../../src/css/ui/dialog.css" rel="stylesheet">
+<!--按钮样式-->
+<link href="../../src/css/ui/button.css" rel="stylesheet">
+<!--广告轮播组件CSS文件-->
+<link href="../../src/css/ui/slider.css" rel="stylesheet">
+<!--滑动开关组件CSS文件-->
+<link href="../../src/css/ui/flipSwitch.css" rel="stylesheet">
+
+<!--字体图片-->
+<link href="../../src/plugin/ionicons/css/ionicons.min.css" rel="stylesheet">
+<style>
+
+    body {
+        color: #74747C;
+        cursor: url('../../resources/image/finger.png'), auto;
+
+    }
+
+    header.header ul {
+        background: #ffffff;
+        height: 3.8rem;
+        line-height: 3.8rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header ul li {
+        float: left;
+        list-style: none;
+        background: #ffffff;
+        height: 3.8rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header li:active {
+        background: rgba(188, 188, 188, 0.4);
+    }
+
+    .header-title-left {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .header-title-left div {
+        float: left;
+        color: #3598db;
+    }
+
+    .header-title-left .one-icon {
+        font-size: 2.5rem;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    .header-title-left .icon-txt {
+        font-size: 1.2rem;
+    }
+
+    .header .header-title-center {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 1.2rem;
+    }
+
+    .header-title-right {
+        font-size: 2.2rem;
+        padding-left: 3.3rem;
+        text-align: center;
+    }
+
+    /*profile*/
+    .profile {
+        padding-top: 3.8rem;
+        background: #33393C;
+        text-align: left;
+
+    }
+
+    /*选择.profile下的div以profile_开头的子元素*/
+    .profile > div[class^='profile_'] {
+        float: left;
+    }
+
+    /*除姓名的DIV外，其余的DIV样式和颜色设置*/
+    .profile div:not(.profile_name) {
+        margin-top: 0.5rem;
+        color: #bcbcc4;
+        font-size: 1.1rem;
+    }
+
+    /*.profile div:last-of-type {*/
+    /*padding-bottom: 1.7rem;*/
+    /*}*/
+
+    .profile_image {
+        padding: 1.0rem 1.0rem 1.5rem 1.0rem;
+    }
+
+    .profile_image img {
+        text-align: center;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 10%;
+    }
+
+    .profile_info {
+        padding-top: 1.0rem;
+    }
+
+    .profile_name {
+        font-size: 1.8rem;
+        margin-top: 1.0rem;
+        color: white;
+    }
+
+    /*底部操作选项*/
+    .detail {
+        margin-top: 1.0rem;
+        padding: 0.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .detail > .item_title {
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .detail .one_item {
+        padding: 0.5rem;
+        color: #33333a;
+    }
+
+    .detail .item_text {
+        padding-left: 0;
+        padding-top: 0.5rem;
+    }
+
+    .detail .one_list2 > div {
+        height: 3.84rem;
+    }
+
+    .detail .one_list2 .one_item:active {
+        background: rgba(188, 188, 188, 0.4);
+    }
+
+    .one_list2 .ion-ios-arrow-right {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .logout {
+        margin-top: 1.0rem;
+        padding: 0.4rem;
+        margin-bottom: 0.5rem;
+
+    }
+
+    .logout .one_item{
+        height: 3.84rem;
+        padding-top: 0.8rem;
+        text-align: center;
+        background: #3598db;
+        color: #ffffff;
+        font-size:1.4rem;
+    }
+
+    .logout .one_item>span{
+        padding-right:0.4rem;
+    }
+
+    .logout .one_item:active {
+        background: rgba(188, 188, 188, 0.4);
+        color:#000000;
+    }
+
+</style>
+
+<script>
+
+    $(function () {
+        var switch3 = one.ui.flipSwitch("#switch-1");
+        switch3.status("on");
+
+
+        var switch4 = one.ui.flipSwitch("#switch-2");
+        switch4.status("off");
+
+        var switch5 = one.ui.flipSwitch("#switch-3");
+        switch5.status("on");
+        switch5.allowStatus("off", false);
+        switch5.enable(false);
+    })
+</script>
+</head>
+<body>
+
+<header class="header-fixed-top header">
+    <ul class="one-g">
+        <li class="one-u-sm-3">
+            <div class="header-title-left">
+                <div class="one-icon ion-ios-arrow-back"></div>
+                <div class="icon-txt">用户</div>
+            </div>
+        </li>
+        <li class="one-u-sm-6">
+            <div class="header-title-center">个人设置</div>
+        </li>
+        <li class="one-u-sm-3">
+            <div class=" header-title-right"></div>
+        </li>
+    </ul>
+    <div class="clear-both"></div>
+</header>
+
+
+<section class="profile">
+    <div class="profile_image">
+        <img src="../../resources/image/patterns/lang.jpg">
+    </div>
+    <div class="profile_info">
+        <div class="profile_name">李小明</div>
+        <div class="profile_email">xiaoming.li@newtouch.cn</div>
+    </div>
+    <div class="clear-both"></div>
+</section>
+
+
+<section class="detail">
+    <div class="item_title">分享</div>
+    <div class="one_list">
+        <div class="one_item one-g">
+            <div class="one-u-sm-9 item_text">
+                微博
+            </div>
+            <div class="one-u-sm-3">
+                <label class="one_switch">
+                    <input type="checkbox" id="switch-1" class="one_switch__input"/>
+
+                    <div class="one_switch__toggle"></div>
+                </label>
+            </div>
+        </div>
+        <div class="one_item one-g">
+            <div class="one-u-sm-9 item_text">
+                微信朋友圈
+            </div>
+            <div class="one-u-sm-3">
+                <label class="one_switch">
+                    <input type="checkbox" id="switch-2" class="one_switch__input"/>
+
+                    <div class="one_switch__toggle"></div>
+                </label>
+            </div>
+        </div>
+        <div class="one_item one-g">
+            <div class="one-u-sm-9 item_text">
+                短信
+            </div>
+            <div class="one-u-sm-3">
+                <label class="one_switch">
+                    <input type="checkbox" id="switch-3" class="one_switch__input"/>
+
+                    <div class="one_switch__toggle"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="item_title">其他</div>
+    <div class="one_list one_list2">
+        <div class="one_item one-g">
+            <div class="one-u-sm-10 item_text">
+                帮助文档
+            </div>
+            <div class="one-u-sm-2">
+                <div class="ion-ios-arrow-right"></div>
+            </div>
+        </div>
+        <div class="one_item one-g">
+            <div class="one-u-sm-10 item_text">
+                隐私策略
+            </div>
+            <div class="one-u-sm-2">
+                <div class="ion-ios-arrow-right"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="logout">
+    <div class="one_list">
+        <div class="one-g">
+            <div class="one_item"><span class="ion-log-out"></span>退出登录</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

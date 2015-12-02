@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lion Framework HTML5  开始</title>
+    <!-- 新 Bootstrap 核心 CSS 文件
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../resources/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../resources/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="../resources/css/style.css"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <link rel="stylesheet" href="../resources/plugins/jScrollPane/jquery.jscrollpane.css"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .md_left_list li {  height: auto;  }
+        .md_right{  padding-top: 10px;  }
+        .md_left{margin-top:18px;}
+        div.h3 {  margin-top: 10px;  font-size: 16px;  color: rgb(111, 84, 153);  font-weight: bold;  }
+        .start_content {  margin-top: 0;  padding-top: 0;  }
+        .color-1 {  color: rgb(111, 84, 153);  }
+        .color-2 {  color: rgba(91, 91, 91, 0.77);  }
+        .middle_container img{width: 100%;}
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar  navbar-static-top" role="navigation">
+    <div class="container-fluid header_fluid">
+        <div class="container">
+            <div class="collapse navbar-collapse" style="height:66px !important;">
+                <ul class="nav headertop navbar-nav col-lg-12 col-lg-push-1">
+                    <li><img src="../resources/image/index/logo1.svg" width="38px" height="38px"/></li>
+                    <li class="header_item header_item_first">
+                        <a class="header_item_a  " href="../index.html">首页</a></li>
+                    <li class="header_item">
+                        <a class="header_item_a header_active" href="start.html">开始</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" href="quickstart.html">快速入门</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" href="frame.html">UI组件</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a " href="componets.html">组件说明</a>
+                    </li>
+
+                    <li class="header_item">
+                        <a class="header_item_a " href="docs.html">文档</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" target="_blank" href="../pages/api/index.html">API</a>
+                    </li>
+                    <!--
+                    <li class="header_item">
+                        <a class="header_item_a" href="patterns.html">模式</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" href="themes.html">主题</a>
+                    </li>
+                    -->
+                    <li class="header_item pull-right col-lg-pull-1">
+                        <a class="header_item_a" href="javascript:void(0);"><span class="glyphicon glyphicon-globe"
+                                                                                  style="padding-right:5px;"></span>中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="middle_container" >
+    <div class="container ">
+        <div class="col-lg-3 md_left col-lg-push-1">
+            <div style="padding-bottom: 10px;">
+                <h4>目录</h4>
+            </div>
+            <div class="md_right_border">
+                <div class="tm-download ">
+                    项目创建流程
+                </div>
+                <nav style="padding-left: 0;" class=" bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+                    <ul class="nav bs-docs-sidenav">
+                        <li style="padding: 5px 0 5px 0;"><a href="#nav1" style="font-size:16px;">1.1先建立一个项目框架</a>
+                            <ul class="nav">
+                                <li style="padding: 5px 0 5px 0;"><a href="#nav1-1" style="font-size:14px;">1.1Jdk下载地址及版本说明</a></li>
+                                <li ><a href="#nav1-2" style="font-size:14px;">1.1.2 模型（Model）层</a></li>
+                                <li ><a href="#nav1-3" style="font-size:14px;">1.1.3 Dao层</a></li>
+                                <li ><a href="#nav1-4" style="font-size:14px;">1.1.4 service层</a></li>
+                                <li ><a href="#nav1-5" style="font-size:14px;">1.1.5 Controller层</a></li>
+                                <li ><a href="#nav1-6" style="font-size:14px;">1.1.6 View层</a></li>
+                                <li ><a href="#nav1-7" style="font-size:14px;">1.1.7 国际化ie8</a></li>
+                                <li ><a href="#nav1-8" style="font-size:14px;">1.1.8 前台展示</a></li>
+                            </ul>
+                        </li>
+                        <li style="padding: 0 0 5px 0;"><a href="#nav2" style="font-size:16px;">1.2查询功能</a>
+                        </li>
+                        <li style="padding: 0 0 5px 0;"><a href="#nav3" style="font-size:16px;">1.3添加功能</a>
+                        </li>
+                        <li style="padding: 0 0 5px 0;"><a href="#nav4" style="font-size:16px;">1.4编辑功能</a>
+                        </li>
+                        <li style="padding: 0 0 5px 0;"><a href="#nav5" style="font-size:16px;">1.5刷新功能</a>
+                        </li>
+                        <li style="padding: 0 0 5px 0;"><a href="#nav6" style="font-size:16px;">1.6删除功能</a>
+                        </li>
+                        <li style="padding: 0 0 5px 0;"><a href="#nav7" style="font-size:16px;">1.7导出Excel</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-lg-8 md_right col-lg-push-1" data-spy="scroll" data-target=".bs-docs-sidebar">
+            <h1>项目创建流程</h1>
+            <h2 id="nav1">1.1先建立一个项目框架</h2>
+            <p>说明：本文档以新建一个简单的保单管理为例，数据库以MySQL为例，使用navicat作为连接数据库的可视化界面，详细列出开发流程，
+                该模块将提供保单的查询功能。</p>
+            <p>开发环境：数据库：MySQL</p>
+
+            <div class="col-lg-12">
+                <div class="col-lg-6">文件下载:</div>
+                <div class="col-lg-6">文档下载:</div>
+                <div style="clear: both;"></div>
+
+            </div>
+
+            <div class="col-lg-12" style="margin-top: 10px;  height: 50px;">
+                <div class="col-lg-6">
+                    <a href="http://pan.baidu.com/s/1o6DYL78" target="_blank">
+                        <input type="button" class="btn btn-info" value="下载环境 v1.0.0 "/>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a href="http://pan.baidu.com/s/1qW2z5N2" target="_blank">
+                        <input type="button" class="btn btn-info" value="下载源码 v1.0.0 "/>
+                    </a>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <h3 id="nav1-1">1.1.1设计表结构</h3>
+            <p>新建一个表BAS_POLICY如图1所示：</p>
+            <p><img src="../resources/image/start-html/pic1-1.png" alt="image1"></p>
+            <p align="center">图 1</p>
+            <h3 id="nav1-2">1.1.2 模型（Model）层</h3>
+            <p>(1）新建一个类Policy类和PolicyVo类如下：</p>
+<pre>     -----------------------------------Policy类----------------------------------
+    package com.newtouch.starter.policy;
+    import java.io.Serializable;
+    import com.newtouch.lion.model.VersionEntity;
+
+    public class Policy extends VersionEntity&lt;Long&gt; implements Serializable {
+    private static final long serialVersionUID = -6327022095298899613L;
+        private Long          id;                //保单ID
+        private String          policyType;        //保单类型
+        private String          insuredName;        //被保人姓名
+        public Long getId() {
+            return id;
+        }
+        public void setId(Long id) {
+            this.id = id;
+        }
+        public String getPolicyType() {
+            return policyType;
+        }
+        public void setPolicyType(String policyType) {
+            this.policyType = policyType;
+        }
+        public String getInsuredName() {
+            return insuredName;
+        }
+        public void setInsuredName(String insuredName) {
+            this.insuredName = insuredName;
+        }
+        public Policy(Long id, String policyType, String insuredName) {
+            super();
+            this.id = id;
+            this.policyType = policyType;
+            this.insuredName = insuredName;
+        }
+        @Override
+        public String toString() {
+            return &quot;Policy [id=&quot; + id + &quot;, policyType=&quot; + policyType
+                 + &quot;, insuredName=&quot; + insuredName + &quot;]&quot;;
+        }
+    }
+    --------------------------------PolicyVo类----------------------------------
+    package com.newtouch.starter.policy;
+    import java.io.Serializable;
+
+    public class PolicyVo implements Serializable{
+        private static final long serialVersionUID = -6327022095298899613L;
+        private Long          id;                //保单ID
+        private String          policyType;        //保单类型
+        private String          insuredName;        //被保人姓名
+        public Long getId() {
+            return id;
+        }
+        public void setId(Long id) {
+            this.id = id;
+        }
+        public String getPolicyType() {
+            return policyType;
+        }
+        public void setPolicyType(String policyType) {
+            this.policyType = policyType;
+        }
+        public String getInsuredName() {
+            return insuredName;
+        }
+        public void setInsuredName(String insuredName) {
+            this.insuredName = insuredName;
+        }
+        @Override
+        public String toString() {
+            return &quot;PolicyVo [id=&quot; + id + &quot;, policyType=&quot; + policyType
+                + &quot;, insuredName=&quot; + insuredName + &quot;]&quot;;
+        }
+        public PolicyVo() {
+            super();
+        }
+        public PolicyVo(Long id, String policyType, String insuredName) {
+            super();
+            this.id = id;
+            this.policyType = policyType;
+            this.insuredName = insuredName;
+        }
+    }
+</pre><p>(2）新建置文件bas_serviceBean.mysql.orm.xml，并在文件中配置Policy的属性</p>
+<pre>
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;entity-mappings xmlns=&quot;http://java.sun.com/xml/ns/persistence/orm&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd&quot;
+    version=&quot;2.0&quot;&gt;
+        &lt;package&gt;com.newtouch.starter.policy&lt;/package&gt;
+        &lt;access&gt;PROPERTY&lt;/access&gt;
+        &lt;!-- 保单信息 --&gt;
+        &lt;entity class=&quot;Policy&quot;&gt;
+            &lt;table name=&quot;BAS_POLICY&quot; /&gt;
+            &lt;attributes&gt;
+                &lt;id name=&quot;id&quot;&gt;
+                    &lt;column name=&quot;policy_id&quot; unique=&quot;true&quot; nullable=&quot;false&quot; precision=&quot;11&quot; scale=&quot;0&quot; /&gt;
+                    &lt;generated-value strategy=&quot;IDENTITY&quot; /&gt;
+                &lt;/id&gt;
+                &lt;basic name=&quot;policyType&quot;&gt;
+                    &lt;column name=&quot;POLICY_TYPE&quot; length=&quot;500&quot; nullable=&quot;true&quot;/&gt;
+                &lt;/basic&gt;
+                &lt;basic name=&quot;insuredName&quot;&gt;
+                    &lt;column name=&quot;INSURED_NAME&quot; length=&quot;500&quot; nullable=&quot;true&quot;/&gt;
+                &lt;/basic&gt;
+            &lt;/attributes&gt;
+        &lt;/entity&gt;
+    &lt;/entity-mappings&gt;
+</pre><p>(3）将配置文件注册到applicationContext-jpa.xml中，如下所示（红色字体标识的）</p>
+<pre>
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd&quot;&gt;
+    &lt;!-- Hibernate Common Configuraction --&gt;
+        &lt;bean class=&quot;org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor&quot; /&gt;
+        &lt;bean class=&quot;org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor&quot; /&gt;
+        &lt;!-- 指定JPA持久化提供商，此处使用Hibernate实现HibernatePersistence类 --&gt;
+        &lt;bean id=&quot;persistenceProvider&quot; class=&quot;org.hibernate.ejb.HibernatePersistence&quot; /&gt;
+        &lt;!-- 如果指定jpaVendorAdapter此属性可选，此处为HibernateJpaDialect --&gt;
+        &lt;bean id=&quot;jpaDialect&quot; class=&quot;org.springframework.orm.jpa.vendor.HibernateJpaDialect&quot; /&gt;
+        &lt;!-- 指定实现厂商专用特性，即generateDdl= false表示不自动生成DDL，database= HSQL表示使用hsqldb数据库 --&gt;
+        &lt;bean id=&quot;jpaVendorAdapter&quot; class=&quot;org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter&quot;&gt;
+            &lt;property name=&quot;generateDdl&quot; value=&quot;false&quot; /&gt;
+            &lt;property name=&quot;database&quot; value=&quot;HSQL&quot; /&gt;
+        &lt;/bean&gt;
+        &lt;!-- 配置hibernate session工厂 --&gt;
+        &lt;bean id=&quot;entityManagerFactory&quot; class=&quot;org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean&quot;&gt;
+            &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+            &lt;property name=&quot;persistenceProvider&quot; ref=&quot;persistenceProvider&quot; /&gt;
+            &lt;!-- &lt;property name=&quot;persistenceXmlLocation&quot; value=&quot;classpath:META-INF/persistence-mysql.xml&quot;&gt;&lt;/property&gt;--&gt;
+            &lt;property name=&quot;mappingResources&quot;&gt;
+                &lt;list&gt;
+                    &lt;value&gt;model/application/bas_app_properties.${database.prefix}.orm.xml&lt;/value&gt;
+                    &lt;value&gt;model/datagrid/bas_datagrid.${database.prefix}.orm.xml&lt;/value&gt;
+                    &lt;value&gt;model/system/bas_demo.${database.prefix}.orm.xml&lt;/value&gt;
+                    &lt;value&gt;model/system/bas_common.${database.prefix}.orm.xml&lt;/value&gt;
+                    &lt;value&gt;model/system/bas_login_log.${database.prefix}.orm.xml&lt;/value&gt;
+                    &lt;value&gt;model/system/bas_system.${database.prefix}.orm.xml&lt;/value&gt;
+                    &lt;value&gt;model/system/bas_tasks.${database.prefix}.orm.xml&lt;/value&gt;
+                    &lt;value&gt;model/bas_policy.${database.prefix}.orm.xml&lt;/value&gt;
+                    &lt;value&gt;model/system/bas_reminder.${database.prefix}.orm.xml&lt;/value&gt;
+                &lt;/list&gt;
+            &lt;/property&gt;
+            &lt;property name=&quot;jpaProperties&quot;&gt;
+                &lt;props&gt;
+                    &lt;!--  &lt;prop key=&quot;hibernate.hbm2ddl.auto&quot;&gt;${hibernate.hbm2ddl.auto}&lt;/prop&gt;--&gt;
+                    &lt;prop key=&quot;hibernate.dialect&quot;&gt;${hibernate.dialect}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.show_sql&quot;&gt;${hibernate.show_sql}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.format_sql&quot;&gt;${hibernate.format_sql}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.use_sql_comments&quot;&gt;${hibernate.use_sql_comments}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.generate_statistics&quot;&gt;${hibernate.generate_statistics}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.max_fetch_depth&quot;&gt;${hibernate.max_fetch_depth}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.jdbc.batch_size&quot;&gt;${hibernate.jdbc.batch_size}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.jdbc.fetch_size&quot;&gt;${hibernate.jdbc.fetch_size}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.max_fetch_depth&quot;&gt;${hibernate.max_fetch_depth}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.cache.use_query_cache&quot;&gt;${hibernate.cache.use_query_cache}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.cache.use_second_level_cache&quot;&gt;${hibernate.cache.use_second_level_cache}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.cache.provider_class&quot;&gt;${hibernate.cache.provider_class}&lt;/prop&gt;
+                    &lt;prop key=&quot;hibernate.cache.region.factory_class&quot;&gt;${hibernate.cache.region.factory_class}&lt;/prop&gt;
+                    &lt;prop key=&quot;current_session_context_class&quot;&gt;thread&lt;/prop&gt;
+                &lt;/props&gt;
+            &lt;/property&gt;
+        &lt;/bean&gt;
+    &lt;/beans&gt;
+</pre><h3 id="nav1-3">1.1.3 Dao层</h3>
+            <p>(1）新建PolicyDao接口，并继承BaseDao，代码如下</p>
+<pre>    package com.newtouch.starter.dao;
+    import com.newtouch.lion.dao.BaseDao;
+    import com.newtouch.starter.policy.Policy;
+    public interface PolicyDao extends BaseDao&lt;Policy, Long&gt; {
+    }
+</pre>
+            <p>(2）创建PolicyDaoImpl，继承BaseDaoImpl并实现PolicyDao，代码如下</p>
+<pre>package com.newtouch.starter.dao;
+    import org.springframework.stereotype.Repository;
+    import com.newtouch.lion.dao.impl.BaseDaoImpl;
+    import com.newtouch.starter.policy.Policy;
+    @Repository
+    public class PolicyDaoImpl extends BaseDaoImpl&lt;Policy, Long&gt; implements PolicyDao {
+        private static final long serialVersionUID = -1494476134711376183L;
+    }
+</pre><h3 id="nav1-4">1.1.4 service层</h3>
+            <p>(1）创建接口PolicyService,代码如下：</p>
+<pre>package com.newtouch.starter.service;
+    import com.newtouch.lion.page.PageResult;
+    import com.newtouch.lion.query.QueryCriteria;
+    import com.newtouch.starter.policy.Policy;
+
+    public interface PolicyService {
+        /**
+        * 分页查询保单信息
+        * @param queryCriteria
+        * @return
+        */
+        public PageResult&lt;Policy&gt;  doFindByCriteria(QueryCriteria queryCriteria);
+    }
+</pre><p>(2）创建PolicyServiceImpl,使之继承AbstractService并实现PolicyService,代码如下：</p>
+<pre>package com.newtouch.starter.service;
+    import java.util.Map;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+    import com.newtouch.lion.common.sql.HqlUtils;
+    import com.newtouch.lion.page.PageResult;
+    import com.newtouch.lion.query.QueryCriteria;
+    import com.newtouch.lion.service.AbstractService;
+    import com.newtouch.starter.dao.PolicyDao;
+    import com.newtouch.starter.policy.Policy;
+    @Service
+    public class PolicyServiceImpl extends AbstractService implements
+            PolicyService {
+        @Autowired
+        private PolicyDao policyDao;
+        @Override
+        public PageResult&lt;Policy&gt; doFindByCriteria(QueryCriteria criteria) {
+            String queryEntry = &quot; from Policy &quot;;
+            String[] whereBodies = {&quot;policyType like:policyType&quot;};
+            String fromJoinSubClause = &quot;&quot;;
+            Map&lt;String, Object&gt; params = criteria.getQueryCondition();
+            String orderField = criteria.getOrderField();
+            String orderDirection = criteria.getOrderDirection();
+            String hql = HqlUtils.generateHql(queryEntry, fromJoinSubClause, whereBodies, orderField, orderDirection, params);
+            int pageSize = criteria.getPageSize();
+            int startIndex = criteria.getStartIndex();
+            PageResult&lt;Policy&gt; pageResult = this.policyDao.query(hql, HqlUtils.generateCountHql(hql, null), params, startIndex, pageSize);
+            return pageResult;
+        }
+    }
+</pre><h3 id="nav1-5">1.1.5 Controller层</h3>
+            <p>创建PolicyController如下：</p>
+            <p>该controller层只提供查询功能</p>
+<pre>package com.newtouch.starter.controller;
+    import org.apache.commons.lang.StringUtils;
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Controller;
+    import org.springframework.web.bind.annotation.ModelAttribute;
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.RequestMethod;
+    import org.springframework.web.bind.annotation.ResponseBody;
+    import com.newtouch.lion.data.DataTable;
+    import com.newtouch.lion.page.PageResult;
+    import com.newtouch.lion.query.QueryCriteria;
+    import com.newtouch.lion.web.controller.AbstractController;
+    import com.newtouch.lion.web.model.QueryDt;
+    import com.newtouch.starter.policy.Policy;
+    import com.newtouch.starter.policy.PolicyVo;
+    import com.newtouch.starter.service.PolicyService;
+    @Controller
+    @RequestMapping(&quot;/system/policy/&quot;)
+    public class PolicyController extends AbstractController {
+        private final Logger logger = LoggerFactory.getLogger(super.getClass());
+        /** 默认排序字段名称 */
+        private static final String DEFAULT_ORDER_FILED_NAME = &quot;id&quot;;
+        @Autowired
+        private PolicyService policyService;
+        @RequestMapping(value=&quot;/index&quot;,method=RequestMethod.GET)
+        public  String index(){
+            logger.info(&quot;dddd&quot;);
+            return &quot;system/policy/index&quot;;
+        }
+        @RequestMapping(value = &quot;list&quot;)
+        @ResponseBody
+        public DataTable&lt;Policy&gt; list(QueryDt query,@ModelAttribute(&quot;policy&quot;) PolicyVo policyVo) {
+            QueryCriteria queryCriteria = new QueryCriteria();
+            // 设置分页
+        启始页
+            queryCriteria.setStartIndex(query.getPage());
+            // 每页大小
+            queryCriteria.setPageSize(query.getRows());
+            // 设置排序字段及排序方向
+            if(StringUtils.isNotEmpty(query.getSort())&amp;&amp;StringUtils.isNotEmpty(query.getOrder())) {
+            queryCriteria.setOrderField(query.getSort());
+            queryCriteria.setOrderDirection(query.getOrder());
+            } else {
+            queryCriteria.setOrderField(DEFAULT_ORDER_FILED_NAME);
+            queryCriteria.setOrderDirection(QueryCriteria.ASC);
+            }
+            //查询条件 名称按模糊查询
+            if(StringUtils.isNotEmpty(policyVo.getPolicyType())){
+            queryCriteria.addQueryCondition(&quot;policyType&quot;,&quot;%&quot;+policyVo.getPolicyType()+&quot;%&quot;);
+            }
+            PageResult&lt;Policy&gt; pageResult = policyService.doFindByCriteria(queryCriteria);
+            return pageResult.getDataTable(query.getRequestId());
+        }
+    }
+</pre><h3 id="nav1-6">1.1.6 View层</h3>
+            <p>(1）写前台js</p>
+            <p>在src/mian/webapp/resourves/admin/scripts/system下新建一个policy.js文件，如下</p>
+<pre>var icondg=$(&#39;sys_policy_tb&#39;); //datagrids
+    var queryForm=$(&#39;queryform&#39;);
+    $(function(){
+        //默认加载函数
+        lion.web.AppInit();
+    //验证表单
+        icondg=$(&#39;sys_policy_tb&#39;); //datagrids
+        queryForm=$(&#39;queryform&#39;);
+        //查询
+        $(&#39;btnQuery&#39;).click(function(){
+        icondg.datagrids({querydata:queryForm.serializeObject()});
+        var queryparam=icondg.datagrids(&#39;queryparams&#39;);
+        icondg.datagrids(&#39;reload&#39;);
+        });
+        //刷新
+        $(&#39;btnRefresh&#39;).click(function(){
+            icondg.datagrids(&#39;reload&#39;);
+        });
+    });
+</pre><p>(2）写前台index页面</p>
+            <p>在src/mian/webapp/WEB-INF/view/system下新建一个policy文件夹，在policy文件夹下新建一个index.ftl文件，代码如下：</p>
+<pre>
+    &lt;assign base = request.contextPath/&gt;
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot; class=&quot;no-js&quot;&gt;
+    &lt;head&gt;
+    &lt;title&gt; &lt;@spring.message &quot;sys.policy.html.title&quot;/&gt;&lt;/title&gt;
+    &lt;link href=&quot;${base}/resources/global/plugins/ztree/css/metro.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;
+    &lt;link href=&quot;${base}/resources/global/plugins/bootstrap-select/bootstrap-select.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;link href=&quot;${base}/resources/global/plugins/bootstrap-toastr/toastr.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+    &lt;!--DataTable css Start--&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;${base}/resources/global/plugins/select2/select2.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;${base}/resources/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;${base}/resources/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;${base}/resources/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css&quot;/&gt;
+    &lt;!--DataTable css End--&gt;
+    &lt;link href=&quot;${base}/resources/global/plugins/bootstrap-select/bootstrap-select.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;link href=&quot;${base}/resources/global/css/lion.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;link href=&quot;${base}/resources/global/css/combotree/combotree.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;!-- DataTables js Start --&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;${base}/resources/global/plugins/select2/select2.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;${base}/resources/global/plugins/datatables/media/js/jquery.dataTables.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;${base}/resources/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;${base}/resources/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;${base}/resources/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;${base}/resources/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- DataTables js End --&gt;
+    &lt;script src=&quot;${base}/resources/global/plugins/bootbox/bootbox.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;${base}/resources/global/plugins/bootstrap-toastr/toastr.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;${base}/resources/admin/pages/scripts/ui-toastr.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;${base}/resources/global/plugins/jquery-validation/js/jquery.validate.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;!--lion UI JS Start--&gt;
+    &lt;script src=&quot;${base}/resources/global/js/lion.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;${base}/resources/global/js/form/form.fill.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;${base}/resources/global/js/local/lion-lang-zh_CN.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;${base}/resources/global/js/combotree/combotree.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;${base}/resources/global/js/datagrid/datagrids.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;!--ztree js--&gt;
+    &lt;script src=&quot;${base}/resources/global/plugins/ztree/js/jquery.ztree.all-3.5.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;!--lang--&gt;
+    &lt;script src=&quot;${base}/resources/admin/scripts/admin-common.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;!-- tasks --&gt;
+    &lt;script src=&quot;${base}/resources/admin/scripts/system/policy.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body class=&quot;page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo&quot;&gt;
+    &lt;!-- BEGIN PAGE CONTENT INNER --&gt;
+    &lt;div class=&quot;portlet light&quot;&gt;
+        &lt;div class=&quot;portlet-body&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-md-12 margin-bottom-10&quot;&gt;
+                    &lt;form id=&quot;queryform&quot; class=&quot;form-horizontal&quot;&gt;
+                        &lt;label class=&quot;control-label col-md-2&quot; for=&quot;nameZh&quot; &gt;
+                            &lt;@spring.message &quot;sys.policy.html.policyType&quot;/&gt;
+                        &lt;/label&gt;
+                        &lt;div class=&quot;col-md-2&quot;&gt;
+                            &lt;input class=&quot;form-control input-small&quot; type=&quot;text&quot; size=&quot;30&quot; name=&quot;name&quot; id=&quot;name&quot;  placeholder=&quot;&lt;@spring.message &quot;sys.policy.html.tip.policyType&quot;/&gt;&quot;  /&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-md-2&quot;&gt;
+                            &lt;a href=&quot;javascript:void(0)&quot; id=&quot;btnQuery&quot; class=&quot;btn blue&quot;&gt;
+                                &lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;
+                                &lt;@spring.message &quot;common.query.btn.text&quot;/&gt;
+                            &lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col-md-12 margin-bottom-10&quot; id=&quot;toolbar&quot;&gt;
+                    &lt;a id=&quot;btnAdd&quot; class=&quot;btn btn-sm yellow&quot; data-toggle=&quot;modal&quot; href=&quot;basic&quot;&gt;
+                        &lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+                        &lt;@spring.message &quot;common.toolbar.btn.add.text&quot;/&gt;
+                    &lt;/a&gt;
+                    &lt;a id=&quot;btnEdit&quot; class=&quot;btn btn-sm red&quot;&gt;
+                        &lt;i class=&quot;fa fa-edit&quot;&gt;&lt;/i&gt;
+                        &lt;@spring.message &quot;common.toolbar.btn.edit.text&quot;/&gt;
+                    &lt;/a&gt;
+                    &lt;a id=&quot;btnDelete&quot; class=&quot;btn btn-sm purple&quot;&gt;
+                        &lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;
+                        &lt;@spring.message &quot;common.toolbar.btn.delete.text&quot;/&gt;
+                    &lt;/a&gt;
+                    &lt;a id=&quot;btnRefresh&quot; class=&quot;btn btn-sm blue&quot;&gt;
+                        &lt;i class=&quot;fa fa-refresh&quot;&gt;&lt;/i&gt;
+                        &lt;@spring.message &quot;common.toolbar.btn.reload.text&quot;/&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;javascript:void(0)&quot; id=&quot;btnExport&quot;  class=&quot;btn btn-sm green&quot;&gt;
+                        &lt;i class=&quot;fa  fa-file-excel-o&quot;&gt;&lt;/i&gt;
+                        &lt;@spring.message &quot;common.toolbar.btn.export.text&quot;/&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col-md-12&quot;&gt;
+                    &lt;table class=&quot;lion-datagrids table table-striped table-bordered table-hover&quot; id=&quot;sys_policy_tb&quot; data-singleselect=&quot;true&quot;,   data-loadUrl=&quot;${base}/system/policy/list.json&quot; data-checkbox=&quot;true&quot; data-pageSize=&quot;10&quot;&gt;
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th class=&quot;table-checkbox&quot; data-field=&#39;id&#39; data-checkbox=&quot;true&quot;&gt;
+                                    &lt;input type=&quot;checkbox&quot; class=&quot;group-checkable&quot; data-set=&quot;sys_policy_tb.checkboxes&quot;  data-sortable=&quot;false&quot; /&gt;
+                                &lt;/th&gt;
+                                &lt;th data-field=&#39;policyType&#39; data-sortDir=&quot;asc&quot; style=&quot;width:100px;&quot;&gt;
+                                    &lt;@spring.message &quot;sys.policy.html.policyType&quot;/&gt;
+                                &lt;/th&gt;
+                                &lt;th data-field=&quot;insuredName&quot; style=&quot;width:100px;&quot;&gt;
+                                    &lt;@spring.message &quot;sys.policy.html.pinsuredName&quot;/&gt;
+                                &lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</pre><h3 id="nav1-7">1.1.7 国际化</h3>
+            <p>(1）在src/main/resources/i18n/system下新建一个policy文件夹，在该文件夹下新建两个文件，policy_en_US.properties（用于存放英文数据）和policy_zh_CN.properties（用于存放中文数据），在policy_zh_CN.properties中内容如下：</p>
+<pre>
+    sys.policy.html.title=保单管理
+    sys.policy.html.policyType=投保类型
+    sys.policy.html.tip.policyType=请输入投保类型
+    sys.policy.html.pinsuredName=被保人姓名
+</pre><p>(2）将国际化的文件在dispatcher-servlet.xml中注册如下（表红色的部分）：</p>
+<pre>
+    &lt;!-- i18n --&gt;
+    &lt;bean id=&quot;messageSource&quot; class=&quot;org.springframework.context.support.ReloadableResourceBundleMessageSource&quot;&gt;
+        &lt;property name=&quot;basenames&quot;&gt;
+            &lt;list&gt;
+                &lt;value&gt;classpath:i18n/messages&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/login/login&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/application/applicationProperty&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/parameter/parameter&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/user/user&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/role/role&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/group/group&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/datagrid/datagrid&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/datacolumn/datacolumn&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/code/codeList&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/code/codeType&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/resource/resource&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/tasks/taskslist&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/policy/policy&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/icon/icon&lt;/value&gt;
+                &lt;value&gt;classpath:i18n/system/reminder/reminder&lt;/value&gt;
+            &lt;/list&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot; /&gt;
+        &lt;property name=&quot;fallbackToSystemLocale&quot; value=&quot;true&quot; /&gt;
+        &lt;property name=&quot;useCodeAsDefaultMessage&quot; value=&quot;false&quot; /&gt;
+    &lt;/bean&gt;
+</pre><h3 id="nav1-8">1.1.8 前台展示</h3>
+            <p>程序运行之后，在浏览器地址栏中输入localhost:8080/starter/system/policy/index.htm，则页面显示如图2所示：</p>
+            <p><img src="../resources/image/start-html/pic1-2.png" alt="image2"></p>
+            <p align="center">图2</p>
+            <p>由图2可知，页面上实现的功能有：查询，添加，编辑，删除，刷新和导出Excel。</p>
+            <h2 id="nav2">1.2查询功能</h2>
+            <p>在实现查询功能时，需在policy.js中编写对应的方法，直接调用Controller中的list方法即可实现查询功能。在输入框中输入所要查询
+                的保单类型，点击查询按钮，即可进行查询。结果如图3所示：</p>
+            <p><img src="../resources/image/start-html/pic1-3.png" alt="image3"></p>
+            <p align="center">图 3</p>
+            <h2 id="nav3">1.3添加功能</h2>
+            <p>点击添加按钮后，将会弹出一个对话框，如图4所示。</p>
+            <p><img src="../resources/image/start-html/pic1-4.png" alt="image4"></p>
+            <p align="center">图 4</p>
+            <p>实现这一步时，需要在policy.js中添加点击事件，代码如下所示：</p>
+<pre>/**新增或编辑的提交代码*/
+    function submitForm(frm){
+        var param=frm.serialize(),id=($(&#39;id&#39;).val());
+        //ID为空时，为添加动作
+        if(lion.util.isEmpty(id)){
+            lion.web.post({url:&#39;add.json&#39;,data:param,success:successAddFrm});
+        }else{
+            lion.web.post({url:&#39;edit.json&#39;,data:param,success:successEditFrm});
+        }
+    }
+    //添加未成功的函数
+    function successAddFrm(result,args){
+        lion.web.parsedata({
+        data:result,
+        success:function(){
+            addDialog.modal(&#39;toggle&#39;);
+            icondg.datagrids(&#39;reload&#39;);
+        },
+        msg:&#39;添加保单未成功&#39;
+        });
+    }
+</pre><p>点击“保存”后要先进行表单验证，在policy.js中编写表单验证的代码如下：</p>
+<pre>
+    //验证表单
+    handleVForm=function(vForm,submitCallBackfn){
+        var addError = $(&#39;.alert-danger&#39;, vForm);
+        var addSuccess = $(&#39;.alert-success&#39;,vForm);
+        vForm.validate({
+            errorElement: &#39;span&#39;,
+            errorClass: &#39;help-block help-block-error&#39;,
+            focusInvalid: false,
+            onkeyup:false,
+            ignore: &#39;&#39;,
+            messages: {
+                policyType:{
+                    required:&#39;请输入保单类型&#39;,
+                    rangelength:jQuery.validator.format(&#39;保单类型长度为{0}和{1}字符之间&#39;)
+                },
+                insuredName:{
+                    required:&#39;请输入被保人姓名&#39;,
+                    rangelength:jQuery.validator.format(&#39;被保人姓名长度为{0}和{1}字符之间&#39;),
+                    remote:&#39;该被保人已存在，请输入其它姓名&#39;
+                }
+            },
+            rules: {
+                policyType: {
+                    required:true,
+                    rangelength:[1,128]
+                },
+                insuredName:{
+                    required: true,
+                    rangelength:[1,128],
+                    remote:{
+                        url:&#39;checkisexitnameen.htm&#39;, //后台处理程序
+                        type: &#39;post&#39;,               //数据发送方式
+                        dataType: &#39;json&#39;,           //接受数据格式
+                        data: {                     //要传递的数据
+                            nameEn: function() {
+                                return $(&#39;insuredName&#39;).val();
+                            },
+                            id:function(){
+                                var id=($(&#39;id&#39;).val());
+                                if(lion.util.isNotEmpty(id)){
+                                    return id;
+                                }
+                                return &#39;&#39;;
+                            }
+                        }
+                    }
+                }
+            },
+            invalidHandler: function (event, validator) {
+                addSuccess.hide();
+                addError.show();
+                Metronic.scrollTo(addError, -200);
+            },
+            highlight: function (element) {
+                $(element).closest(&#39;.form-group&#39;).addClass(&#39;has-error&#39;);
+            },
+            unhighlight: function (element) {
+                $(element).closest(&#39;.form-group&#39;).removeClass(&#39;has-error&#39;);
+            },
+            success: function (label) {
+                label.closest(&#39;.form-group&#39;).removeClass(&#39;has-error&#39;);
+            },
+            errorPlacement:function(error,element){
+                //当遇到combo的对话框架的时，修改它的显示位置
+                if (element.hasClass(&#39;lion-combo&#39;)){
+                    error.insertAfter(element.parent().find(&#39;div.btn-group&#39;));
+                }else{
+                    error.insertAfter(element);
+                }
+            },
+            submitHandler: function (form) {
+                addSuccess.show();
+                addError.hide();
+                submitCallBackfn(vForm);
+            }
+        });
+    };
+</pre><p>在service包下的PolicyService.java下定义添加方法，代码如下：</p>
+<pre>
+    /**
+    * 添加新的保单信息
+    * @param policy
+    */
+    public void doCreate(Policy policy);
+    /**
+    * 根据保单类型获取保单信息
+    * @param iconClass
+    * @return
+    */
+    public Policy doFindTypeByPolicyType(String policyType);
+    /**
+    * 判断保单的类型是否存在
+    * @param policyClass
+    * @return
+    */
+    public boolean doIsExistByPolicyType(String policyType);
+    在policyServiceImpl.java中继承实现，代码如下：
+    @Override
+    public void doCreate(Policy policy) {
+        Assert.notNull(policy);
+        policyDao.save(policy);
+    }
+    @Override
+    public boolean doIsExistByPolicyType(String policyType) {
+        Assert.notNull(policyType);
+        Policy policy = this.doFindTypeByPolicyType(policyType);
+        if (policy != null)
+            return true;
+        return false;
+    }
+    @Override
+    public Policy doFindTypeByPolicyType(String policyType) {
+        Assert.notNull(policyType);
+        String hql = &quot;from policy where policyType=:policyType&quot;;
+        Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+        params.put(&quot;policyType&quot;, policyType);
+        java.util.List&lt;Policy&gt;
+        policys = policyDao.query(hql, params);
+        if (policys != null &amp;&amp; policys.size() &gt; 0) {
+            return policys.get(0);
+        }
+        return null;
+    }
+</pre><p>在Controller包下的PolicyController.java中实现添加数据的代码如下：</p>
+<pre>
+    /** 表单数据添加保存 */
+    @RequestMapping(value = &quot;add&quot; )
+    @ResponseBody
+    public ModelAndView add(@Valid @ModelAttribute(&quot;policy&quot;) PolicyVo policyVo,
+         Errors errors, ModelAndView modelAndView){
+        //是否错误消息
+        if (errors.hasErrors()) {
+            modelAndView.addObject(BindMessage.ERRORS_MODEL_KEY, errors);
+            return this.getJsonView(modelAndView);
+        }
+        Policy policy = new Policy();
+        BeanUtils.copyProperties(policyVo, policy);
+        policyService.doCreate(policy);
+        Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();
+        params.put(BindResult.SUCCESS, &quot;sys.policy.add.success&quot;);
+        modelAndView.addObject(BindMessage.SUCCESS, params);
+        return this.getJsonView(modelAndView);
+    }
+    @RequestMapping(value = &quot;checkisexitnameen&quot;)
+        @ResponseBody
+        public String checkIsExistByNameEn(HttpServletRequest servletRequest,
+                @RequestParam(required = false) String policyType,@RequestParam(required=false) Long id) {
+            Boolean flag=Boolean.FALSE;
+            if(id==null){
+                flag = this.isExistByPolicyClass(policyType)? false : true;
+            }else{
+                Policy policy = policyService.doFindById(id);
+                if(policy==null){
+                    flag = this.isExistByPolicyClass(policyType)? false : true;
+                }else{
+                    flag=this.isExistByPolicyClass(policyType, policy.getPolicyType())?false:true;
+                }
+            }
+            return flag.toString();
+        }
+        private Boolean isExistByPolicyClass(String policyClass) {
+            Boolean flag = false;
+            if (StringUtils.isNotEmpty(policyClass)) {
+                flag = policyService.doIsExistByPolicyType(policyClass.trim());
+            }
+            return flag;
+        }
+        private Boolean isExistByPolicyClass(String policyClass, String oldClass) {
+            Boolean flag = false;
+            if (StringUtils.isNotEmpty(policyClass) &amp;&amp; !policyClass.equals(oldClass)) {
+                flag = policyService.doIsExistByPolicyType(policyClass.trim());
+            }
+        return flag;
+    }
+</pre><p>在policy_zh_CN.properties中添加国际化。</p>
+<pre>sys.policy.add.success=添加成功
+    sys.policy.form.adddialog.text=添加保单
+</pre><p>页面显示如图5所示：</p>
+            <p><img src="../resources/image/start-html/pic1-5.png" alt="image5"></p>
+            <p align="center">图 5</p>
+            <p>点击“保存”，即可将数据保存到数据库中。结果如图6所示。</p>
+            <p><img src="../resources/image/start-html/pic1-6.png" alt="image6"></p>
+            <p align="center">图 6</p>
+            <h2 id="nav4">1.4编辑功能</h2>
+            <p>首先在policy.js中添加编辑点击事件，代码如下：</p>
+<pre>//编辑成功的函数
+    function successEditFrm(result,args){
+        lion.web.parsedata({
+            data:result,
+            success:function(){
+                addDialog.modal(&#39;toggle&#39;);
+                icondg.datagrids(&#39;reload&#39;);
+            },
+            msg:&#39;编辑保单未成功&#39;
+        });
+    }
+    //测试选择中checkbox
+    function formatterCheckBox(data,type,full){
+        return data;
+    }
+    //判断是否编辑
+    function formatterEidtable(data,type,full) {
+        var name =$.lion.lang.editable.n;
+        if (data) {
+            name = $.lion.lang.editable.y;
+        }
+        return name;
+    }
+</pre><p>选中表中某一行，点击编辑按钮，弹出如图7所示的对话框。</p>
+            <p><img src="../resources/image/start-html/pic1-7.png" alt="image7"></p>
+            <p align="center">图7</p>
+            <p>在编辑时需要根据id查找信息，然后在再进行更新。在接口PolicyService.java中定义更新和查询的方法，代码如下：</p>
+<pre>
+    /**
+    * 更新保单
+    * @param policy
+    * @return
+    */
+    public Policy doUpdate(Policy policy);
+    /**
+    * 根据id查询Policy并返回保单对象
+    * @param id
+    * @return
+    */
+    public Policy doFindById(Long id);
+</pre><p>在PolicyServiceImpl.java中实现上述方法，代码如下：</p>
+<pre>
+    @Override
+        public Policy doUpdate(Policy policy) {
+            Assert.notNull(policy);
+            policyDao.update(policy);
+            return policy;
+        }
+    @Override
+        public Policy doFindById(Long id) {
+            return this.policyDao.findById(id);
+        }
+</pre><p>在Controller包下的PolicyController.java中实现编辑功能的数据交互，代码如下：</p>
+<pre>
+    /**
+    * 保单编辑
+    */
+    @RequestMapping(value = &quot;editdialog&quot;)
+    public String editDialog(@RequestParam Long id, Model model) {
+        if (id != null) {
+            Policy policy = policyService.doFindById(id);
+            model.addAttribute(&quot;policy&quot;, policy);
+        } else {
+            logger.error(&quot;Edit Object id is not null!&quot;);
+        }
+        return &quot;/system/group/editdialog&quot;;
+    }
+    /**保单编辑对话框*/
+    @RequestMapping(value = &quot;edit&quot;)
+    @ResponseBody
+    public ModelAndView edit{
+        @Valid @ModelAttribute(&quot;policy&quot;) PolicyVo policyVo,
+        Errors errors,ModelAndView modelAndView){
+        modelAndView=this.getJsonView(modelAndView);
+        //判断传入的ID是否为空
+        if (!errors.hasErrors() &amp;&amp; policyVo.getId() == null) {
+            errors.reject(&quot;sys.policy.form.id.empty&quot;);
+            modelAndView.addObject(BindMessage.ERRORS_MODEL_KEY, errors);
+            return modelAndView;
+        }
+        //判断传入的实体类是否已经存在
+        Policy policy = policyService.doFindById(policyVo.getId());
+        if (policy == null) {
+            errors.reject(&quot;sys.policy.form.id.empty&quot;);
+            return modelAndView;
+        }
+        if (errors.hasErrors()) {
+            modelAndView.addObject(BindMessage.ERRORS_MODEL_KEY, errors);
+            return  this.getJsonView(modelAndView);
+        }
+        .copyProperties(policyVo, policy);
+        policyService.doUpdate(policy);
+        Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();
+        params.put(BindResult.SUCCESS, &quot;sys.policy.edit.success&quot;);
+        modelAndView.addObject(BindMessage.SUCCESS, params);
+        return this.getJsonView(modelAndView);
+    }
+</pre><p>在国际化中添加信息，代码如下：</p>
+<pre>sys.policy.edit.success=编辑成功
+</pre><p>点击保存即可更新数据，如图8所示：</p>
+            <p><img src="../resources/image/start-html/pic1-8.png" alt="image8"></p>
+            <p align="center">图 8</p>
+            <p>点击保存，就可以将数据更新到数据库中。结果如图9所示。</p>
+            <p><img src="../resources/image/start-html/pic1-9.png" alt="image9"></p>
+            <p align="center">图 9</p>
+            <h2 id="nav5">1.5刷新功能</h2>
+            <p>需在policy.js中添加如下代码：</p>
+<pre>
+    //验证表单
+    handleVForm(addForm,submitForm);
+    //刷新
+    $(&#39;btnRefresh&#39;).click(function(){
+        icondg.datagrids(&#39;reload&#39;);
+    });
+</pre><h2 id="nav6">1.6删除功能</h2>
+            <p>在PolicyService.java中定义删除方法，代码如下：</p>
+<pre>
+    /**
+    * 根据id删除Policy对象
+    *
+    */
+    public int doDeleteById(Long id);
+</pre><p>在PolicyServiceImpl.java中实现上述方法，代码如下：</p>
+<pre>
+    @Override
+    public int doDeleteById(Long id) {
+        String hql=&quot;delete from Policy i where i.id=:id&quot;;
+        Map&lt;String,Object&gt; params=new  HashMap&lt;String, Object&gt;();
+        params.put(&quot;id&quot;,id);
+        return this.policyDao.updateHQL(hql, params);
+    }
+</pre><p>在PolicyController.java中添加删除的方法，代码如下：</p>
+<pre>
+    /** 删除保单 */
+    @RequestMapping(value = &quot;delete&quot;)
+    @ResponseBody
+    public ModelAndView delete(@RequestParam long id, ModelAndView modelAndView) {
+        Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();
+        int updateRow = this.policyService.doDeleteById(id);
+        if (updateRow &gt; 0) {
+            params.put(BindResult.SUCCESS,&quot;sys.policy.delete.success&quot;);
+        } else {
+            params.put(BindResult.SUCCESS,&quot;sys.ploicy.delete.fail&quot;);
+        }
+        modelAndView.addObject(BindMessage.SUCCESS, params);
+        return this.getJsonView(modelAndView);
+    }
+</pre><p>在policy.js中添加删除按钮的事件，代码如下：</p>
+<pre>
+    //删除
+    $(&#39;btnDelete&#39;).on(&#39;click&#39;,function(){
+        var row=icondg.datagrids(&#39;getSelected&#39;);
+        lion.web.deletefn({
+            url:&#39;delete.json&#39;,
+            data:row,
+            unselectedmsg:&#39;请选择要删除记录&#39;,
+            confirmmsg:&#39;确认要删除此记录？&#39;,
+            success:successForDelete,
+        });
+    });
+    //删除成功
+    function successForDelete(data,arg){
+        if(data!==null&amp;&amp;!(data.hasError)){
+            lion.util.success(&#39;提示&#39;,data.message);
+            icondg.datagrids(&#39;reload&#39;);
+        }else if(data!==null&amp;&amp;data.hasError){
+            var gmsg=&#39;&#39;;
+            for(var msg in data.errorMessage){
+                gmsg+=data.errorMessage[msg];
+            }
+            if(lion.util.isEmpty(gmsg)){
+                gmsg=&#39;未删除成功&#39;;
+            }
+            lion.util.error(&#39;提示&#39;,gmsg);
+        }
+    }
+</pre><p>页面如图10所示：</p>
+            <p><img src="../resources/image/start-html/pic1-10.png" alt="image10"></p>
+            <p align="center">图 10</p>
+            <p>点击“确认”，即可删除选中的数据。结果如图11所示：</p>
+            <p><img src="../resources/image/start-html/pic1-11.png" alt="image11"></p>
+            <p align="center">图 11</p>
+            <h2 id="nav7">1.7导出Excel</h2>
+            <p>首先在数据库中bas_tablegrid表中添加一行数据，如图12所示。</p>
+            <p><img src="../resources/image/start-html/pic1-12.png" alt="image12"></p>
+            <p align="center">图 12</p>
+            <p>在bas_column表中添加要导出的数据，如图13所示：</p>
+            <p><img src="../resources/image/start-html/pic1-13.png" alt="image13"></p>
+            <p align="center">图 13</p>
+            <p>在PolicyController.java中添加导出Excel方法，代码入下所示：</p>
+<pre>/**
+    * 导出excel
+    * @param tableId
+    * @param sort
+    * @param order
+    * @param policy
+    * @param modelAndView
+    * @return
+    */
+    @RequestMapping(value = &quot;export&quot;)
+    @ResponseBody
+    public ModelAndView exportExcel(@RequestParam(required=false) String tableId,@RequestParam(required = false) String sort,@RequestParam(required = false) String order,@ModelAttribute(&quot;policy&quot;) PolicyVo policyVo,ModelAndView modelAndView){
+
+        DataGrid dataGrid=dataGridService.doFindByTableIdAndSort(tableId);
+        QueryCriteria queryCriteria=new QueryCriteria();
+        queryCriteria.setPageSize(10000);
+        // 设置排序字段及排序方向
+        if (StringUtils.isNotEmpty(sort) &amp;&amp; StringUtils.isNotEmpty(order)) {
+            queryCriteria.setOrderField(sort);
+            queryCriteria.setOrderDirection(order);
+        } else {
+            queryCriteria.setOrderField(DEFAULT_ORDER_FILED_NAME);
+            queryCriteria.setOrderDirection(&quot;ASC&quot;);
+        }
+        //查询条件 中文参数名称按模糊查询
+        if(StringUtils.isNotEmpty(policyVo.getInsuredName())){
+            queryCriteria.addQueryCondition(&quot;insuredName&quot;,&quot;%&quot;+policyVo.getInsuredName()+&quot;%&quot;);
+        }
+        //查询保单
+        PageResult&lt;Policy&gt; result=policyService.doFindByCriteria(queryCriteria);
+        Map&lt;String, Map&lt;Object, Object&gt;&gt; fieldCodeTypes = new HashMap&lt;String, Map&lt;Object, Object&gt;&gt;();
+        Map&lt;String, String&gt; dataFormats = new HashMap&lt;String, String&gt;();
+        dataFormats.put(&quot;birthday&quot;, DateUtil.FORMAT_DATE_YYYY_MM_DD);
+        //创建.xls的文件名
+        String fileName=this.createFileName(FileUtil.EXCEL_EXTENSION);
+        modelAndView.addObject(&quot;title&quot;, dataGrid.getTitle());
+        Long startTime=System.currentTimeMillis();
+        fileName=excelExportService.export(dataGrid, result.getContent(), fileName, fieldCodeTypes, dataFormats);
+        logger.info(&quot;fileName:{}&quot;,fileName);
+        Long costTime=System.currentTimeMillis()-startTime;
+        modelAndView.addObject(FILENAME,fileName);
+        logger.info(&quot;export Excel {} cost:{} time,fileName:{}&quot;,dataGrid.getTitle(),costTime,fileName);
+        logger.info(&quot;out Excel导出&quot;);
+        return this.getExcelView(modelAndView);
+    }
+</pre><p>在policy.js中添加导出excel按钮事件，代码如下：</p>
+<pre>
+    //导出Excel
+    $(&#39;btnExport&#39;).on(&#39;click&#39;,function(){
+        var params=queryForm.serialize(),
+        dgtableId=icondg.attr(&#39;id&#39;);
+        lion.web.exportfn({url:&#39;export.json&#39;,data:params,tableId:dgtableId});
+        return;
+    });
+</pre><p>点击excel按钮即可将数据库中的数据以excel的形式导出。</p>
+            <p>将编辑好的页面加入到导航栏</p>
+            <p><em>第一步</em>：添加一个父类容器，名为“实例”
+                运行程序，进入系统设置---》资源管理---》添加，添加一个父类资源，如图14所示：</p>
+            <p><img src="../resources/image/start-html/pic1-14.png" alt="image14"></p>
+            <p align="center">图1-14</p>
+            <p>进入 用户管理---》角色管理，选择系统角色----》关联资源，找到刚才添加的资源，授权即可，如图15所示：</p>
+            <p><img src="../resources/image/start-html/pic1-15.png" alt="image15"></p>
+            <p align="center">图15</p>
+            <p><em>第二部</em>：将编辑好的页面添加到，父类容器中
+                运行程序，进入系统设置---》资源管理---》添加，添加一个保单管理的资源，如图16所示：</p>
+            <p><img src="../resources/image/start-html/pic1-16.png" alt="image16"></p>
+            <p align="center">图16</p>
+            <p>进入 用户管理---》角色管理，选择系统角色----》关联资源，找到刚才添加的资源，授权即可，如图17所示：</p>
+            <p><img src="../resources/image/start-html/pic1-17.png" alt="image17"></p>
+            <p align="center">图17</p>
+            <p>完成后页面如图18所示：</p>
+            <p><img src="../resources/image/start-html/pic1-18.png" alt="image18"></p>
+            <p align="center">图18</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="footer1" align="center">
+        © 版权所有 2015-2021 上海新致软件股份有限公司
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../resources/js/jQuery.1.11.1.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../resources/js/bootstrap.min.js"></script>
+<script src="../resources/plugins/jScrollPane/jquery.jscrollpane.min.js"></script>
+<script src="../resources/plugins/jScrollPane/jquery.mousewheel.js"></script>
+<script src="../resources/plugins/jqueryPin/jquery.pin.min.js"></script>
+<script>
+    $("pre").addClass("prettyprint");
+</script>
+</body>
+</html>

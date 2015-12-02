@@ -1,0 +1,39 @@
+<html lang="en" ng-app="StarterApp">
+<head>
+    <link rel="stylesheet" href="../../lib/material/css/angular-material.css">
+    <script src="../../lib/material/js/angular/angular.js"></script>
+    <script src="../../lib/material/js/angular/angular-animate.js"></script>
+    <script src="../../lib/material/js/angular/angular-aria.js"></script>
+    <script src="../../lib/material/js/angular-material.js"></script>
+    <script>
+        var app = angular.module('StarterApp', ['ngMaterial']);
+
+        app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
+            $scope.toggleSidenav = function(menuId) {
+                $mdSidenav(menuId).toggle();
+            };
+
+        }]);
+    </script>
+</head>
+<body layout="column" ng-controller="AppCtrl">
+<md-toolbar layout="row">
+    <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
+        <span class="visually-hidden">Menu</span>
+    </button>
+    <h1>Hello World</h1>
+</md-toolbar>
+<div layout="row" flex>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
+
+    </md-sidenav>
+    <div layout="column" flex id="content">
+        <md-content layout="column" flex class="md-padding">
+
+        </md-content>
+    </div>
+</div>
+<!-- Angular Material Dependencies -->
+
+</body>
+</html>

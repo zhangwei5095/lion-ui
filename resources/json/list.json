@@ -1,0 +1,187 @@
+﻿[
+    {
+        "id": 1,
+        "type": "application",
+        "target": "_self",
+        "path": "Application",
+        "description": "Application",
+        "text": "应用资源",
+        "editable": true,
+        "nameEn": "application",
+        "isLeaf": false,
+        "children": [
+            {
+                "id": 2,
+                "type": "module_menu_category",
+                "target": "_self",
+                "path": "SystemConfig",
+                "description": "系统设置",
+                "_parentId": 1,
+                "text": "系统设置",
+                "editable": true,
+                "nameEn": "SystemConfig",
+                "isLeaf": false,
+                "children": [
+                    {
+                        "id": 20,
+                        "type": "module_menu_category",
+                        "target": "_self",
+                        "path": "DataGridManage",
+                        "description": "DataGrid管理",
+                        "_parentId": 2,
+                        "text": "DataGrid管理",
+                        "editable": true,
+                        "nameEn": "DataGrid",
+                        "isLeaf": false,
+                        "children": [
+                            {
+                                "id": 24,
+                                "type": "module_menu_category_item",
+                                "target": "_self",
+                                "path": "/system/datacolumn/index.htm",
+                                "permission": "",
+                                "_parentId": 20,
+                                "text": "DataColumn管理",
+                                "editable": true,
+                                "nameEn": "DataColumn",
+                                "isLeaf": false,
+                                "children": [],
+                                "seqNum": 2
+                            },
+                            {
+                                "id": 21,
+                                "type": "module_menu_category_item",
+                                "target": "_self",
+                                "path": "/system/datagrid/index.htm",
+                                "permission": "",
+                                "_parentId": 20,
+                                "text": "DataGrid",
+                                "editable": true,
+                                "nameEn": "DataGrid",
+                                "isLeaf": false,
+                                "children": [],
+                                "seqNum": 0
+                            }
+                        ],
+                        "seqNum": 5
+                    },
+                    {
+                        "id": 19,
+                        "type": "module_menu_category_item",
+                        "target": "_self",
+                        "path": "/system/department/index.htm",
+                        "description": "部门管理",
+                        "_parentId": 2,
+                        "text": "部门管理",
+                        "editable": true,
+                        "nameEn": "DepartmentManage",
+                        "isLeaf": false,
+                        "children": [],
+                        "seqNum": 1
+                    },
+                    {
+                        "id": 11,
+                        "type": "module_menu_category_item",
+                        "target": "_self",
+                        "path": "/system/TREEGRID/index.htm",
+                        "permission": "",
+                        "description": "",
+                        "_parentId": 2,
+                        "text": "资源管理",
+                        "editable": true,
+                        "nameEn": "TREEGRIDManage",
+                        "children": [],
+                        "seqNum": 2
+                    },
+                    {
+                        "id": 9,
+                        "type": "module_menu_category",
+                        "target": "_self",
+                        "path": "",
+                        "permission": "",
+                        "_parentId": 2,
+                        "text": "用户管理",
+                        "editable": true,
+                        "nameEn": "usermanage",
+                        "isLeaf": false,
+                        "children": [
+                            {
+                                "id": 18,
+                                "type": "module_menu_category_item",
+                                "target": "_self",
+                                "path": "/system/user/index.htm",
+                                "description": "用户管理",
+                                "_parentId": 9,
+                                "text": "用户管理",
+                                "editable": true,
+                                "nameEn": "userManage",
+                                "children": [],
+                                "seqNum": 2
+                            }
+                        ],
+                        "seqNum": 0
+                    },
+                    {
+                        "id": 10,
+                        "type": "module_menu_category",
+                        "target": "_self",
+                        "path": "",
+                        "permission": "",
+                        "_parentId": 2,
+                        "text": "编码管理",
+                        "editable": true,
+                        "nameEn": "CodeManage",
+                        "isLeaf": false,
+                        "children": [
+                            {
+                                "id": 17,
+                                "type": "module_menu_category_item",
+                                "target": "_self",
+                                "path": "/system/codelist/index.htm",
+                                "permission": "system.codelist.index",
+                                "_parentId": 10,
+                                "text": "编码列表",
+                                "editable": true,
+                                "nameEn": "codelist",
+                                "isLeaf": false,
+                                "children": [],
+                                "seqNum": 1
+                            }
+                        ],
+                        "seqNum": 1
+                    },
+                    {
+                        "id": 43,
+                        "type": "module_menu_category_item",
+                        "target": "_self",
+                        "path": "/system/applicationproperty/index.htm",
+                        "description": "项目属性配置",
+                        "_parentId": 2,
+                        "text": "项目属性配置",
+                        "editable": true,
+                        "nameEn": "PROJECT_PRO_CONF",
+                        "isLeaf": false,
+                        "children": [],
+                        "seqNum": 6
+                    }
+                ],
+                "seqNum": 1
+            },
+            {
+                "id": 13,
+                "type": "module_menu_category_item",
+                "target": "_self",
+                "path": "/index.htm",
+                "permission": "dashboard:index",
+                "_parentId": 1,
+                "text": "控制面板",
+                "editable": true,
+                "nameEn": "MyMenu",
+                "isLeaf": false,
+                "children": [],
+                "seqNum": 0
+            }
+        ],
+        "seqNum": 0
+    }
+]

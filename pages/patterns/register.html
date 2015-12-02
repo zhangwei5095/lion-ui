@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--基础依赖js文件-->
+    <script src="../../src/js/zepto.min.js"></script>
+    <!--应用框架基础工具js文件-->
+    <script src="../../src/js/one.js"></script>
+    <!--对话框组件JS文件-->
+    <script src="../../src/js/ui/dialog/dialog.js"></script>
+    <!--广告轮播组件js文件-->
+    <script src="../../src/js/ui/slider/slider.js"></script>
+    <!--滑动开关组件JS文件-->
+    <script src="../../src/js/ui/flipSwitch/flipSwitch.js"></script>
+
+
+    <!--组件与布局基础样式-->
+    <link href="../../src/css/one.css" rel="stylesheet">
+    <!--当前演示页面布局需要的样式，与组件无关-->
+    <link href="../../src/css/patterns/patterns.css" rel="stylesheet">
+
+    <!--对话框样式-->
+    <link href="../../src/css/ui/dialog.css" rel="stylesheet">
+    <!--按钮样式-->
+    <link href="../../src/css/ui/button.css" rel="stylesheet">
+    <!--广告轮播组件CSS文件-->
+    <link href="../../src/css/ui/slider.css" rel="stylesheet">
+    <!--滑动开关组件CSS文件-->
+    <link href="../../src/css/ui/flipSwitch.css" rel="stylesheet">
+    <!--字体图片-->
+    <link href="../../src/plugin/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <style>
+
+        /*固定头部*/
+        .header-fixed-top{
+            box-shadow:1px 0 5px;
+            position: fixed;
+            right: 0;
+            left: 0;
+            background-color: #f5f5f5;
+            z-index: 1001;
+        }
+
+        body {
+            color: #74747C;
+            /*控制滚动条*/
+            /*overflow-y: scroll;*/
+            overflow-x: hidden;
+            height: 100%;
+            cursor: url('../../resources/image/finger.png'), auto;
+
+        }
+
+        header.header ul {
+            background: #ffffff;
+            height: 3.8rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header ul li {
+            float: left;
+            list-style: none;
+            height: 3.8rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header li:first-of-type:active {
+            background: rgba(188, 188, 188, 0.4);
+        }
+
+
+        .header-title-txt {
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        div[class^='header-title-back']{
+            float: left;
+            padding-left:0.4rem;
+            padding-right: 0.2rem;;
+        }
+        div[class^='header-title']{
+            height: 3.8rem;
+            line-height: 3.8rem;
+        }
+
+        .header-title-back{
+            color: #3598db;
+            font-size: 2.5rem;
+
+        }
+        .header-title-back2{
+            color: #3598db;
+            font-size: 1.3rem;
+        }
+
+        .header-title-txt {
+            text-align: center;
+        }
+
+        .register{
+            padding-top:1.0rem;
+        }
+        .register-form{
+            padding-top:20%;
+        }
+        .register-form-inputs{
+            text-align: center;
+        }
+        .register-form-inputs div{
+
+        }
+        .register-form-inputs input{
+            font-size:1.3rem;
+            padding-bottom: 0.8rem;
+            padding-top:0.8rem;
+            margin-bottom: 1.2rem;
+            border-style: none none solid;
+            border-width: medium medium 1px;
+            border-color: #DDD;
+            background: none repeat scroll 0% 0% padding-box transparent;
+            color: #1F1F21;
+            width: 80%;
+        }
+
+        .register-form-inputs-1 input{
+            width: 40%;
+        }
+        .register-form-buttons{
+            text-align: center;
+            font-size: 1.5rem;
+            padding:10% 20% 5% 20%;
+
+        }
+
+        .ion-log-out{
+            padding-right: 0.5rem;
+        }
+
+
+        .register-form-buttons{
+            height: 3.5rem;
+            line-height: 3.5rem;
+        }
+
+       .register-button{
+            background: #3598db;
+            color:#ffffff;
+        }
+
+        .register-form-buttons .register-button:active{
+            background: rgba(188, 188, 188, 0.4);
+            color:#74747C;
+        }
+
+
+
+    </style>
+
+    <script>
+
+        $(function () {
+            $("#btn-register").click(function(){
+                one.ui.dialog("成功!");
+            });
+        })
+    </script>
+</head>
+<body>
+
+<header class="header-fixed-top header">
+    <ul class="one-g">
+        <li class="one-u-sm-3">
+            <div class="header-title-back ion-ios-arrow-back">
+            </div>
+            <div class="header-title-back2">返回</div>
+        </li>
+        <li class="one-u-sm-8 one-u-sm-pull-2">
+            <div class="header-title-txt ">注&nbsp;&nbsp;册</div>
+        </li>
+    </ul>
+    <div class="clear-both"></div>
+</header>
+
+
+<section class="register">
+    <div class="register-form">
+        <div class="register-form-inputs">
+           <div class="register-form-inputs-1">
+               <input type="text" name="name" class="register-form-input-name" placeholder="用户名" size="8"/>
+               <input type="text" name="name" class="register-form-input-name" placeholder="真实姓名" size="8"/>
+
+           </div>
+           <div><input type="password" name="password" class="register-form-input-pwd" placeholder="密码"/></div>
+            <div><input type="password" name="password" class="register-form-input-pwd" placeholder="重复密码"/></div>
+            <div><input type="email" name="email" class="register-form-input-pwd" placeholder="电子邮箱"/></div>
+            <div>密码不能小于6位</div>
+        </div>
+        <div class="register-form-buttons one-g">
+            <div class="register-button" id="btn-register"><span class="ion-log-out"></span>注&nbsp;&nbsp;册</div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

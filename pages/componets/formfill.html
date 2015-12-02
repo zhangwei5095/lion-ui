@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .tab{
+            border: 1px solid #988F8F;
+            width: 100%;
+            line-height: 35px;
+            text-align: center;
+        }
+        .tab td{border: 1px solid #988F8F;}
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Formfill表单控件</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">导入js库</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_yyzywj1">js库</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_qztj">使用方法</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_dyhtml">js</a></li>
+                    <li><a uri="#doc_dialog_syjs2">HTML</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_gjsy">方法</a></li>
+            </ul>
+        </div>
+    </div>
+    <h4 id="doc_dialog_sm">导入js库</h4>
+    <p id="doc_dialog_yyzywj1">js库</p>
+    <pre class="prettyprint">
+&lt;script src="${base}/resources/global/plugins/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="${base}/resources/global/js/lion.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="${base}/resources/global/js/form/form.fill.js" type="text/javascript"&gt;&lt;/script&gt;
+    </pre>
+    <h4 id="doc_dialog_qztj">使用方法</h4>
+    <p id="doc_dialog_dyhtml">1.js</p>
+    <pre class="prettyprint">
+//表单重置
+$(‘#sysForm’).reset();
+//表单数据填入
+var data={'username':'demo'};
+$('#sysForm').fill(data);
+//表单序列化
+var param = $('#sysForm').serialize();
+console.dir(param);
+    </pre>
+    <p id="doc_dialog_syjs2">2.HTML</p>
+    <pre class="prettyprint">
+&lt;form id="sysForm"&gt;
+    &lt;input type="text" id="name" name="username"/&gt;
+&lt;/form&gt;
+    </pre>
+    <div>
+        <h4 id="doc_dialog_gjsy" >方法</h4>
+        <table class="tab">
+            <tr>
+                <td>名称</td>
+                <td>参数</td>
+                <td>描述</td>
+            </tr>
+            <tr>
+                <td>reset</td>
+                <td>none</td>
+                <td>将表单中的数据重置</td>
+            </tr>
+            <tr>
+                <td>seriatdzeObject</td>
+                <td>none</td>
+                <td>将表单数据进行序列化</td>
+            </tr>
+            <tr>
+                <td>fill</td>
+                <td>param</td>
+                <td>将数据填入表单中</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

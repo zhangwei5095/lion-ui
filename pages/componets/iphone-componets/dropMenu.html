@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/dropmenu/dropmenu.js"></script>
+
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/dropmenu.css" rel="stylesheet">
+
+
+    <title></title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 230);
+            cursor: url('../../../resources/image/finger.png'), auto;
+
+        }
+        .top{
+            margin:20px;
+        }
+        .main{
+            margin:20px;
+        }
+    </style>
+
+    <script>
+
+        $(function () {
+          var  dropMenu1 = one.ui.dropMenu("#dropMenu1");
+            dropMenu1.change(function(infoArr){
+                //infoArr 数组  依次存放  索引  text  value
+                $("#info").html("当前选择的是："+infoArr[1]);
+//                alert(infoArr[0]+infoArr[1]+infoArr[2]);
+            });
+            var  dropMenu2 = one.ui.dropMenu("#dropMenu2");
+            dropMenu2.setMenu(2);
+        })
+    </script>
+</head>
+<body>
+
+<div class="top">Drop Menu 下拉框框演示</div>
+<div class="main">
+<div class="one_ui_dropMenu" id="dropMenu1">
+    <input type="text" placeholder="请选择" readonly>
+    <ul class="one_ui_dropMenu_select">
+        <li value="val_1">百度</li>
+        <li value="val_2">阿里巴巴</li>
+        <li value="val_3">腾讯</li>
+        <li value="val_4">360</li>
+        <li value="val_5">小米</li>
+        <li value="val_6">华为</li>
+        <li value="val_7">联想</li>
+        <li value="val_8">中兴</li>
+    </ul>
+</div>
+
+<div id="info">
+
+</div>
+    <div class="list_tip">
+        <label class="one-fs-5">默认选择第3个:</label>
+    </div>
+<div class="one_ui_dropMenu" id="dropMenu2">
+    <input type="text" placeholder="请选择" readonly>
+    <ul class="one_ui_dropMenu_select">
+        <li value="val_1">百度</li>
+        <li value="val_2">阿里巴巴</li>
+        <li value="val_3">腾讯</li>
+        <li value="val_4">360</li>
+        <li value="val_5">小米</li>
+        <li value="val_6">华为</li>
+        <li value="val_7">联想</li>
+        <li value="val_8">中兴</li>
+    </ul>
+</div>
+</div>
+</body>
+</html>

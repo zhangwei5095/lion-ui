@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Grid</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">说明</a></li>
+                <li><a uri="#doc_dialog_qztj">前置条件</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_yyzywj">页面引用CSS文件</a></li>
+                    </ul>
+                </li>
+                <li><a uri="#doc_dialog_syfs">使用方式</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_a_1">用法一</a></li>
+                        <li><a uri="#doc_a_2">用法二</a></li>
+                    </ul>
+
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">说明</h4>
+    <p>
+        将宽度等分成12列，通过设置元素的占用列数来决定元素的宽度占用百分比，适用于
+        需要更加屏幕分辨率进行自适应的情况。
+    </p>
+    <h4 id="doc_dialog_qztj">前置条件</h4>
+
+    <p id="doc_dialog_yyzywj">页面引用JS与CSS文件</p>
+   <pre class="prettyprint">
+&lt;!--当前组件依赖的CSS文件--&gt;
+&lt;link href="../../src/css/one.css" rel="stylesheet"&gt;
+      </pre>
+
+    <h4 id="doc_dialog_syfs">使用方式</h4>
+
+    <p id="doc_a_1">1.用法一</p>
+    每一个div各占1列
+      <pre class="prettyprint">
+&lt;div class=&quot;one-g&quot;&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-1&quot;&gt;1&lt;/div&gt;
+&lt;/div&gt;
+
+     </pre>
+
+
+    <p id="doc_a_2">2.用法二</p>
+    第一个DIV占4列，第2个DIV占8列。最多占用12列
+      <pre class="prettyprint">
+&lt;div class=&quot;one-g&quot;&gt;
+    &lt;div class=&quot;one-u-sm-4&quot;&gt;one-u-sm-4&lt;/div&gt;
+    &lt;div class=&quot;one-u-sm-8&quot;&gt;one-u-sm-8&lt;/div&gt;
+&lt;/div&gt;
+      </pre>
+
+
+
+
+
+</div>
+
+</body>
+</html>

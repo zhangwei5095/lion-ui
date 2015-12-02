@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lion Framework HTML5 UI 模式展示</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../resources/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../resources/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="../resources/css/style.css"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+
+    <link rel="stylesheet" href="../resources/plugins/jScrollPane/jquery.jscrollpane.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .md_right_border{
+            padding-right:0;
+        }
+
+        .jspPane ul{
+            padding:0;
+            width:66%;
+            margin-left: 15%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar  navbar-fixed-top" role="navigation">
+    <div class="container-fluid header_fluid">
+        <div class="container">
+            <div class="collapse navbar-collapse" style="height:66px !important;">
+                <ul class="nav headertop navbar-nav col-lg-12 col-lg-push-1">
+                    <li><img src="../resources/image/index/logo1.svg" width="38px" height="38px"/></li>
+                    <li class="header_item header_item_first">
+                        <a class="header_item_a  " href="../index.html">首页</a></li>
+                    <!--<li class="header_item">
+                        <a class="header_item_a " href="start.html">开始</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" href="frame.html">框架</a>
+                    </li>-->
+                    <li class="header_item">
+                        <a class="header_item_a" href="componets.html">UI组件</a>
+                    </li>
+
+                    <li class="header_item">
+                        <a class="header_item_a" href="docs.html">文档</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" target="_blank" href="../pages/api/index.html">API</a>
+                    </li>
+                   <!-- <li class="header_item">
+                        <a class="header_item_a header_active" href="patterns.html">模式</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" href="themes.html">主题</a>
+                    </li>
+                    -->
+                    <li class="header_item pull-right col-lg-pull-2">
+                        <a class="header_item_a" href="javascript:void(0);"><span class="glyphicon glyphicon-globe"
+                                                                                  style="padding-right:5px;"></span>中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container md_start">
+    <!--<label>组件</label>
+    <a>|&nbsp;万物皆对象,页面皆组件</a>-->
+</div>
+
+<div class="middle_container">
+    <div class="container ">
+        <div class="col-lg-3 md_left col-lg-push-1">
+            <div>
+                <!--<h4>目录</h4>-->
+            </div>
+            <div class="md_right_border">
+
+                <div class="patterns_left_list" id="patterns_left_list">
+                    <ul>
+                        <li data-url="patterns/profile.html"><img src="../resources/image/patterns/pattern3.png"></li>
+                        <li data-url="patterns/setting.html"> <img src="../resources/image/patterns/pattern4.png"></li>
+                        <li data-url="patterns/shopDetails.html"> <img src="../resources/image/patterns/pattern5.png"></li>
+                        <li data-url="patterns/login.html"> <img src="../resources/image/patterns/pattern1.png"></li>
+                        <li data-url="patterns/register.html"> <img src="../resources/image/patterns/pattern2.png"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4 md_right col-lg-push-1" style="padding-top: 39px;">
+            <div class="iphone_container col-lg-push-3">
+                <div class="iphone">
+                    <iframe id="demoiframe" src="patterns/profile.html" scrolling="none" frameborder="no"
+                            border="0"></iframe>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-2">
+            <img src="">
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer1" align="center">
+        © 版权所有 2015-2021 上海新致软件股份有限公司
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../resources/js/jQuery.1.11.1.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../resources/js/bootstrap.min.js"></script>
+<script src="../resources/js/app.js"></script>
+
+<script src="../resources/plugins/jScrollPane/jquery.jscrollpane.js"></script>
+<script src="../resources/plugins/jScrollPane/jquery.mousewheel.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+      /*  var w = $("#patterns_left_list").width();
+        $("#patterns_left_list").width(w+10);
+        $("#patterns_left_list").jScrollPane({verticalGutter 	: -16
+        });
+        $(".jspVerticalBar").hide();
+        $(".jspDrag").height("20px");
+        $("#patterns_left_list").hover(function(){
+            $(".jspVerticalBar").fadeIn();
+        },function(){
+            $(".jspVerticalBar").fadeOut();
+        });*/
+
+    });
+
+</script>
+</body>
+</html>

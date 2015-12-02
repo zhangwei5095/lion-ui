@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .doc_dialog_ml{
+            font-size:16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Mysql下载及安装</h2>
+    <h4 >Mysql下载地址及版本说明</h4>
+    <p>下载地址：oracle官网</p>
+    <p>本版本所使用的mysql为mysql5.5，请使用此版本及以上版本</p>
+    <h4>Mysql安装</h4>
+    <p>1.打开下载的安装文件，出现如下界面：</p>
+    <p><img src="../resources/image/start/Mysql1.png"></p>
+    <p>2.mysql安装向导启动，点击“next”继续。选择安装类型，有“Typical（默认）”、“Complete（完全）”、“Custom（用
+        户自定义）”三个选项。选择“Typical（默认）”。</p>
+    <p><img src="../resources/image/start/Mysql2.png"></p>
+    <p>3.确认一下先前的设置，如果有误，按“Back”返回重做。按“Install”开始安装。</p>
+    <p><img src="../resources/image/start/Mysql3.png"></p>
+    <p>4.将“Configure the Mysql Server now”前面的勾打上，点“Finish”结束
+        软件的安装<br>并启动mysql配置向导。
+    </p>
+    <p><img src="../resources/image/start/Mysql4.png"></p>
+    <p>5.出现如下界面，MySQL Server配置向导启动。</p>
+    <p><img src="../resources/image/start/Mysql5.png"></p>
+    <p>6.点击“next”出现如下界面。</p>
+    <p><img src="../resources/image/start/Mysql6.png"></p>
+    <p>7.选择配置方式，“Detailed Configuration（手动精确配置）”、“Standard Configuration（标准配置）”，选择
+        “Detailed Configuration”。</p>
+    <p><img src="../resources/image/start/Mysql7.png"></p>
+    <p>8.选择服务器类型，“Developer Machine（开发测试类）”、“Server Machine（服务器类型）”、“Dedicated MySQL 
+        Server Machine（专门的数据库服务器）”。选择“Developer Machine”。</p>
+    <p><img src="../resources/image/start/Mysql8.png"></p>
+    <p>9.选择mysql数据库的大致用途，“Multifunctional Database（通用多功能型）”、“Transactional Database Only
+        （服务器类型，专注于事务处理）”、“Non-Transactional Database Only（非事务处理型，主要做一些监控、记数用，对
+        MyISAM数据类型的支持仅限于non-transactional）。选择“Multifunctional Database”。</p>
+    <p><img src="../resources/image/start/Mysql9.png"></p>
+    <p>10.对InnoDB Tablespace进行配置，就是为InnoDB 数据库文件选择一个存储空间，如果修改了，要记住位置，重装的时候要选
+        择一样的地方，否则可能会造成数据库损坏。这里没有修改，使用默认位置，直接按“Next”继续。</p>
+    <p><img src="../resources/image/start/Mysql10.png"></p>
+    <p>11.选择网站的一般mysql 访问量，同时连接的数目，“Decision Support(DSS)/OLAP（20个左右）”、“Online Transaction
+        Processing(OLTP)（500个左右）”、“Manual Setting（手动设置，自己输一个数）“。选择默认。</p>.</p>
+    <p><img src="../resources/image/start/Mysql11.png"></p>
+    <p>12.是否启用TCP/IP连接，设定端口，如果不启用，就只能在自己的机器上访问mysql 数据库了，这里启用，把前面的勾打上，
+        Port Number：3306。按“Next”继续。</p>
+    <p><img src="../resources/image/start/Mysql12.png"></p>
+    <p>13.这里可以对mysql默认数据库语言编码进行设置，第一个是西文编码，第二个是多字节的通用utf8编码，选择第二种
+        （utf8编码）。按“Next”继续。</p>
+    <p><img src="../resources/image/start/Mysql13.png"></p>
+    <p>14.选择是否将mysql 安装为windows服务，还可以指定Service Name（服务标识名称），是否将mysql的bin目录加入到Windows 
+        PATH（加入后，就可以直接使用bin下的文件。这里全部打上了勾，Service Name不变。按“Next”继续。</p>
+    <p><img src="../resources/image/start/Mysql14.png"></p>
+    <p>15.这一步询问是否要修改默认root 用户（超级管理）的密码（默认为空），“New root password”如果要修改，就在此填入
+        新密码（如果是重装，并且之前已经设置了密码，在这里更改密码可能会出错，请留空，并将“Modify Security Settings”前
+        面的勾去掉，安装配置完成后另行修改密码），“Confirm（再输一遍）”内再填一次，防止输错。“Enable root access 
+        from remotemachines（是否允许root 用户在其它的机器上登陆，如果要安全，就不要勾上，如果要方便，就勾上它）”。
+        按“Next”继续。</p>
+    <p><img src="../resources/image/start/Mysql15.png"></p>
+    <p>16.确认设置无误，如果有误，按“Back”返回检查。按“Execute”使设置生效。</p>
+    <p><img src="../resources/image/start/Mysql16.png"></p>
+</div>
+
+</body>
+</html>

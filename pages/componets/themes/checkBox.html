@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/checkBox/checkBox.js" type="text/javascript"></script>
+
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/checkBox.css" rel="stylesheet" type="text/css">
+    <link href="../../../src/css/ui/button.css" rel="stylesheet">
+    <title></title>
+    <style title="changeThemes">
+
+        .one_checkbox > input[type="checkbox"]:checked + .one_checkbox__checkmark::before{
+            border:1px solid #574BDB;
+            background: #574BDB;
+        }
+
+
+        .one_checkbox > .one_checkbox__checkmark::before{
+            border:1px solid #574BDB;
+        }
+
+        .one_checkbox>span{
+            color:#1F1F21;
+        }
+
+    </style>
+</head>
+<body style="padding:10px;">
+
+            <label class="one_checkbox"><input type="checkbox" value="off">
+                <div class="one_checkbox__checkmark"></div>
+                <span>OFF</span>
+            </label>
+            <label class="one_checkbox">
+                <input type="checkbox" checked="checked" value="on">
+                <div class="one_checkbox__checkmark"></div>
+                <span>ON</span>
+            </label>
+            <label class="one_checkbox">
+                <input type="checkbox" disabled value="disable">
+                <div class="one_checkbox__checkmark"></div>
+                <span>Disabled</span>
+            </label>
+</body>
+<script>
+
+    //供父页面调用的方法，名字与参数不能变更
+    function changeStyle(key,value){
+        if(key=="color"){//此处的key为父页面当中每个input的data-style值
+            //每个页面根据组件的情况进行调整
+            one.util.changeThemes({
+                ".one_checkbox>span":{"color":value}
+            });
+        }else if(key=="highlight2"){
+           var  border = "1px solid "+value;
+            one.util.changeThemes({
+                ".one_checkbox > input[type=\"checkbox\"]:checked + .one_checkbox__checkmark::before":{"border":border,
+                "background":value},
+                ".one_checkbox > .one_checkbox__checkmark::before":{"border":border},
+                //兼容ff
+                ".one_checkbox > input[type=\"checkbox\"]:checked + .one_checkbox__checkmark:before":{"border":border,
+                    "background":value},
+                ".one_checkbox > .one_checkbox__checkmark:before":{"border":border}
+            });
+        }
+    }
+
+    $(function () {
+        //通知父窗口当前页面已经加载完成，可以调用本页面的方法
+        if(window.parent.receiveFromIframe){
+            window.parent.receiveFromIframe();
+        }
+    })
+</script>
+</html>

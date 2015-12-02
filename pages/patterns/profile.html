@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--基础依赖js文件-->
+    <script src="../../src/js/zepto.min.js"></script>
+    <!--应用框架基础工具js文件-->
+    <script src="../../src/js/one.js"></script>
+    <!--对话框组件JS文件-->
+    <script src="../../src/js/ui/dialog/dialog.js"></script>
+    <!--广告轮播组件js文件-->
+    <script src="../../src/js/ui/slider/slider.js"></script>
+
+    <!--组件与布局基础样式-->
+    <link href="../../src/css/one.css" rel="stylesheet">
+    <!--当前演示页面布局需要的样式，与组件无关-->
+    <link href="../../src/css/patterns/patterns.css" rel="stylesheet">
+    <!--对话框样式-->
+    <link href="../../src/css/ui/dialog.css" rel="stylesheet">
+    <!--按钮样式-->
+    <link href="../../src/css/ui/button.css" rel="stylesheet">
+    <!--广告轮播组件CSS文件-->
+    <link href="../../src/css/ui/slider.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../resources/plugins/jScrollPane/jquery.jscrollpane.css"/>
+
+
+    <!--字体图片-->
+    <link href="../../src/plugin/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <style>
+
+        body {
+            color: #74747C;
+            cursor: url('../../resources/image/finger.png'), auto;
+
+        }
+
+        header.header ul {
+            background: #ffffff;
+            height: 3.8rem;
+            line-height: 3.8rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header ul li {
+            float: left;
+            list-style: none;
+            background: #ffffff;
+            height: 3.8rem;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .header li:active {
+            background: rgba(188, 188, 188, 0.4);
+        }
+
+        .header-title-left {
+            text-align: center;
+            vertical-align: middle;
+            line-height: 3.8rem;
+        }
+
+        .header-title-left div {
+            float: left;
+            color: #3598db;
+        }
+
+        .header-title-left .one-icon {
+            font-size: 2.5rem;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .header-title-left .icon-txt {
+            font-size: 1.2rem;
+        }
+
+
+        .header .header-title-center {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1.2rem;
+        }
+
+        .header-title-right {
+            font-size: 2.2rem;
+            padding-left: 3.3rem;
+            text-align: center;
+        }
+
+        /*profile*/
+        .profile{
+            padding-top:3.8rem;
+            background:#33393C;
+            text-align: center;
+        }
+        /*除姓名的DIV外，其余的DIV样式和颜色设置*/
+        .profile div:not(.profile_name){
+            margin-top: 0.5rem;
+            color: #bcbcc4;
+            font-size: 1.1rem;
+        }
+
+        .profile div:last-of-type{
+            padding-bottom: 1.7rem;
+        }
+        .profile_image{
+            padding-top:1.0rem;
+        }
+        .profile_image img{
+            text-align: center;
+            width:10rem;
+            height:10rem;
+            border-radius: 50%;
+        }
+
+        .profile_name{
+            font-size: 1.8rem;
+            margin-top: 1.0rem;
+            color: white;
+        }
+
+        /*用户状态*/
+        .status{
+            background: #ffffff;
+        }
+        .status ul{
+            background: #ffffff;
+            padding: 0;
+            margin: 0;
+
+        }
+        .status ul li{
+            float: left;
+            list-style: none;
+            width: 33.333333%;
+            text-align: center;
+            padding:0.8rem;
+        }
+
+        .status ul li:active{
+            background:rgba(188, 188, 188, 0.4);
+        }
+        .status .status_number{
+            font-size: 1.5rem;
+            color: #3598db;
+            font-weight: 600;
+        }
+
+        .status .status_txt{
+            margin-top: 0.3rem;
+        }
+
+        /*底部操作选项*/
+        .detail{
+            margin-top: 1.0rem;
+            padding: 0.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail .one_item{
+            padding:0.9rem;
+        }
+
+        .detail .one_item:active{
+            background:rgba(188, 188, 188, 0.4);
+        }
+        .detail .item_text{
+            padding-left: 0;
+        }
+
+    </style>
+
+    <script>
+
+        $(function () {
+
+        })
+    </script>
+</head>
+<body>
+
+
+<header class="header-fixed-top header">
+    <ul class="one-g">
+        <li class="one-u-sm-3">
+            <div class="header-title-left">
+                <div class="one-icon ion-ios-arrow-back"></div>
+                <div class="icon-txt">返回</div>
+            </div>
+        </li>
+        <li class="one-u-sm-6">
+            <div class="header-title-center">个人信息</div>
+        </li>
+        <li class="one-u-sm-3">
+            <div class="ion-gear-b header-title-right"></div>
+        </li>
+    </ul>
+    <div class="clear-both"></div>
+</header>
+
+
+<section class="profile">
+    <div class="profile_image">
+        <img src="../../resources/image/patterns/lang.jpg">
+    </div>
+    <div class="profile_name">李小明</div>
+    <div class="profile_email">xiaoming.li@newtouch.cn</div>
+    <div class="profile_detail">擅长应用架构设计、Java、Android、iOS软件开发</div>
+</section>
+
+<section class="status">
+    <ul>
+        <li>
+            <div class="status_number">87</div>
+            <div class="status_txt">文章</div>
+        </li>
+        <li>
+            <div class="status_number">41</div>
+            <div class="status_txt">关注</div>
+        </li>
+        <li>
+            <div class="status_number">936</div>
+            <div class="status_txt">粉丝</div>
+        </li>
+    </ul>
+    <div class="clear-both"></div>
+</section>
+
+<section class="detail">
+    <div class="one_list">
+        <div class="one_item one-g">
+            <div class="one-u-sm-10 item_text">
+                给他发表评论
+            </div>
+            <div class="one-u-sm-1"><div class="ion-ios-arrow-right"></div></div>
+        </div>
+        <div class="one_item one-g">
+            <div class="one-u-sm-10 item_text">
+                查看更多的详情
+            </div>
+            <div class="one-u-sm-1"><div class="ion-ios-arrow-right"></div></div>
+        </div>
+        <div class="one_item one-g">
+            <div class="one-u-sm-10 item_text">
+                添加到观察列表当中
+            </div>
+            <div class="one-u-sm-1"><div class="ion-ios-arrow-right"></div></div>
+        </div>
+
+    </div>
+</section>
+
+
+<footer></footer>
+</body>
+</html>

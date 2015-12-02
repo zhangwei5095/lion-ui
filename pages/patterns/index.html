@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>在线演示-首页</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--基础依赖js文件-->
+    <script src="../../src/js/zepto.min.js"></script>
+    <!--应用框架基础工具js文件-->
+    <script src="../../src/js/one.js"></script>
+    <!--对话框组件JS文件-->
+    <script src="../../src/js/ui/dialog/dialog.js"></script>
+    <!--广告轮播组件js文件-->
+    <script src="../../src/js/ui/slider/slider.js"></script>
+
+    <!--组件与布局基础样式-->
+    <link href="../../src/css/one.css" rel="stylesheet">
+    <!--当前演示页面布局需要的样式，与组件无关-->
+    <link href="../../src/css/patterns/patterns.css" rel="stylesheet">
+    <!--对话框样式-->
+    <link href="../../src/css/ui/dialog.css" rel="stylesheet">
+    <!--按钮样式-->
+    <link href="../../src/css/ui/button.css" rel="stylesheet">
+    <!--广告轮播组件CSS文件-->
+    <link href="../../src/css/ui/slider.css" rel="stylesheet">
+
+
+    <style type="text/css">
+        header {
+            line-height: 4.0rem;
+
+        }
+
+        header div {
+            text-align: center;
+
+        }
+
+    </style>
+    <script>
+        $(function () {
+            var slider = one.ui.slider("#slider");
+        })
+    </script>
+</head>
+<body>
+
+<header class="one-g header-fixed-top">
+    <div class="one-u-sm-2 header_left">左边</div>
+    <div class="one-u-sm-8 header_midden">未来之窗</div>
+    <div class="one-sm-2 header_right">登录</div>
+</header>
+<section class="body one-g">
+
+    <div class="ad">
+        <div class="one_slider " id="slider">
+            <div class="one_slider_content">
+                <a href="#" class="one_slider_toggle">
+                    <img src="../../resources/image/slider_1.jpg">
+                </a>
+                <a href="#" class="one_slider_toggle">
+                    <img src="../../resources/image/slider_2.jpg">
+                </a>
+                <a href="#" class="one_slider_toggle">
+                    <img src="../../resources/image/slider_3.jpg">
+                </a>
+            </div>
+            <div class="one_slider_bullets">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid9">
+        <ul>
+            <li>
+                <div class="grid_icon"></div>
+                <div class="grid_txt">按钮</div>
+            </li>
+            <li>
+                <div class="grid_icon"></div>
+                <div class="grid_txt">开关</div>
+            </li>
+            <li>
+                <div class="grid_icon"></div>
+                <div class="grid_txt">对话框</div>
+            </li>
+            <li>
+                <div class="grid_icon"></div>
+                <div class="grid_txt">提示框</div>
+            </li>
+            <li>
+                <div class="grid_icon"></div>
+                <div class="grid_txt">折叠框</div>
+            </li>
+            <li>
+                <div class="grid_icon"></div>
+                <div class="grid_txt">加载框</div>
+            </li>
+        </ul>
+    </div>
+    <div class="one_list grid_list" style="margin-top: 0.8rem;">
+        <div class="one-g one_item">
+            <div class="one-u-sm-10">List</div>
+            <div class="one-u-sm-2">&gt;&gt;</div>
+        </div>
+        <div class="one-g one_item">
+            <div class="one-u-sm-10">List</div>
+            <div class="one-u-sm-2">&gt;&gt;</div>
+        </div>
+        <div class="one-g one_item">
+            <div class="one-u-sm-10">List</div>
+            <div class="one-u-sm-2">&gt;&gt;</div>
+        </div>
+
+        <div class="one-g one_item">
+            <div class="one-u-sm-10">List</div>
+            <div class="one-u-sm-2">&gt;&gt;</div>
+        </div>
+    </div>
+    <!--用于防止固定的底部在内容少时跟随页面上移-->
+    <div class="bottom_push"></div>
+</section>
+
+<footer class="footer footer-fixed-bottom">
+    <ul>
+        <li>
+            <div class="grid_icon icon_house"></div>
+            <div class="grid_txt">主页</div>
+        </li>
+        <li>
+            <div class="grid_icon icon_faxian"></div>
+            <div class="grid_txt">发现</div>
+        </li>
+        <li>
+            <div class="grid_icon icon_chart"></div>
+            <div class="grid_txt">图表</div>
+        </li>
+        <li>
+            <div class="grid_icon icon_personal"></div>
+            <div class="grid_txt">我的</div>
+        </li>
+    </ul>
+</footer>
+
+</body>
+</html>

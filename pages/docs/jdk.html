@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .doc_dialog_ml{
+            font-size:16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Jdk下载及安装</h2>
+    <h4 >Jdk下载地址及版本说明</h4>
+    <p>
+        下载地址:&nbsp;oracle官网</p>
+    </p>
+    <p>
+        本版本所使用的开发环境为jdk-7u60-windows-x64，请使用此版本及以上版本。
+    </p>
+    <h4>Jdk安装与配置</h4>
+    <p>1.安装JDK 选择安装目录安装过程中会出现两次安装提示。第一次是安装 jdk ，第二次是安装 jre 。建议两个都安装在同一个java文件夹中的不同文件夹中。（不能都安装在java文件夹的根目录下，jdk和jre安装在同一文件夹会出错）
+        如下图所示
+    </p>
+    <p><img src="../resources/image/start/jdk1.jpg" width="35%"></p>
+    <p>2.</p>
+    <div>
+        <ul>
+            <li>安装jdk 随意选择目录只需把默认安装目录 \java 之前的目录修改即可</li>
+            <li>安装jre→更改→ \java 之前目录和安装 jdk 目录相同即可
+                注：若无安装目录要求，可全默认设置。无需做任何修改，两次均直接点下一步。</li>
+        </ul>
+    </div>
+    <p><img src="../resources/image/start/jdk2.1.jpg" width="70%"></p><p><img src="../resources/image/start/jdk2.2.png" width="70%"></p>
+    <p>3.安装完JDK后配置环境变量： 计算机→属性→高级系统设置→高级→环境变量
+        <img src="../resources/image/start/jdk3.jpg" width="90%"></p>
+    <p>4.系统变量→新建 JAVA_HOME 变量。变量值填写jdk的安装目录。（本例是 E:\Java\jdk1.7.0)</p>
+    <p>5.系统变量→寻找 Path 变量→编辑 在变量值最后输入 %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;<br>
+        （注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码）
+        <img src="../resources/image/start/jdk5.png"></p>
+    <p>6.系统变量→新建 CLASSPATH 变量  变量值填写 .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（注意最前面有一点）
+        系统变量配置完毕
+        <img src="../resources/image/start/jdk6.png"></p>
+    <p>7.检验是否配置成功运行cmd 输入 java -version （java 和 -version 之间有空格）
+        若如图所示显示版本信息则说明安装和配置成功。
+       <p><img src="../resources/image/start/jdk7.png"></p></p>
+</div>
+
+</body>
+</html>

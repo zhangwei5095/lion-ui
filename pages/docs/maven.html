@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Maven下载及安装</h2>
+    <h4>Maven下载地址</h4>
+    <p>
+        下载地址：http://maven.apache.org/download.cgi
+    </p>
+    <h4>Maven安装及配置</h4>
+    <p>1.解压maven到软件安装常用目录如：D:\Programe Files</p>
+    <p>2.打开系统环境变量对话框</p>
+    <div>
+        <ul>
+            <li>右键“我的电脑” -> "属性"</li>
+            <li>在打开的属性面板里选择“高级系统设置”</li>
+            <li>在打开的高级系统设置对话框中选择“高级”标签 ->“环境变量”</li>
+            <li>具体操作如下面图示：</li>
+        </ul>
+    </div>
+    <p><img src="../resources/image/start/maven3.3.png" width="95%"></p>
+    <p>3.添加新的系统环境变量MAVEN_HOME，并设置其值为你安装的目录</p>
+    <p> MAVEN_HOME=D:\Programe Files\maven-3.2.2</p>
+    <p><img src="../resources/image/start/maven3.4.png"></p>
+    <p>4.更新系统PATH 变量， 添加;%MAVEN_HOME%\bin;到尾部</p>
+    <p><img src="../resources/image/start/maven3.5.png"></p>
+    <p>5.检验是否配置成功运行cmd 输入mvn若如图所示显示信息则说明安装和配置成功。</p>
+    <p><img src="../resources/image/start/maven3.6.png"></p>
+</div>
+
+</body>
+</html>

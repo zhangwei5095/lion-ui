@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .tab{
+            border: 1px solid #988F8F;
+            width: 100%;
+            line-height: 35px;
+            text-align: center;
+        }
+        .tab td{border: 1px solid #988F8F;}
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Combotree 树形下拉框控件</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">导入js、css库</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_yyzywj1">js库</a></li>
+                    <li><a uri="#doc_dialog_yyzywj2">css库</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_qztj">使用方法</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_dyhtml">js</a></li>
+                    <li><a uri="#doc_dialog_syjs2">HTML</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_syfs">属性</a></li>
+                <li><a uri="#doc_dialog_gjsy">方法</a></li>
+            </ul>
+        </div>
+    </div>
+    <h4 id="doc_dialog_sm">导入js、css库</h4>
+    <p id="doc_dialog_yyzywj1">1.js库</p>
+    <pre class="prettyprint">
+&lt;script src="${base}/resources/global/plugins/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="${base}/resources/global/js/combotree/combotree.js" type="text/javascript"&gt;&lt;/script&gt;
+    </pre>
+    <p id="doc_dialog_yyzywj">2.css库</p>
+    <pre class="prettyprint">
+&lt;link href="${base}/resources/global/css/combotree/combotree.css" rel="stylesheet" type="text/css" /&gt;
+    </pre>
+    <h4 id="doc_dialog_qztj">使用方法</h4>
+    <p id="doc_dialog_dyhtml">1.js</p>
+    <pre class="prettyprint">
+//获取选中的值
+ Var data = $(‘#departmentId’).val();
+    </pre>
+    <p id="doc_dialog_syjs2">2.HTML</p>
+    <pre class="prettyprint">
+&lt;input  id="departmentId"  name="departmentId"  placeholder="请选择部门…"
+type="text"  class="lion-combotree form-control"
+data-loadURL="${base}/system/department/comboxtree.json"
+data-width="200px" data-height="300px"/&gt;
+    </pre>
+    <h4 id="doc_dialog_syfs">属性</h4>
+    <table class="tab">
+        <tr>
+            <td>名称</td>
+            <td>描述</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>规定该标签的唯一id。</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>规定该标签的名称。</td>
+        </tr>
+        <tr>
+            <td>placeholder</td>
+            <td>规定如果该标签的值为空时，显示的内容。</td>
+        </tr>
+        <tr>
+            <td class="td-height">class</td>
+            <td>规定该标签的样式。推荐样式（” tdon-combotree form-control”)</td>
+        </tr>
+        <tr>
+            <td>data-width</td>
+            <td>规定该标签树形下拉框的宽度。</td>
+        </tr>
+        <tr>
+            <td>data-height</td>
+            <td>规定该标签树形下拉框的高度。</td>
+        </tr>
+        <tr>
+            <td>data-URL</td>
+            <td>规定该标签获取数据的url。</td>
+        </tr>
+    </table>
+    <div class="table2">
+        <h4 id="doc_dialog_gjsy" >方法</h4>
+        <table class="tab">
+            <tr>
+                <td>名称</td>
+                <td>参数</td>
+                <td>描述</td>
+            </tr>
+            <tr>
+                <td>setTree</td>
+                <td>none</td>
+                <td>设置树的数据结构。</td>
+            </tr>
+            <tr>
+                <td>val</td>
+                <td>Id</td>
+                <td>获取数据或设置选中的数据</td>
+            </tr>
+            <tr>
+                <td class="td-height">treeOnCtdck</td>
+                <td class="td-height">e, treeId, treeNode</td>
+                <td>当在树形下拉框中选择数据时触发事件</td>
+            </tr>
+            <tr>
+                <td class="td-height">treeBeforeCtdck</td>
+                <td class="td-height">treeId, treeNode</td>
+                <td>当在树形下拉框中选择数据之前触发事件</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .tab{
+            border: 1px solid #988F8F;
+            width: 100%;
+            line-height: 35px;
+            text-align: center;
+        }
+        .tab td{border: 1px solid #988F8F;}
+
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Combonew 下拉框控件</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">导入js、css库</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_yyzywj1">js库</a></li>
+                    <li><a uri="#doc_dialog_yyzywj2">css库</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_qztj">使用方法</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_dyhtml">js</a></li>
+                    <li><a uri="#doc_dialog_syjs2">HTML</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_syfs">属性</a></li>
+                <li><a uri="#doc_dialog_gjsy">方法</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">导入js、css库</h4>
+    <p id="doc_dialog_yyzywj1">1.js库</p>
+    <pre class="prettyprint">
+&lt;script src="${base}/resources/global/plugins/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="${base}/resources/global/plugins/select2/select2.min.js"&gt;&lt;/script&gt;
+&lt;script src="${base}/resources/global/js/combo/combonew.js" type="text/javascript"&gt;&lt;/script&gt;
+    </pre>
+    <p id="doc_dialog_yyzywj">2.css库</p>
+    <pre class="prettyprint">
+&lt;link rel="stylesheet" type="text/css" href="${base}/resources/global/plugins/select2/select2.css"/&gt;
+    </pre>
+    <h4 id="doc_dialog_qztj">使用方法</h4>
+    <p id="doc_dialog_dyhtml">1.js</p>
+    <pre class="prettyprint">
+//通过方法来获取combo的数据或对combo进行操作
+var data = $(‘iconTypeList’).combo(‘getData’);
+    </pre>
+    <p id="doc_dialog_syjs2">2.HTML</p>
+    <pre class="prettyprint">
+ &lt;select  id="iconTypeList" name="iconType"  placeholder请输入图标..."
+    class="lion-combo form-control select2" data-valueField='codeValue'
+    data-textField='nameZh' data-URL="${base}/system/code/combox.htm?
+    nameEn=IconType"&gt;&lt;/select&gt;
+    </pre>
+    <h4 id="doc_dialog_syfs">属性</h4>
+    <table class="tab">
+        <tr>
+            <td>名称</td>
+            <td>描述</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>规定该标签的唯一id。</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>规定该标签的名称。</td>
+        </tr>
+        <tr>
+            <td>placeholder</td>
+            <td>规定如果该标签的值为空时，显示的内容。</td>
+        </tr>
+        <tr>
+            <td>class</td>
+            <td>规定该标签的样式。推荐样式（”tdon-combo form-control select2”）</td>
+        </tr>
+        <tr>
+            <td >data-valueField</td>
+            <td>规定该标签下拉框每一个元素的值所对应的对象的属性。</td>
+        </tr>
+        <tr>
+            <td>data-textField</td>
+            <td>规定该标签下拉框每一个元素显示的值所对应的对象的属性。</td>
+        </tr>
+        <tr>
+            <td>data-URL</td>
+            <td>规定该标签获取数据的url。</td>
+        </tr>
+    </table>
+    <div class="table2">
+        <h4 id="doc_dialog_gjsy" >方法</h4>
+        <table class="tab">
+            <tr>
+                <td>名称</td>
+                <td>参数</td>
+                <td>描述</td>
+            </tr>
+            <tr>
+                <td>getVal</td>
+                <td>none</td>
+                <td>获取默认选择的数据。</td>
+            </tr>
+            <tr>
+                <td>setVal</td>
+                <td>param</td>
+                <td>将用户选中的元素设置值。</td>
+            </tr>
+            <tr>
+                <td>clear</td>
+                <td>none</td>
+                <td>清除先前的选择。</td>
+            </tr>
+            <tr>
+                <td>getData</td>
+                <td>none</td>
+                <td>获取所有数据。</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

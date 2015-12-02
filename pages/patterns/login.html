@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--基础依赖js文件-->
+    <script src="../../src/js/zepto.min.js"></script>
+    <!--应用框架基础工具js文件-->
+    <script src="../../src/js/one.js"></script>
+    <!--对话框组件JS文件-->
+    <script src="../../src/js/ui/dialog/dialog.js"></script>
+    <!--广告轮播组件js文件-->
+    <script src="../../src/js/ui/slider/slider.js"></script>
+    <!--滑动开关组件JS文件-->
+    <script src="../../src/js/ui/flipSwitch/flipSwitch.js"></script>
+
+
+    <!--组件与布局基础样式-->
+    <link href="../../src/css/one.css" rel="stylesheet">
+
+    <!--对话框样式-->
+    <link href="../../src/css/ui/dialog.css" rel="stylesheet">
+    <!--按钮样式-->
+    <link href="../../src/css/ui/button.css" rel="stylesheet">
+    <!--广告轮播组件CSS文件-->
+    <link href="../../src/css/ui/slider.css" rel="stylesheet">
+    <!--滑动开关组件CSS文件-->
+    <link href="../../src/css/ui/flipSwitch.css" rel="stylesheet">
+    <!--字体图片-->
+    <link href="../../src/plugin/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!--当前演示页面布局需要的样式，与组件无关-->
+    <link href="../../src/css/patterns/patterns.css" rel="stylesheet">
+    <style>
+
+        body {
+            color: #74747C;
+            cursor: url('../../resources/image/finger.png'), auto;
+
+        }
+
+        header.header ul {
+            background: #ffffff;
+            height: 3.8rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header ul li {
+            float: left;
+            list-style: none;
+            height: 3.8rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header li:active {
+            background: rgba(188, 188, 188, 0.4);
+        }
+
+        .header-title-txt {
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        .header-title-close {
+            text-align: center;
+            color:#3598db;
+        }
+
+        /*解决DIV内的文字居中问题*/
+        .header div[class^='header-title'] {
+            line-height: 3.8rem;
+        }
+
+        .login{
+            padding-top:3.8rem;
+        }
+        .login-form{
+            padding-top:30%;
+        }
+        .login-form-inputs{
+            text-align: center;
+        }
+        .login-form-inputs input{
+            font-size:1.3rem;
+            padding-bottom: 0.8rem;
+            padding-top:0.8rem;
+            margin-bottom: 1.2rem;
+            border-style: none none solid;
+            border-width: medium medium 1px;
+            border-color: #DDD;
+            background: none repeat scroll 0% 0% padding-box transparent;
+            color: #1F1F21;
+            width: 80%;
+        }
+        .login-form-buttons{
+            text-align: center;
+            font-size: 1.5rem;
+            padding:10% 20% 5% 20%;
+
+        }
+        .login-form-buttons .one_item{
+            background: #3598db;
+            color:#ffffff;
+        }
+        .ion-log-out{
+            padding-right: 0.5rem;
+        }
+        .login-form-buttons .one_item:active{
+            background: rgba(188, 188, 188, 0.4);
+            color:#74747C;
+        }
+
+        .login-form-txt{
+            text-align: center;
+        }
+
+
+    </style>
+
+    <script>
+
+        $(function () {
+            $("#btn-login").click(function(){
+                one.ui.dialog("登录成功!");
+            });
+        })
+    </script>
+</head>
+<body>
+
+<header class="header-fixed-top header">
+    <ul class="one-g">
+        <li class="one-u-sm-8 one-u-sm-push-2">
+            <div class="header-title-txt">登&nbsp;&nbsp;录</div>
+        </li>
+        <li class="one-u-sm-2">
+            <div class="header-title-close">关闭</div>
+        </li>
+    </ul>
+    <div class="clear-both"></div>
+</header>
+
+
+<section class="login">
+    <div class="login-form">
+        <div class="login-form-inputs">
+            <div ><input type="text" name="name" class="login-form-input-name" placeholder="用户名"/></div>
+            <div><input type="password" name="password" class="login-form-input-pwd" placeholder="密码"/></div>
+        </div>
+        <div class="login-form-buttons one-g">
+            <div class="one_item" id="btn-login"><span class="ion-log-out"></span>登&nbsp;&nbsp;录</div>
+        </div>
+        <div class="login-form-txt">
+            <a>忘记密码了?</a>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

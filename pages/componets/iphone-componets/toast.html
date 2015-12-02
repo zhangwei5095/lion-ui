@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <!--该文件为当前页面按钮所需，非本组件所需-->
+    <link href="../../../src/css/ui/button.css" rel="stylesheet">
+
+    <link href="../../../src/css/ui/toast.css" rel="stylesheet">
+    <script src="../../../src/js/ui/toast/toast.js"></script>
+    <title></title>
+<style>
+    *{margin:0px auto;}
+    body{
+        background-color: rgb(230, 230, 230);
+        cursor: url('../../../resources/image/finger.png'), auto;
+
+    }
+    .top{
+        margin:20px;
+    }
+</style>
+</head>
+<script>
+    $(function()
+    {
+            $("#set1").click(function(){
+                window.toast=one.ui.toast
+                ({
+                    content : "请输入用户名密码",
+                    animate : true,
+                    autoClose : 2000
+                });
+            })
+    })
+</script>
+<body>
+<div class="top">Toast 提示框演示</div>
+<div class="one_list">
+    <div class="one-g one_item">
+        <button class="one_button" id="set1">显示提示框</button>
+    </div>
+</div>
+</body>
+</html>

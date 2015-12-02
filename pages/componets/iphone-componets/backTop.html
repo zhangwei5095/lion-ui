@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/dialog/dialog.js"></script>
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <script src="../../../src/js/ui/backtop/backtop.js" type="text/javascript"></script>
+    <link href="../../../src/css/ui/backtop.css" rel="stylesheet" type="text/css">
+
+
+    <!--该文件为当前页面按钮所需，非本组件所需-->
+    <link href="../../../src/css/ui/button.css" rel="stylesheet">
+    <title></title>
+    <script>
+        $(function()
+        {
+                var backTop=one.ui.backTop({
+                id:"one_backtop",
+                isAnimate:true  //是否动画,默认为true
+            });
+        })
+    </script>
+
+    <style>
+        body{
+            background-color: rgb(230, 230, 230);
+            cursor: url('../../../resources/image/finger.png'), auto;
+
+        }
+        .top{
+            margin:20px;
+        }
+    </style>
+
+</head>
+
+<body style="height:800px;">
+
+<div class="top">Back Top控件演示
+    <h3 >向下滚动页面可以看到回到顶部的图标</h3></div>
+<article style="padding: 10px;">
+    <p><h4>什么时候 AngularJS 会超越 jQuery</h4></p>
+    <p>
+        web 新手常问的一个问题是“我应该使用哪个框架？”但这个问题却没有‘正确’的答案，通常主要讨论的是 AngularJS 和 jQuery的区别。
+        但它们间的比较在某些方面就像是在比较苹果和橘子的区别，对于一个web应用，没有明确的原因非要使用一个主要的 web 框架实现。
+        下面一些使用 AngularJS 要优先于 jQuery 的场景。
+
+    </p>
+
+    <p>
+        <h5>当 DOM 操作是次要时</h5>
+
+        jQuery 主要关注于 DOM 扫描和操作。一个常例是通过用户操作进行 DOM 元素的添加和修改，例如将AJAX返回的结果通过预先处理的HTML
+        添加到已存在的DIV中。但使用 AngularJS，开发的焦点在于数据展示。通过双向数据绑定，数据的更新会自动完成而不需要删除和重建 DOM。
+        虽然 DOM 操作是不可能完全避免的，但较只使用 jQuery，使用 AngularJS 你只需处理较少的 DOM 操作。
+    </p>
+    <p>
+        <h5>当注重效率时</h5>
+        虽然 AngularJS 学起来有点难，但它对于开发者来说具有较高的效率。AngularJS 的很多特性注重于提高开发者的产出。例如为支持单元测试
+        的内建扩展支持。注重于测试的特性通过简化单元测试，从而使开发者注重于生产更健壮可靠的代码。另外，通过将DOM操作与程序逻辑解耦，
+        开发者能够专注于“为什么”而不是“如何做”。通常，这会导致短小但稳定和易于调试的代码。
+    </p>
+    <p>
+       <h5> 在采用描述性接口的时候</h5>
+        使用jQuery常常遇到的问题是它采用的是命令式编程，说的再透彻点，它告诉计算机如何才能达到目标，这样的处理过程产生的结果就是你想要
+        的结果。不过，描述性编程则相反，它告诉计算机你想要的结果，让计算机自己确定该如何实现。JavaScript 总的来说是采用命令式方法进行
+        设计的，而HTML-以及AngularJS给HTML所增加的指令-都是专门为描述性编程而设计的。如果你使用AngularJS进行编程，那么你最终采用的
+        描述性编程，它更符合HTML原来的设计意图-即告诉计算机你想得到的显示结果，然后由计算机处理具体的细节。如果采用了这种编程方式，
+        那么完成具体任务所需代码的行数就会大大的减少了，这样的代码可读性更高，维护起来更容易。
+    </p>
+</article>
+</body>
+</html>

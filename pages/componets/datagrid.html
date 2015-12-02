@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .tab{
+            border: 1px solid #988F8F;
+            width: 100%;
+            line-height: 35px;
+            text-align: center;
+        }
+        .tab td{border: 1px solid #988F8F;}
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Datagrid 数据表控件</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">导入js、css库</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_yyzywj1">js库</a></li>
+                    <li><a uri="#doc_dialog_yyzywj2">css库</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_qztj">使用方法</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_dyhtml">js</a></li>
+                    <li><a uri="#doc_dialog_syjs2">HTML</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_syfs">属性</a></li>
+                <li><a uri="#doc_dialog_gjsy">方法</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">导入js、css库</h4>
+    <p id="doc_dialog_yyzywj1">1.js库</p>
+    <pre class="prettyprint">
+&lt;script src="${base}/resources/global/plugins/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="${base}/resources/global/plugins/datatables/media/js
+        /jquery.dataTables.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="${base}/resources/global/plugins/datatables/extensions/TableTools/js
+        /dataTables.tableTools.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="${base}/resources/global/plugins/datatables/extensions/ColReorder/js
+        /dataTables.colReorder.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="${base}/resources/global/plugins/datatables/extensions/Scroller/js
+        /dataTables.scroller.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="${base}/resources/global/plugins/datatables/plugins/bootstrap
+        /dataTables.bootstrap.js"&gt;&lt;/script&gt;
+&lt;script src="${base}/resources/global/js/datagrid/datagrids.js" type="text/javascript"&gt;&lt;/script&gt;
+    </pre>
+    <p id="doc_dialog_yyzywj">2.css库</p>
+    <pre class="prettyprint">
+&lt;link rel="stylesheet" type="text/css" href="${base}/resources/global/plugins/datatables/extensions/Scroller/css
+        /dataTables.scroller.min.css"/&gt;
+&lt;link rel="stylesheet" type="text/css" href="${base}/resources/global/plugins/datatables/extensions/ColReorder/css
+        /dataTables.colReorder.min.css"/&gt;
+&lt;link rel="stylesheet" type="text/css" href="${base}/resources/global/plugins/datatables/plugins/bootstrap
+        /dataTables.bootstrap.css"/&gt;
+    </pre>
+    <h4 id="doc_dialog_qztj">使用方法</h4>
+    <p id="doc_dialog_dyhtml">1.js</p>
+    <pre class="prettyprint">
+//将数据进行转换
+function formatterEidtable(data,type,full) {
+  if (data) {return ‘是’; }
+  return ’否’;
+}
+//根据方法获取datagrid的数据或对datagrid进行操作
+var data = $(‘#sys_codetype_lists_tb’).datagrids(‘getData’);
+
+    </pre>
+    <p id="doc_dialog_syjs2">2.HTML</p>
+    <pre class="prettyprint">
+&lt;table class="lion-datagrids table table-striped table-bordered table-hover" id="sys_codetype_lists_tb" data-singleselect="true",   data-loadUrl="${base}/system/codetype/list.json" data-checkbox="true" data-pageSize="10"&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th class="table-checkbox" data-field='id' data-checkbox="true"&gt;
+            &lt;input type="checkbox" class="group-checkable" data-set="#sys_codetype_lists_tb.checkboxes"  data-sortable="false" /&gt;
+        &lt;/th&gt;
+        &lt;th data-field='type' style="width:100px;" &gt;
+            类型
+        &lt;/th&gt;
+        &lt;th data-field="nameEn" style="width:100px;"&gt;
+            名称（英文）
+        &lt;/th&gt;
+        &lt;th data-field="nameZh" style="width:100px;"&gt;
+            名称（中文）
+        &lt;/th&gt;
+        &lt;th data-field="codeLenLimit" style="width:50px;" &gt;
+            参数长度
+        &lt;/th&gt;
+        &lt;th data-field="editable" style="width:30px;" align="center"  data-formatter="formatterEidtable"&gt;
+            可编辑
+        &lt;/th&gt;
+        &lt;th data-field="createdDate" style="width:100px;"&gt;
+            创建时间
+        &lt;/th&gt;
+        &lt;th data-field="updatedDate" style="width:100px;"&gt;
+            更新时间
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+&lt;/table&gt;
+    </pre>
+    <h4 id="doc_dialog_syfs">属性</h4>
+    <table class="tab">
+        <tr>
+            <td>名称</td>
+            <td>描述</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>规定该数据表的唯一id。</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>规定该数据表的名称。</td>
+        </tr>
+        <tr>
+            <td >class</td>
+            <td>规定该数据表的样式。推荐样式（”tdon-datagrids <br>
+                table table-striped table-bordered table-hover”）</td>
+        </tr>
+        <tr>
+            <td>data-singleselect</td>
+            <td>规定该数据表的勾选框是否单选</td>
+        </tr>
+        <tr>
+            <td>data-checkbox</td>
+            <td>规定该数据表是否使用勾选框</td>
+        </tr>
+        <tr>
+            <td>data-URL</td>
+            <td>规定该数据表获取数据的url。</td>
+        </tr>
+        <tr>
+            <td>data-pageSize</td>
+            <td>规定该数据表每次展出数据的行数</td>
+        </tr>
+        <tr>
+            <td>data-field</td>
+            <td>规定该列展示的对象的属性</td>
+        </tr>
+        <tr>
+            <td>data-sortable</td>
+            <td>规定该列是否可以进行排序</td>
+        </tr>
+        <tr>
+            <td>data-formatter</td>
+            <td>规定该列进行数据转换的方法</td>
+        </tr>
+    </table>
+    <div class="table2">
+        <h4 id="doc_dialog_gjsy" >方法</h4>
+        <table class="tab">
+            <tr>
+                <td>名称</td>
+                <td>参数</td>
+                <td>描述</td>
+            </tr>
+            <tr>
+                <td>getSelections</td>
+                <td>none</td>
+                <td>多行数据返回已选择的数据</td>
+            </tr>
+            <tr>
+                <td>getSelected</td>
+                <td>none</td>
+                <td>获取选择的行数据row</td>
+            </tr>
+            <tr>
+                <td>getdata</td>
+                <td>none</td>
+                <td>获取所有数据</td>
+            </tr>
+            <tr>
+                <td>createdRow</td>
+                <td>row, data, index</td>
+                <td>创建行回调函数</td>
+            </tr>
+            <tr>
+                <td>reload</td>
+                <td>none</td>
+                <td>重新加载数据</td>
+            </tr>
+            <tr>
+                <td>querydata</td>
+                <td>none</td>
+                <td>获取查询参数</td>
+            </tr>
+            <tr>
+                <td>initComplete</td>
+                <td>none</td>
+                <td>初始化事件</td>
+            </tr>
+            <tr>
+                <td>loadinitComplete</td>
+                <td>none</td>
+                <td>DataTable初始化事件</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

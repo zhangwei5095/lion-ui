@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lion Framework HTML5 UI Themes 展示</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../resources/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../resources/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="../resources/css/style.css"/>
+
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+
+
+    <link rel="stylesheet" href="../resources/plugins/jquerycolors/jquery.minicolors.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style id="customeStyle" title="customeStyle">
+        p {  color: red;  }
+        label {  color: green;  }
+        .iframe-list{  margin: 0;  padding:0;  list-style: none;  }
+        .iframe-list>li{  float: left;  padding-left:10px;  }
+    </style>
+
+</head>
+<body>
+
+
+<nav class="navbar  navbar-fixed-top" role="navigation">
+    <div class="container-fluid header_fluid">
+        <div class="container">
+            <div class="collapse navbar-collapse" style="height:66px !important;">
+                <ul class="nav headertop navbar-nav col-lg-12 col-lg-push-1">
+                    <li><img src="../resources/image/index/logo1.svg" width="39px" height="39px"/></li>
+                    <li class="header_item header_item_first">
+                        <a class="header_item_a  " href="../index.html">首页</a></li>
+                    <!--<li class="header_item">
+                        <a class="header_item_a " href="start.html">开始</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" href="frame.html">框架</a>
+                    </li>
+                    -->
+                    <li class="header_item">
+                        <a class="header_item_a" href="componets.html">UI组件</a>
+                    </li>
+
+                    <li class="header_item">
+                        <a class="header_item_a" href="docs.html">文档</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a" target="_blank" href="../pages/api/index.html">API</a>
+                    </li>
+                   <!-- <li class="header_item">
+                        <a class="header_item_a " href="patterns.html">模式</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a header_active" href="themes.html">主题</a>
+                    </li>
+                    -->
+                    <li class="header_item pull-right col-lg-pull-1">
+                        <a class="header_item_a" href="javascript:void(0);"><span class="glyphicon glyphicon-globe"
+                                                                                  style="padding-right:5px;"></span>中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container md_start">
+    <!--<label>组件</label>
+    <a>|&nbsp;万物皆对象,页面皆组件</a>-->
+</div>
+
+<div class="middle_container">
+    <div class="container ">
+        <div class="col-lg-3 md_left col-lg-push-1">
+            <div style="padding-bottom: 10px;">
+                <h4>自定义风格</h4>
+            </div>
+            <div class="md_right_border">
+                <div class="tm-download ">
+                    下载
+                </div>
+                <div class="tm-ydy-txt">预定义的颜色方案</div>
+                <div class="tm-ydy-icon">
+                    <ul id="tm-custom-color">
+                        <li class="" >
+                            <div class="tm-color-1">
+                                <div data-picker="color-picker-bg" data-color="#ffffff" data-opacity="1"
+                                     style="background-color:#ffffff;"></div>
+                                <div data-picker="color-picker-txt" data-color="#1F1F21" data-opacity="1"
+                                     style="background-color:#1F1F21;"></div>
+                                <div data-picker="color-picker-subtxt" data-color="#999999" data-opacity="1"
+                                     style="background-color:#999999;"></div>
+                                <div data-picker="color-picker-highlight" data-color="#1867C2" data-opacity="0.81"
+                                     style="background-color:rgba(24, 103, 194, 0.811765);"></div>
+                                <div data-picker="color-picker-second-highlight" data-color="#25A6D9" data-opacity="1"
+                                     style="background-color:#25A6D9;"></div>
+                                <div data-picker="color-picker-border" data-color="#DDDDDD" data-opacity="1"
+                                     style="background-color:#DDDDDD;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tm-color-2">
+
+                                <div data-picker="color-picker-bg" data-color="#FFFFFF" data-opacity="1"
+                                     style="background-color:#FFFFFF;"></div>
+                                <div data-picker="color-picker-txt" data-color="#1F1F21" data-opacity="1"
+                                     style="background-color:#1F1F21;"></div>
+                                <div data-picker="color-picker-subtxt" data-color="#999999" data-opacity="1"
+                                     style="background-color:#999999;"></div>
+                                <div data-picker="color-picker-highlight" data-color="#1284FF" data-opacity="1"
+                                     style="background-color:#1284FF;"></div>
+                                <div data-picker="color-picker-second-highlight" data-color="#4CDA64" data-opacity="1"
+                                     style="background-color:#4CDA64;"></div>
+                                <div data-picker="color-picker-border" data-color="#DDDDDD" data-opacity="1"
+                                     style="background-color:#DDDDDD;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tm-color-3">
+                                <div data-picker="color-picker-bg" data-color="#242424" data-opacity="1"
+                                     style="background-color:#242424;"></div>
+                                <div data-picker="color-picker-txt" data-color="#FFFFFF" data-opacity="1"
+                                     style="background-color:#FFFFFF;"></div>
+                                <div data-picker="color-picker-subtxt" data-color="#87888F" data-opacity="1"
+                                     style="background-color:#87888F;"></div>
+                                <div data-picker="color-picker-highlight" data-color="#3D74FF" data-opacity="1"
+                                     style="background-color:#3D74FF;"></div>
+                                <div data-picker="color-picker-second-highlight" data-color="#5494D1" data-opacity="1"
+                                     style="background-color:#5494D1;"></div>
+                                <div data-picker="color-picker-border" data-color="#424242" data-opacity="1"
+                                     style="background-color:#424242;"></div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tm-color-4">
+                                <div data-picker="color-picker-bg" data-color="#F9F9F9" data-opacity="1"
+                                     style="background-color: #F9F9F9;"></div>
+                                <div data-picker="color-picker-txt" data-color="#333333" data-opacity="1"
+                                     style="background-color:#333333;"></div>
+                                <div data-picker="color-picker-subtxt" data-color="#999999" data-opacity="1"
+                                     style="background-color:#999999;"></div>
+                                <div data-picker="color-picker-highlight" data-color="#EB482F" data-opacity="1"
+                                     style="background-color:#EB482F;"></div>
+                                <div data-picker="color-picker-second-highlight" data-color="#F28227" data-opacity="1"
+                                     style="background-color: #F28227;"></div>
+                                <div data-picker="color-picker-border" data-color="#DDDDDD" data-opacity="1"
+                                     style="background-color:#DDDDDD;"></div>
+
+                            </div>
+                        </li>
+                        <li class="tm-color-active">
+                            <div class="tm-color-5" id="tm-color-active">
+                                <div data-picker="color-picker-bg" data-color="#F3F3F3" data-opacity="1"
+                                     style="background-color:#F3F3F3;"></div>
+                                <div data-picker="color-picker-txt" data-color="#524B57" data-opacity="1"
+                                     style="background-color:#524B57;"></div>
+                                <div data-picker="color-picker-subtxt" data-color="#CCCCCC" data-opacity="1"
+                                     style="background-color:#CCCCCC;"></div>
+                                <div data-picker="color-picker-highlight" data-color="#8962ED" data-opacity="1"
+                                     style="background-color:#8962ED;"></div>
+                                <div data-picker="color-picker-second-highlight" data-color="#574BDB" data-opacity="1"
+                                     style="background-color:#574BDB;"></div>
+                                <div data-picker="color-picker-border" data-color="#DDDDDD" data-opacity="1"
+                                     style="background-color:#DDDDDD;"></div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tm-ydy-txt">全局</div>
+                <div class="tm-select-color">
+                    <ul>
+                        <li>
+                            <div>背景色 <span class="color-value">#F3F3F3</span></div>
+                            <div class="color-picker-container">
+                                <div>
+                                    <input id="color-picker-bg" data-style="background" data-opacity="0.81"
+                                           class="color-picker" value="#ffffff"
+                                           type="hidden"/>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>文本颜色 <span class="color-value">#524B57</span></div>
+                            <div class="color-picker-container">
+                                <div>
+                                    <input id="color-picker-txt" data-style="color" class="color-picker" value="#1F1F21"
+                                           type="hidden"/>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>说明文本颜色 <span class="color-value">#CCCCCC</span></div>
+                            <div class="color-picker-container">
+                                <div>
+                                    <input id="color-picker-subtxt" data-style="color2" class="color-picker"
+                                           value="#999" type="hidden"/>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>突出部分颜色 <span class="color-value">#8962ED</span></div>
+                            <div class="color-picker-container">
+                                <div>
+                                    <input id="color-picker-highlight" data-style="highlight" class="color-picker"
+                                           data-opacity="0.81"
+                                           value="#1867C2" type="hidden"/>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>其次突出部分颜色 <span class="color-value">#574BDB</span></div>
+                            <div class="color-picker-container">
+                                <div>
+                                    <input id="color-picker-second-highlight" data-style="highlight2"
+                                           class="color-picker" value="#25a6d9"
+                                           type="hidden"/>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div>边框颜色 <span class="color-value">#DDDDDD</span></div>
+                            <div class="color-picker-container">
+                                <div>
+                                    <input id="color-picker-border" data-style="border-color" class="color-picker"
+                                           value="#ddd" type="hidden"/>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-lg-8 md_right col-lg-push-1" style="margin-top: 40px;">
+            <ul class="iframe-list">
+                <li> <iframe height="60" src="componets/themes/filpSwitch.html" scrolling="none" frameborder="no"
+                             border="0"></iframe></li>
+                <li> <iframe  height="190" src="componets/themes/dialog.html" scrolling="none" frameborder="no"
+                             border="0"></iframe></li>
+                <li> <iframe  height="68" src="componets/themes/toast.html" scrolling="none" frameborder="no"
+                              border="0"></iframe></li>
+                <li> <iframe  height="68" src="componets/themes/checkBox.html" scrolling="none" frameborder="no"
+                              border="0"></iframe></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer1" align="center">
+        © 版权所有 2015-2021 上海新致软件股份有限公司
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../resources/js/jQuery.1.11.1.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../resources/js/bootstrap.min.js"></script>
+<script src="../resources/js/app.js"></script>
+<script src="../resources/plugins/jquerycolors/jquery.minicolors.min.js"></script>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $.minicolors = {
+            defaults: {
+                animationSpeed: 50,
+                animationEasing: 'swing',
+                change: null,
+                changeDelay: 0,
+                control: 'hue',
+                defaultValue: '',
+                hide: null,
+                hideSpeed: 100,
+                inline: false,
+                letterCase: 'lowercase',
+                opacity: true,
+                position: 'bottom left',
+                show: null,
+                showSpeed: 100,
+                theme: 'default'
+            }
+        };
+
+        //hex转换成rgb
+        function hex2rgb(hex) {
+            hex = parseInt(((hex.indexOf('#') > -1) ? hex.substring(1) : hex), 16);
+            return {
+                /* jshint ignore:start */
+                r: hex >> 16,
+                g: (hex & 0x00FF00) >> 8,
+                b: (hex & 0x0000FF)
+                /* jshint ignore:end */
+            };
+        }
+
+
+        function execuColorPicker(clazz) {
+            $(".color-picker").minicolors("destroy");
+            $(".color-picker").minicolors({
+                change: function (hex, opacity) {
+                    console.log(hex + ' - ' + opacity);
+                    $(this).parent().parent().prev().find(".color-value").html(hex);
+                    var key = $(this).attr("data-style");
+                    var value = $(this).minicolors("rgbaString");
+                    //修改某个选型的颜色时切换示例样式
+                    $("iframe").each(function () {
+                        $(this).get(0).contentWindow.changeStyle(key, value);
+                    })
+                }
+            });
+        }
+
+        $("#tm-custom-color >li").click(function () {
+            $(this).parent().find("li").each(function () {
+                $(this).removeClass("tm-color-active");
+            });
+            $(this).addClass("tm-color-active");
+
+            $(this).find("div[data-picker]").each(function () {
+                var picker = $(this).attr("data-picker");
+                var color = $(this).attr("data-color");
+                var opacity = $(this).attr("data-opacity");
+                var key =  $("#" + picker).attr("data-style");
+                $("#" + picker).val(color).attr("data-opacity", opacity);
+                $("#" + picker).parent().parent().prev().find(".color-value").html(color);
+                var value = color;
+                if (opacity != "1") {
+                    var rgb = hex2rgb(value);
+                    value = 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', ' + parseFloat(opacity) + ')';
+                }
+                //切换示例样式
+                $("iframe").each(function () {
+                    $(this).get(0).contentWindow.changeStyle(key, value);
+                })
+            });
+            execuColorPicker();
+        });
+
+        window.iframeCount = $("iframe").size();//当前页面iframe的个数
+
+        var loadInterval = window.setInterval(function () {
+            window.iframeLoadedCount = window.iframeLoadedCount || 0;
+            console.log("当前页面共" + window.iframeCount + "个iframe,已经有" + window.iframeLoadedCount + "加载完成!");
+            if (window.iframeLoadedCount == window.iframeCount) {
+                //触发第一套方案
+                $("#tm-color-active").trigger("click");
+                window.clearInterval(loadInterval);
+            }
+        }, 500);
+    });
+
+    function receiveFromIframe() {
+
+        window.iframeLoadedCount = window.iframeLoadedCount || 0;//当前页面iframe加载完成的数量，防止iframe未加载完成后就开始执行需要执行iframe页面内的方法
+
+        window.iframeLoadedCount++;
+    }
+
+
+</script>
+</body>
+</html>

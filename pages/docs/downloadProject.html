@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .doc_dialog_ml{
+            font-size:16px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Git项目加载</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">1在视图中打开git Repositories</a></li>
+                <li><a uri="#doc_dialog_qztj">2.克隆git项目到本地</a></li>
+                <li><a uri="#doc_dialog_syfs">3.导入项目</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">1在视图中打开git Repositories</h4>
+    <p>进入eclipse，在上方工具栏打开windows->Show View->Other，选中Git Repositories并点击ok。</p>
+    <p><img src="../resources/image/start/gitadd1.png"></p>
+    <h4 id="doc_dialog_qztj">2.克隆git项目到本地</h4>
+    <div>
+       <ul>
+           <li>点击Clone a Git repository 在URI中写入https://github.com/scwanglijun/framework/网址，并输入用户名和密码。</li>
+       </ul> 
+    </div>
+    <p><img src="../resources/image/start/gitadd2.1.png" width="85%"></p>
+    <div>
+        <ul>
+            <li>在Directory中选中对应的目录，并点击Finish结束，等待项目下载完成。</li>
+        </ul>
+    </div>
+    <p><img src="../resources/image/start/gitadd2.2.png"></p>
+    <h4 id="doc_dialog_syfs">3.导入项目</h4>
+    <p>将项目作为Maven Project导入。</p>
+    <p><img src="../resources/image/start/gitadd3.png"></p>
+</div>
+
+</body>
+</html>

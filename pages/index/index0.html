@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Li-Rabbit HTML5 UI 模式展示</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../../resources/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../resources/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="../../resources/css/style.css"/>
+    <link rel="stylesheet" href="../../resources/plugins/prettify/prettify.css"/>
+    <script src="../../resources/plugins/prettify/run_prettify.js"></script>
+
+    <link rel="stylesheet" href="../../resources/plugins/jScrollPane/jquery.jscrollpane.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .md_right_border{
+            padding-right:0;
+        }
+        .jspPane ul{
+            padding:0;
+            width:66%;
+            margin-left: 15%;
+        }
+
+    </style>
+    <style type="text/css">
+        #bcckground{
+            background-color:#ecf4f4;
+        }
+        div#container{
+            width:100%;
+        }
+        #container{
+            margin-top: -67px;
+        }
+        div#header {
+            background-color:rgb(46,92,89);
+            height: 380px;
+            text-align:center;  <!-- /.居中显示 -->
+            float: none;
+            overflow:auto;
+            margin-top:65px;
+            padding-top: 80px;
+            font-size:30px;
+            font-weight:bold;
+            color: #819393;
+            background: -webkit-gradient(linear, left top, right top,color-stop(0.05, #0d302c), 
+            color-stop(0.5, #0c6760), color-stop(0.95, #0d302c));
+        }
+        div#search {
+            background-color:#ffffff;
+            height:300px;
+            font-size: 20px;
+            padding-top: 50px;
+        }
+        div#search1 {
+            background-color:#edf6f5;
+            height:360px;
+            width: 100%;
+        }
+        div#search2 {
+            background-color:#ffffff;
+            height:550px;
+            width: 100%;
+        }
+        div#footer1 {
+            background-color:#173734;
+            height:180px;
+        }
+        div#footer2 {
+            background-color:#14312f;
+            height:40px;
+            color: #ffffff;
+            font-size: 12px;
+            padding-top: 10px;
+
+        }
+
+        .header_fluid1{
+            background: -webkit-gradient(linear, left top, right top,color-stop(0.05, #0d302c),
+            color-stop(0.5, #0d4640), color-stop(0.95, #0d302c));
+        }
+        .circle {
+            width: 164px;
+            height: 164px;
+            background: #52ada6;
+            border-radius: 82px;
+            position: relative;
+            top: 30px;
+        }
+        .circle1{
+            position: relative;
+            left: 0px;
+            top: -129px;
+        }
+        .header2 {
+            text-align: center;
+            font-size:18px;
+            padding-top: 36px;
+            color: #eaffff;
+        }
+        .header3 {
+            padding-top: 60px;
+        }
+        .img2{
+            position: relative;
+            left: -266px;
+            top: 30px;
+        }
+        .img2_01{
+            width: 285px;
+            height: 494px;
+            box-shadow:0px 0.5px 8px #0D302C;
+        }
+        .search-border{
+            border: 1px solid #d8e1e0;
+            height: 190px;
+            width:190px;
+        }
+        .search-border-font11{
+            font-size: 20px;
+            color: #dae0de;
+            background-color:#e84c3d ;
+            height: 80px;
+            padding-top: 11px;
+        }
+        .search-border-font12{
+            font-size: 20px;
+            color: #dae0de;
+            background-color:#1fa67b ;
+            height: 80px;
+            padding-top: 11px;
+        }
+        .search-border-font13{
+            font-size: 20px;
+            color: #dae0de;
+            background-color:#563e7c ;
+            height: 80px;
+            padding-top: 11px;
+        }
+        .search-border-font14{
+            font-size: 20px;
+            color: #dae0de;
+            background-color:#3598db ;
+            height: 80px;
+            padding-top: 11px;
+        }
+        .search-border-font2{
+            font-size: 15px;
+            color: #616564;
+        }
+        .search1-font1{
+            font-weight:bold;
+            font-size:25px;
+        }
+        .search1-font2{
+            position: relative;
+            top: -109px;
+            font-size:25px;
+        }
+        .search2-font1{
+            color: #2c302f;
+        }
+        .search2-font3{
+            position: relative;
+            left: -271px;
+            top: -363px;
+        }
+        .search2-font2{
+            color:#2b2f2e;
+            font-size: 18px;
+        }
+        .header-line{
+            width: 95%;
+            height:0.5px;
+            background-color: #ffffff;
+            position: relative;
+            left: 23px;
+            top: -6px;
+        }
+        .logo{
+            height: 35px;
+            width: 35px;
+            background-color: #36beb4;
+        }
+        .header_item_a{
+            color:#cbcdcc;
+        }
+        .a_font1{
+            color: #31a49d;
+        }
+        .footer1_left1
+        {
+            position:relative;
+            left: 152px;
+            top: 36px;
+            width: 50%;
+            float: left;
+            color: #ffffff;
+        }
+        .footer1_left2
+        {
+            position:relative;
+            left: 20px;
+            top: 20px;
+            float: left;
+            color: #ffffff;
+        }
+        .footer1_left_font1{
+            color: #e84c3d;
+            font-size: 25px;
+        }
+        .footer1_left_font2{
+            color: #e84c3d;
+            font-size: 17px;
+        }
+        input[type="button"]
+        {
+            background-color:#05322d;
+            font-size: 20px;
+            color:#acc9c7;
+            border-style:none;
+            border-radius:5px;
+            height:50px;
+            width:150px;
+        }
+        h1 {margin-bottom:0;}
+        h2 {margin-bottom:0;font-size:25px;font-weight:bold}
+        ul {margin:0;}
+        li {list-style:none;}
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid header_fluid1">
+        <div class="container">
+            <div class="collapse navbar-collapse" style="height:66px !important;">
+                <ul class="nav headertop navbar-nav col-lg-12 col-lg-push-1">
+                    <li class="logo"><img src="../../resources/image/patterns/logomain.png" /></li>
+                    <li class="header_item header_item_first">
+                        <a class="header_item_a  " href="../start/index.html">首页</a></li>
+                    <li class="header_item">
+                        <a class="header_item_a " href="../start/start.html">开始</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a " href="../componets.html">组件</a>
+                    </li>
+
+                    <li class="header_item">
+                        <a class="header_item_a" href="../docs.html">文档</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a " href="../patterns.html">模式</a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_a " href="../themes.html">主题</a>
+                    </li>
+
+                    <li class="header_item pull-right col-lg-pull-2">
+                        <a class="header_item_a" href="javascript:void(0);"><span class="glyphicon glyphicon-globe"
+                                                                                  style="padding-right:5px;"></span>中文</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-line"></div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+<div id="bcckground">
+    <div id="container">
+
+        <div id="header">
+            <li>UI 说明</li>
+            <li class="header2">简洁、直观、强悍的前端开发框架，让web开发更迅速、简单</li>
+            <li class="header3"><input type="button" value="立 即 下 载" style="border:1px solid #ffffff"></li>
+        </div>
+
+        <div id="search" align="center">
+            <table height="200px" width="800px" valign="middle">
+                <tr >
+                    <td width="200px" align="center">
+                        <div class="search-border">
+                            <table  width="180px" height="180px" >
+                                <tr height="90px">
+                                    <td align="center" valign="middle">
+                                        <div class="search-border-font11">Bootstrap<br>
+                                            编码规范
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr height="90px">
+                                    <td>
+                                        <div class="search-border-font2">Bootstrap 编码规范：<br>
+                                            编写灵活、稳定、高质量的<br>
+                                            HTML和CSS代码的规范
+                                         </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td width="200px" align="center">
+                        <div class="search-border">
+                            <table  width="180px" height="180px" >
+                                <tr height="90px">
+                                    <td align="center" valign="middle">
+                                        <div class="search-border-font12">Bootstrap</div>
+                                    </td>
+                                </tr>
+                                <tr height="90px">
+                                    <td>
+                                        <div class="search-border-font2">Bootstrap 编码规范：<br>
+                                            编写灵活、稳定、高质量的<br>
+                                            HTML和CSS代码的规范
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td width="200px" align="center">
+                        <div class="search-border">
+                            <table  width="180px" height="180px" >
+                                <tr height="90px">
+                                    <td align="center" valign="middle">
+                                        <div class="search-border-font13">编码规范</div>
+                                    </td>
+                                </tr>
+                                <tr height="90px">
+                                    <td>
+                                        <div class="search-border-font2">Bootstrap 编码规范：<br>
+                                            编写灵活、稳定、高质量的<br>
+                                            HTML和CSS代码的规范
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td width="200px" align="center">
+                        <div class="search-border">
+                            <table  width="180px" height="180px" >
+                                <tr height="90px">
+                                    <td align="center" valign="middle">
+                                        <div class="search-border-font14">Bootstrap<br>
+                                            编码规范
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr height="90px">
+                                    <td>
+                                        <div class="search-border-font2">Bootstrap 编码规范：<br>
+                                            编写灵活、稳定、高质量的<br>
+                                            HTML和CSS代码的规范
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="search1" align="center">
+            <table width="900" style="margin:auto;">
+                <tr>
+                    <td colspan="4" align="center" valign="middle" height="100px">
+                        <div class="search1-font1">透明沟通 于是纵情协作</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="225px" align="center" valign="middle" height="200px">
+                        <div class="circle"></div>
+                            <div class="circle1"><img src="../../resources/image/component/101.png"></div>
+                        <div class="search1-font2"><a class="search2-font1" href="index0.html">首页</a></div>
+                    </td>
+                    <td width="225px" align="center" valign="middle" height="200px">
+                        <div class="circle"></div>
+                            <div class="circle1"><img src="../../resources/image/component/102.png"></div>
+                        <div class="search1-font2"><a class="search2-font1" href="index0.html">组件</a></div>
+                    </td>
+                    <td width="225px" align="center" valign="middle" height="200px">
+                        <div class="circle"></div>
+                            <div class="circle1"><img src="../../resources/image/component/103.png"></div>
+                        <div class="search1-font2"><a class="search2-font1" href="index0.html">文档</a></div>
+                    </td>
+                    <td width="225px" align="center" valign="middle" height="200px">
+                        <div class="circle"></div>
+                            <div class="circle1"><img src="../../resources/image/component/104.png"></div>
+                        <div class="search1-font2"><a class="search2-font1" href="index0.html">主题</a></div>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+        <div id="search2" align="center">
+            <ul class="img2">
+                <img  class="img2_01" src="../../resources/image/patterns/pattern3.png">
+            </ul>
+            <ul class="search2-font3">
+                <div class="search1-font1" align="right">透明沟通 于是纵情协作</div>
+                <div class="search2-font2" align="right"><br>
+                                每个好团队都乐于打破边界，畅所欲言<br>
+                                别担心，使用明道比微博、微信还要简单<br>
+                                大家一起用明道，两个字：舒爽<br>
+                                <br>
+                    <a class="a_font1" href="">点击了解> </a></div>
+            </ul>
+        </div>
+        <div id="footer1">
+            <div class="footer1_left1">
+                <p class="footer1_left_font1">newtouch-one</p>
+                本网站所列开源项目的中文版文档全部由newtouch-one成员翻译整理，<br>
+                并全部遵循 CC BY 3.0协议发布。
+            </div>
+            <div class="footer1_left2">
+                <ul class="footer1_left2">
+                    <li class="footer1_left_font2">关于</li>
+                    <li><a>关于我们</a></li>
+                    <li><a>广告合作</a></li>
+                    <li><a>友情链接</a></li>
+                </ul>
+                <ul class="footer1_left2">
+                    <li class="footer1_left_font2">联系方式</li>
+                    <li><a>新浪微博</a></li>
+                    <li><a>电子邮件</a></li>
+                </ul>
+                <ul class="footer1_left2">
+                    <li class="footer1_left_font2">旗下网站</li>
+                    <li><a>one中文网</a></li>
+                    <li><a>newtouch</a></li>
+                </ul>
+                <ul class="footer1_left2">
+                    <li class="footer1_left_font2">赞助商</li>
+                    <li><a>UCloud</a></li>
+                    <li><a>又拍云</a></li>
+                </ul>
+            </div>
+            
+        </div>
+
+    
+        <div id="footer2" align="center">
+            &copy;版权所有 2015-2021 上海新致软件股份有限公司
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

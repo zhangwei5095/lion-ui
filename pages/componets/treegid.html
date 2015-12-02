@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .tab{
+            border: 1px solid #988F8F;
+            width: 100%;
+            line-height: 35px;
+            text-align: center;
+        }
+        .tab td{border: 1px solid #988F8F;}
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Treegid 树形数据表控件</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">导入js、css库</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_yyzywj1">js库</a></li>
+                    <li><a uri="#doc_dialog_yyzywj2">css库</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_qztj">使用方法</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_dyhtml">js</a></li>
+                    <li><a uri="#doc_dialog_syjs2">HTML</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_syfs">事件</a></li>
+                <li><a uri="#doc_dialog_gjsy">方法</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">导入js、css库</h4>
+    <p id="doc_dialog_yyzywj1">1.js库</p>
+    <pre class="prettyprint">
+&lt;script src="${base}/resources/global/plugins/easyui/jquery.easyui.min.js" type="text/javascript"&gt;
+        &lt;/script&gt;
+&lt;script src="${base}/resources/global/plugins/easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"&gt;
+        &lt;/script&gt;
+    </pre>
+    <p id="doc_dialog_yyzywj">2.css库</p>
+    <pre class="prettyprint">
+&lt;link href="${base}/resources/global/plugins/easyui/themes/metro/easyui.css" rel="stylesheet" type="text/css"/&gt;
+&lt;link href="${base}/resources/global/plugins/easyui/themes/icon.css" rel="stylesheet" type="text/css"/&gt;
+    </pre>
+    <h4 id="doc_dialog_qztj">使用方法</h4>
+    <p id="doc_dialog_dyhtml">1.js</p>
+    <pre class="prettyprint">
+$('#tt').treegrid({
+url:'treegrid_data.json',
+treeField:'name',
+columns:[[
+{title:'Task Name',field:'name',width:180},
+{field:'persons',title:'Persons',width:60,align:'right'},
+{field:'begin',title:'Begin Date',width:80},
+{field:'end',title:'End Date',width:80}
+]]
+});
+    </pre>
+    <p id="doc_dialog_syjs2">2.HTML</p>
+    <pre class="prettyprint">
+        &lt;table id="tt"&gt;&lt;/table&gt;
+    </pre>
+    <h4 id="doc_dialog_syfs">事件</h4>
+    <table class="tab">
+        <tr>
+            <td>名称</td>
+            <td>参数</td>
+            <td>说明</td>
+        </tr>
+        <tr>
+            <td>onCtdckRow</td>
+            <td>row</td>
+            <td>当用户点击一个节点时触发。</td>
+        </tr>
+        <tr>
+            <td>onDblCtdckRow</td>
+            <td>row</td>
+            <td>当用户双击一个节点时触发。</td>
+        </tr>
+        <tr>
+            <td>onBeforeLoad</td>
+            <td>row, param</td>
+            <td>发出一个加载数据的请求前触发，返回 false 就取消加载动作。</td>
+        </tr>
+        <tr>
+            <td>onLoadSuccess</td>
+            <td>row, data</td>
+            <td>当数据加载成功时触发。</td>
+        </tr>
+        <tr>
+            <td>onLoadError</td>
+            <td>arguments</td>
+            <td>当数据加载失败时触发， arguments 参数和 jQuery.ajax 的 'error' 方法一样。</td>
+        </tr>
+        <tr>
+            <td>onBeforeExpand</td>
+            <td>row</td>
+            <td>节点展开前触发，返回 false 就取消展开动作。</td>
+        </tr>
+        <tr>
+            <td>onExpand</td>
+            <td>row</td>
+            <td>当节点展开时触发。</td>
+        </tr>
+        <tr>
+            <td>onBeforeCollapse</td>
+            <td>row</td>
+            <td>节点折叠前触发，返回 false 就取消折叠动作。</td>
+        </tr>
+        <tr>
+            <td>onCollapse</td>
+            <td>row</td>
+            <td>当节点折叠时触发。</td>
+        </tr>
+        <tr>
+            <td>onContextMenu</td>
+            <td>e, row</td>
+            <td>当右键点击节点时触发。</td>
+        </tr>
+        <tr>
+            <td>onBeforeEdit</td>
+            <td>row</td>
+            <td>当用户开始编辑节点时触发。</td>
+        </tr>
+        <tr>
+            <td>onAfterEdit</td>
+            <td>row,changes</td>
+            <td>当用户完成编辑时触发。</td>
+        </tr>
+        <tr>
+            <td>onCancelEdit</td>
+            <td>row</td>
+            <td>当用户取消编辑节点时触发。</td>
+        </tr>
+    </table>
+    <div class="table2">
+        <h4 id="doc_dialog_gjsy" >方法</h4>
+        <table class="tab">
+            <tr>
+                <td>名称</td>
+                <td>参数</td>
+                <td>说明</td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td>none</td>
+                <td>返回 treegrid 的options 。</td>
+            </tr>
+            <tr>
+                <td>resize</td>
+                <td>options</td>
+                <td>设置 treegrid 的尺寸， options 参数包含两个特性：<br>
+                    width： treegrid 的新宽度。<br>
+                    height： treegrid 的新高度。
+                </td>
+            </tr>
+            <tr>
+                <td>fixRowHeight</td>
+                <td>id</td>
+                <td>适应指定行的高度。</td>
+            </tr>
+            <tr>
+                <td>loadData</td>
+                <td>data</td>
+                <td>加载 treegrid 的数据。</td>
+            </tr>
+            <tr>
+                <td>reload</td>
+                <td>id</td>
+                <td>重新加载 treegrid 的数据。</td>
+            </tr>
+            <tr>
+                <td>reloadFooter</td>
+                <td>footer</td>
+                <td>重新加载脚部数据。</td>
+            </tr>
+            <tr>
+                <td>getData</td>
+                <td>none</td>
+                <td>获取加载的数据。</td>
+            </tr>
+            <tr>
+                <td>getFooterRows</td>
+                <td>none</td>
+                <td>获取脚部数据。</td>
+            </tr>
+            <tr>
+                <td>getRoot</td>
+                <td>none</td>
+                <td>获取根节点，返回节点对象。</td>
+            </tr>
+            <tr>
+                <td>getRoots</td>
+                <td>none</td>
+                <td>获取根节点们，返回节点数据。</td>
+            </tr>
+            <tr>
+                <td>getParent</td>
+                <td>id</td>
+                <td>获取父节点。</td>
+            </tr>
+            <tr>
+                <td>getChildren</td>
+                <td>id</td>
+                <td>获取子节点们。</td>
+            </tr>
+            <tr>
+                <td>getSelected</td>
+                <td>none</td>
+                <td>获取选中的节点并返回它，如果没有选中节点就返回 ntrl。</td>
+            </tr>
+            <tr>
+                <td>getSelections</td>
+                <td>none</td>
+                <td>获取所有的选中节点们。</td>
+            </tr>
+            <tr>
+                <td>getLevel</td>
+                <td>id</td>
+                <td>获取指定节点的层级。</td>
+            </tr>
+            <tr>
+                <td>find</td>
+                <td>id</td>
+                <td>找到指定节点并返回此节点数据。</td>
+            </tr>
+            <tr>
+                <td>select</td>
+                <td>id</td>
+                <td>选择节点。</td>
+            </tr>
+            <tr>
+                <td>unselect</td>
+                <td>id</td>
+                <td>取消选择节点。</td>
+            </tr>
+            <tr>
+                <td>selectAll</td>
+                <td>none</td>
+                <td>选择全部节点。</td>
+            </tr>
+            <tr>
+                <td>unselectAll</td>
+                <td>none</td>
+                <td>取消选择全部节点。</td>
+            </tr>
+            <tr>
+                <td>collapse</td>
+                <td>id</td>
+                <td>折叠节点。</td>
+            </tr>
+            <tr>
+                <td>expand</td>
+                <td>id</td>
+                <td>展开节点。</td>
+            </tr>
+            <tr>
+                <td>collapseAll</td>
+                <td>id</td>
+                <td>折叠全部节点。</td>
+            </tr>
+            <tr>
+                <td>expandAll</td>
+                <td>id</td>
+                <td>展开全部节点。</td>
+            </tr>
+            <tr>
+                <td>expandTo</td>
+                <td>id</td>
+                <td>从根部展开一个指定的节点。</td>
+            </tr>
+            <tr>
+                <td>toggle</td>
+                <td>id</td>
+                <td>切换节点的展开/折叠状态。</td>
+            </tr>
+            <tr>
+                <td>append</td>
+                <td>param</td>
+                <td>追加节点们到父节点。 param 参数包含下列特性：<br>
+                    parent：DOM 对象，追加到的父节点，如果没有分配，则追加为根节点。<br>
+                    data：数组，节点们的数据。
+                </td>
+            </tr>
+            <tr>
+                <td>remove</td>
+                <td>id</td>
+                <td>移除节点和它的子节点们。</td>
+            </tr>
+            <tr>
+                <td>refresh</td>
+                <td>id</td>
+                <td>刷新指定的节点。</td>
+            </tr>
+            <tr>
+                <td>beginEdit</td>
+                <td>id</td>
+                <td>开始编辑节点。</td>
+            </tr>
+            <tr>
+                <td>endEdit</td>
+                <td>id</td>
+                <td>结束编辑节点。</td>
+            </tr>
+            <tr>
+                <td>cancelEdit</td>
+                <td>id</td>
+                <td>取消编辑节点。</td>
+            </tr>
+            <tr>
+                <td>getEditors</td>
+                <td>id</td>
+                <td>获取指定行的编辑器们。每个编辑器有下列特性：<br>
+                    actions：编辑器可以做的动作们。<br>
+                    target：目标编辑器的 jQuery 对象。<br>
+                    field：字段名。<br>
+                    type：编辑器的类型。
+                </td>
+            </tr>
+            <tr>
+                <td>getEditor</td>
+                <td>options</td>
+                <td >获取指定的编辑器， options 参数包含两个特性：<br>
+                    id：行节点的 id。<br>
+                    field：字段名。
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

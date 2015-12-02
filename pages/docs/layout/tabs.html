@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Tabs</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">说明</a></li>
+                <li><a uri="#doc_dialog_qztj">前置条件</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_yyzywj">页面引用CSS文件</a></li>
+                    </ul>
+                </li>
+                <li><a uri="#doc_dialog_syfs">使用方式</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_a_1">用法一</a></li>
+                        <li><a uri="#doc_a_2">用法二</a></li>
+                    </ul>
+
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">说明</h4>
+    <p>
+        以Tab的方式展示。
+    </p>
+    <h4 id="doc_dialog_qztj">前置条件</h4>
+
+    <p id="doc_dialog_yyzywj">页面引用JS与CSS文件</p>
+   <pre class="prettyprint">
+&lt;!--当前组件依赖的CSS文件--&gt;
+&lt;link href="../../src/css/one.css" rel="stylesheet"&gt;
+      </pre>
+
+    <h4 id="doc_dialog_syfs">使用方式</h4>
+
+    <p id="doc_a_1">1.用法一</p>
+      <pre class="prettyprint">
+&lt;div class=&quot;one-tabs  one-tabs-top&quot;&gt;
+    &lt;a class=&quot;one-tab-item&quot;&gt;
+        主页
+    &lt;/a&gt;
+    &lt;a class=&quot;one-tab-item&quot;&gt;
+        收藏
+    &lt;/a&gt;
+    &lt;a class=&quot;one-tab-item&quot;&gt;
+        设置
+    &lt;/a&gt;
+&lt;/div&gt;
+
+     </pre>
+
+
+    <p id="doc_a_2">2.用法二</p>
+    带图标,需要引用对应的iconfont（字体样式文件）
+      <pre class="prettyprint">
+&lt;div class=&quot;one-tabs tabs1&quot;&gt;
+    &lt;a class=&quot;one-tab-item&quot;&gt;
+        &lt;i class=&quot;icon ion-home&quot;&gt;&lt;/i&gt;
+        主页
+    &lt;/a&gt;
+    &lt;a class=&quot;one-tab-item&quot;&gt;
+        &lt;i class=&quot;icon ion-star&quot;&gt;&lt;/i&gt;
+        收藏
+    &lt;/a&gt;
+    &lt;a class=&quot;one-tab-item&quot;&gt;
+        &lt;i class=&quot;icon ion-gear-a&quot;&gt;&lt;/i&gt;
+        设置
+    &lt;/a&gt;
+&lt;/div&gt;
+      </pre>
+
+
+
+
+
+</div>
+
+</body>
+</html>

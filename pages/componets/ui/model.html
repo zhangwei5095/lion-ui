@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../../resources/css/UI_css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../../../resources/js/UI_js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/demo1.js"></script><!--这个js中含有自定义的部分-->
+    <script type="text/javascript" src="../../../resources/js/UI_js/jquery-ui-1.10.0.custom.min.js"></script>
+    <style type="text/css">
+        .but{padding-left: 14%;}
+        .h2{padding-left: 2%;}
+        th{text-align: center;}
+    </style>
+</head>
+<body>
+<h2>model</h2>
+<h3 class="h2">员工信息统计</h3>
+<!-- Demo -->
+<div id="dialog1" title="增加信息" class="demo_ui">
+    <form>
+        <fieldset class="ui-helper-reset">
+            <label for="tab_title">姓名</label><br>
+            <input type="text" name="tab_title" id="name" value="" class="ui-corner-all1" /><br>
+            <label for="tab_title">年龄</label><br>
+            <input type="text" name="tab_title" id="age" value="" class="ui-corner-all1" /><br>
+            <label for="tab_title">电话号码</label><br>
+            <input type="text" name="tab_title" id="telephone" value="" class="ui-corner-all1" />
+        </fieldset>
+    </form>
+</div>
+<div id="dialog2" title="编辑信息" class="demo_ui">
+    <form>
+        <fieldset class="ui-helper-reset">
+            <label for="tab_title">姓名</label><br>
+            <input type="text" name="tab_title" id="tab_title" value="" class="ui-corner-all1" /><br>
+            <label for="tab_title">年龄</label><br>
+            <input type="text" name="tab_title" id="tab_title2" value="" class="ui-corner-all2" /><br>
+            <label for="tab_title">电话号码</label><br>
+            <input type="text" name="tab_title" id="tab_title3" value="" class="ui-corner-all3" />
+        </fieldset>
+    </form>
+</div>
+<div class="but">
+    <button id="add_tab1" class="ui-button-primary">增加</button>
+    <button id="add_tab2" class="ui-button-primary">编辑</button>
+</div>
+<div id="tabs2">
+    <br>
+    <table id="datagrid" border="1" width="80%" align="center">
+        <tr>
+            <th width="10%"><input type="radio" disabled="disabled"></th>
+            <th width="30%">姓名</th>
+            <th width="30%" >年龄</th>
+            <th width="30%">联系电话</th>
+        </tr>
+        <tr>
+            <td align="center"><input type="radio" name="tab_cen"></td>
+            <td align="center">张三</td>
+            <td align="center">36</td>
+            <td align="center">18817570158</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

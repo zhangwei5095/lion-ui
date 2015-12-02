@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/dialog.css" rel="stylesheet">
+    <script src="../../../src/js/ui/dialog/dialog.js"></script>
+    <!--该文件为当前页面按钮所需，非本组件所需-->
+    <link href="../../../src/css/ui/button.css" rel="stylesheet">
+
+
+    <title></title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 230);
+            cursor: url('../../../resources/image/finger.png'), auto;
+
+        }
+        .top{
+            margin:20px;
+        }
+    </style>
+
+    <script>
+
+        $(function () {
+            $("#dialog1").click(function () {
+                var dialog = one.ui.dialog("您点击了我！");
+            })
+
+            $("#dialog2").click(function () {
+              one.ui.dialog({
+                    title: "",
+                    content: "我没有标题!"
+                });
+            })
+
+            $("#dialog3").click(function () {
+                var dialog = one.ui.dialog({
+                    title: "请确认",
+                    content: "确认这样操作吗？",
+                    buttons: [
+                        {
+                            text: "取消",
+                            callback: function (dialog) {
+                                dialog.close();
+                            }
+                        },
+                        {
+                            text: "确认",
+                            clazz: "one_btn_primal",
+                            callback: function (dialog) {
+                                one.ui.dialog("您点击了确认！");
+                                dialog.close();
+                            }
+                        }
+                    ]
+                });
+            })
+
+            $("#dialog4").click(function () {
+                var dialog = one.ui.dialog({
+                    title:"请确认",
+                    content: "确认这样操作吗？",
+                    "btn-align": "vertical",
+                    buttons: [
+                        {
+                            text: "取消",
+                            callback: function (dialog) {
+                                dialog.close();
+                            }
+                        },
+                        {text: "确认",
+                            clazz: "one_btn_primal",
+                            callback: function (dialog) {
+                                one.ui.dialog("您点击了确认！");
+                                dialog.close();
+                            }
+                        }
+                    ]
+
+                });
+            });
+
+
+            $("#dialog5").click(function () {
+                var dialog = one.ui.dialog({
+                    title:"请评价",
+                    content: "本次服务您是否满意",
+
+                    buttons: [
+                        {
+                            text: "一般",
+                            callback: function (dialog) {
+                                dialog.close();
+                            }
+                        },
+                        {text: "不错",
+                            clazz: "one_btn_primal",
+                            callback: function (dialog) {
+                                dialog.close();
+                            }
+                        }
+                        ,
+                        {text: "很好",
+                            callback: function (dialog) {
+                                dialog.close();
+                            }
+                        }
+                    ]
+
+                });
+            });
+
+
+            $("#dialog6").click(function () {
+                var dialog = one.ui.dialog({
+                    title:"请评价",
+                    content: "本次服务您是否满意",
+                    "btn-align": "vertical",
+                    buttons: [
+                        {
+                            text: "一般",
+                            callback: function (dialog) {
+                                dialog.close();
+                            }
+                        },
+                        {text: "不错",
+                            clazz: "one_btn_primal",
+                            callback: function (dialog) {
+                                dialog.close();
+                            }
+                        }
+                        ,
+                        {text: "很好",
+                            callback: function (dialog) {
+                                dialog.close();
+                            }
+                        }
+                    ]
+
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+
+<div class="top">Dialog 模态对话框演示</div>
+
+<div class="list_tip">
+    <label class="one-fs-5">普通对话框</label>
+</div>
+<div class="one_list">
+    <div class="one-g one_item">
+        <input type="button" class="one_button" id="dialog1" value="提示对话框(带标题)"/>
+    </div>
+
+    <div class="one-g one_item">
+        <input type="button" class="one_button" id="dialog2" value="提示对话框(无标题)"/>
+    </div>
+</div>
+
+
+<div class="list_tip">
+    <label class="one-fs-5">更多方式</label>
+</div>
+<div class="one_list">
+    <div class="one-g one_item">
+        <input type="button" class="one_button" id="dialog3" value="两个按钮(左右排列)"/>
+    </div>
+
+    <div class="one-g one_item">
+        <input type="button" class="one_button" id="dialog4" value="两个按钮(上下排列)"/>
+    </div>
+
+    <div class="one-g one_item">
+        <input type="button" class="one_button" id="dialog5" value="三个按钮(左右排列)"/>
+    </div>
+
+    <div class="one-g one_item">
+        <input type="button" class="one_button" id="dialog6" value="三个按钮(上下排列)"/>
+    </div>
+</div>
+
+</body>
+</html>

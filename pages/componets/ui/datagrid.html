@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DATAGRID DEMO</title>
+    <meta charset="utf-8" >
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/datagrid/dataTables.scroller.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/datagrid/dataTables.colReorder.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/datagrid/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/datagrid/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/datagrid/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/datagrid/uniform.default.css"/>
+
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/dataTables.tableTools.js"></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/dataTables.colReorder.js" ></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/dataTables.scroller.js" ></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/dataTables.bootstrap.js" ></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/lion.js" ></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/datagrids.js" ></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/datagrid/jquery.uniform.js" ></script>
+
+<style>
+    .bac{
+        background-color: rgb(252,252,252);
+    }
+    .table{
+        width: 98%;
+    }
+    .col-sm-12{
+        width: 98%;
+    }
+    td{
+        vertical-align:middle;
+    }
+    h4{
+        font-size: 18px;
+        font-weight: 700;
+        height: 9px;
+    }
+</style>
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-sidebar-closed-hide-logo bac">
+<h4>Datagrid</h4>
+<div class="col-md-12" style="width: 775px">
+    <table class="lion-datagrids table table-striped table-bordered table-hover"  id="sys_rolelist_tb" data-singleselect="true", data-loadUrl="../../../resources/json/role.json" data-checkbox="true" data-pageSize="10">
+        <thead>
+        <tr>
+            <th class="table-checkbox" data-field='id' data-checkbox="true">
+                <input type="checkbox" class="group-checkable" data-set="#sys_group_list_tb.checkboxes"  data-sortable="false" />
+            </th>
+            <th data-field='nameEn' data-sortDir="asc" style="width:130px;" align="left">
+                角色名称(英文)
+            </th>
+            <th data-field="nameZh" style="width:110px;" align="left">
+                角色名称(中文)
+            </th>
+            <th data-field="description" style="width:110px;" align="left">
+                描述
+            </th>
+            <th data-field="createdDate" style="width:150px;" align="left">
+                创建时间
+            </th>
+            <th data-field="updatedDate" style="width:150px;" align="left">
+                更新时间
+            </th>
+        </tr>
+        </thead>
+    </table>
+</div>
+</body>
+</html>

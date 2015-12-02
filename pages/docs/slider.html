@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .doc_dialog_ml{
+            font-size:16px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Slider 图片轮播</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">说明</a></li>
+                <li><a uri="#doc_dialog_qztj">前置条件</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_yyzywj">页面引用JS与CSS文件</a></li>
+                    </ul>
+                </li>
+                <li><a uri="#doc_dialog_syfs">使用方式</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_dyhtml">定义HTML</a></li>
+                        <li><a uri="#doc_dialog_syjs2">使用JavaScript调用</a></li>
+                    </ul>
+
+                <li><a uri="#doc_dialog_gjsy">高级使用</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_mrkq">回调函数设置</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">说明</h4>
+    <p>
+        滑块的作用是画面切换，可以设置为滑动样式，也可以设置为隐藏效果。
+    </p>
+    <h4 id="doc_dialog_qztj">前置条件</h4>
+
+    <p id="doc_dialog_yyzywj">页面引用JS与CSS文件</p>
+   <pre class="prettyprint">
+&lt;!--整个框架依赖的JS文件--&gt;
+&lt;script src="../../src/js/zepto.min.js"&gt;&lt;/script&gt;
+&lt;!--当前组件依赖的JS文件--&gt;
+&lt;script src="../../src/js/one.js"&gt;&lt;/script&gt;
+&lt;!--当前组件JS文件--&gt;
+&lt;script src="../../src/js/ui/slider/slider.js"&gt;&lt;/script&gt;
+&lt;!--当前组件依赖的CSS文件--&gt;
+&lt;link href="../../src/css/one.css" rel="stylesheet"&gt;
+&lt;!--当前组件CSS文件--&gt;
+&lt;link href="../../src/css/ui/slider.css" rel="stylesheet"&gt;
+      </pre>
+
+    <h4 id="doc_dialog_syfs">使用方式</h4>
+
+    <p id="doc_dialog_dyhtml">1.定义HTML</p>
+      <pre class="prettyprint">
+&lt;div class="one_slider demo_slider1"&gt;
+    &lt;div class="one_slider_content"&gt;
+		&lt;span href="#" class="one_slider_toggle"&gt;
+			&lt;img src="slider_1.jpg"&gt;
+		&lt;/span&gt;
+        &lt;a href="#" class="one_slider_toggle"&gt;
+            &lt;img src="slider_2.jpg"&gt;
+        &lt;/a&gt;
+        &lt;div href="#" class="one_slider_toggle"&gt;
+            &lt;img src="slider_3.jpg"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="one_slider_bullets"&gt;
+        &lt;ul&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+      </pre>
+
+    <p id="doc_dialog_syjs2">2.使用JavaScript调用</p>
+      <pre class="prettyprint">
+    $(function(){
+    //初始化组件
+    var slider=one.ui.slider({
+        selector:".demo_slider1",//页面组件选择器
+
+        animationSpeed: 500, //切换动画耗时 ms
+        advanceSpeed: 4000, //自动切换时间 ms
+        auto: true, //是否自动播放
+        direction:"next",//切换方向 next,prev
+        toggleMode:"slide",//切换方式,目前支持 fade,slide
+        pagination:true,//是否显示分页
+        paginationMode:"bullets",//分页模式 目前支持 bullets
+
+//组件初始化完成回调函数
+        ready:function(){
+            console.log("ready");
+        },
+//切换前回调函数。index为数组,长度为2
+//index[0]表示当前显示的索引,index[1]表示切换至指定索引
+        toggleBefore:function(){
+            console.log("toggleBefore,index="+index[0]+",toIndex="+index[1]);
+        },
+//切换后回调函数,index表示当前显示的索引值
+        toggleAfter:function(index){
+            console.log("toggleAfter,index="+index);
+        }
+    });
+})
+
+     </pre>
+    <h4 id="doc_dialog_gjsy">高级使用</h4>
+    <p id="doc_dialog_mrkq">1.回调函数设置</p>
+ <pre class="prettyprint">
+  $(function(){
+    var slider=one.ui.slider({
+        selector:".demo_slider1",//页面组件选择器
+
+        animationSpeed: 500, //切换动画耗时 ms
+        advanceSpeed: 4000, //自动切换时间 ms
+        auto: true, //是否自动播放
+        direction:"next",//切换方向 next,prev
+        toggleMode:"slide",//切换方式,目前支持 fade,slide
+        pagination:true,//是否显示分页
+        paginationMode:"bullets",//分页模式 目前支持 bullets
+    });
+
+    //切换前回调函数。index为数组,长度为2
+    //index[0]表示当前显示的索引,index[1]表示切换至指定索引
+    slider.toggleBefore(function(index){
+        console.log("toggleBefore,index="+index[0]+",toIndex="+index[1]);
+        //return false;//可阻止切换
+    });
+     
+     //绑定切换后回调函数,index表示当前显示的索引值
+	slider.toggleAfter(function(index){
+		console.log("toggleAfter,index="+index);
+	});
+})
+     </pre>
+</div>
+
+</body>
+</html>

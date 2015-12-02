@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/flipSwitch/flipSwitch.js"></script>
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/flipSwitch.css" rel="stylesheet">
+    <title></title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 230);
+            cursor: url('../../../resources/image/finger.png'), auto;
+        }
+        .top{
+            margin:20px;
+        }
+    </style>
+    <script>
+
+        $(function(){
+            var switch3=one.ui.flipSwitch("#switch-3");
+            switch3.status("on");
+
+
+            var switch4=one.ui.flipSwitch("#switch-4");
+            switch4.status("off");
+            switch4.allowStatus("on",false);
+            switch4.enable(false);
+
+            var switch5=one.ui.flipSwitch("#switch-5");
+            switch5.status("on");
+            switch5.allowStatus("off",false);
+            switch5.enable(false);
+        })
+    </script>
+</head>
+<body>
+
+<div class="top">Flip Switch 滑动开关演示</div>
+
+<div class="list_tip">
+    <label class="one-fs-5">网络设置</label>
+</div>
+<div class="one_list">
+    <div class="one-g one_item">
+        <div class="one-u-sm-9 one_item_1">开启3G</div>
+        <div class="one-u-sm-3">
+            <label class="one_switch">
+                <input type="checkbox" id="switch-1" class="one_switch__input"/>
+                <div class="one_switch__toggle"></div>
+            </label></div>
+    </div>
+
+    <div class="one-g one_item">
+        <div class="one-u-sm-9 one_item_1">开启WIFI</div>
+        <div class="one-u-sm-3">
+            <label class="one_switch">
+                <input type="checkbox" id="switch-2" class="one_switch__input"/>
+                <div class="one_switch__toggle"></div>
+            </label></div>
+    </div>
+</div>
+
+
+<div class="list_tip">
+    <label class="one-fs-5">其他设置</label>
+</div>
+<div class="one_list">
+    <div class="one-g one_item">
+        <div class="one-u-sm-9 one_item_1">默认开启</div>
+        <div class="one-u-sm-3">
+            <label class="one_switch">
+                <input type="checkbox" id="switch-3" class="one_switch__input"/>
+                <div class="one_switch__toggle"></div>
+            </label></div>
+    </div>
+
+    <div class="one-g one_item">
+        <div class="one-u-sm-9 one_item_1">禁止开启</div>
+        <div class="one-u-sm-3">
+            <label class="one_switch">
+                <input type="checkbox" id="switch-4" class="one_switch__input"/>
+                <div class="one_switch__toggle"></div>
+            </label></div>
+    </div>
+
+    <div class="one-g one_item">
+        <div class="one-u-sm-9 one_item_1">禁止关闭</div>
+        <div class="one-u-sm-3">
+            <label class="one_switch">
+                <input type="checkbox" id="switch-5" class="one_switch__input"/>
+                <div class="one_switch__toggle"></div>
+            </label></div>
+    </div>
+</div>
+
+</body>
+</html>

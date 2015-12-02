@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .tab{
+            border: 1px solid #988F8F;
+            width: 100%;
+            line-height: 35px;
+            text-align: center;
+        }
+        .tab td{border: 1px solid #988F8F;}
+
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Picker 选择器</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">导入js、css库</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_yyzywj1">js库</a></li>
+                    <li><a uri="#doc_dialog_yyzywj2">css库</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_qztj">使用方法</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_dyhtml">js</a></li>
+                    <li><a uri="#doc_dialog_syjs2">HTML</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_syfs">属性</a></li>
+                <li><a uri="#doc_dialog_gjsy">方法</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">导入js、css库</h4>
+    <p id="doc_dialog_yyzywj1">1.js库</p>
+    <pre class="prettyprint">
+&lt;script type="text/javascript" src="../resources/js/UI_js/datapicker/jquery-1.8.3.min.js" charset="UTF-8"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../resources/js/UI_js/datapicker/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../resources/js/UI_js/datapicker/bootstrap-datetimepicker.min.js" charset="UTF-8"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../resources/js/UI_js/datapicker/bootstrap-datetimepicker.fr.js" charset="UTF-8"&gt;&lt;/script&gt;
+    </pre>
+    <p id="doc_dialog_yyzywj">2.css库</p>
+    <pre class="prettyprint">
+&lt;link href="../resources/css/UI_css/datapicker/bootstrap.css" rel="stylesheet" media="screen"&gt;
+&lt;link href="../resources/css/UI_css/datapicker/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen"&gt;
+    </pre>
+    <h4 id="doc_dialog_qztj">使用方法</h4>
+    <p id="doc_dialog_dyhtml">1.js</p>
+    <pre class="prettyprint">
+//对id为form_datetime的datetimepicker进行一定的操作
+$('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+    </pre>
+    <p id="doc_dialog_syjs2">2.HTML</p>
+    <pre class="prettyprint">
+ &lt;form action="" class="form-horizontal"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Test&lt;/legend&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;DateTime Picking&lt;/label&gt;
+            &lt;div class="controls input-append date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1"&gt;
+                &lt;input size="16" type="text" value="" readonly&gt;
+                &lt;span class="add-on"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class="add-on"&gt;&lt;i class="icon-th"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;input type="hidden" id="dtp_input1" value="" /&gt;&lt;br/&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;Date Picking&lt;/label&gt;
+            &lt;div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd"&gt;
+                &lt;input size="16" type="text" value="" readonly&gt;
+                &lt;span class="add-on"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class="add-on"&gt;&lt;i class="icon-th"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;input type="hidden" id="dtp_input2" value="" /&gt;&lt;br/&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;Time Picking&lt;/label&gt;
+            &lt;div class="controls input-append date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii"&gt;
+                &lt;input size="16" type="text" value="" readonly&gt;
+                &lt;span class="add-on"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class="add-on"&gt;&lt;i class="icon-th"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;input type="hidden" id="dtp_input3" value="" /&gt;&lt;br/&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+    </pre>
+    <h4 id="doc_dialog_syfs">属性</h4>
+    <table class="tab">
+        <tr>
+            <td>名称</td>
+            <td>描述</td>
+        </tr>
+        <tr>
+            <td>format</td>
+            <td>日期格式， p, P, h, hh, i, ii, s, ss, d, dd, m, mm, M, MM, yy, yyyy 的任意组合。</td>
+        </tr>
+        <tr>
+            <td>weekStart</td>
+            <td>一周从哪一天开始。0（星期日）到6（星期六）</td>
+        </tr>
+        <tr>
+            <td>autoclose</td>
+            <td>当选择一个日期之后是否立即关闭此日期时间选择器。</td>
+        </tr>
+        <tr>
+            <td>startView</td>
+            <td>日期时间选择器打开之后首先显示的视图。</td>
+        </tr>
+        <tr>
+            <td >minView</td>
+            <td>日期时间选择器所能够提供的最精确的时间选择视图。</td>
+        </tr>
+        <tr>
+            <td>maxView</td>
+            <td>日期时间选择器最高能展示的选择范围视图。</td>
+        </tr>
+        <tr>
+            <td>forceParse</td>
+            <td>当选择器关闭的时候，是否强制解析输入框中的值。</td>
+        </tr>
+    </table>
+    <div class="table2">
+        <h4 id="doc_dialog_gjsy" >方法</h4>
+        <table class="tab">
+            <tr>
+                <td>名称</td>
+                <td>参数</td>
+                <td>描述</td>
+            </tr>
+            <tr>
+                <td>remove</td>
+                <td>none</td>
+                <td>移除日期时间选择器。同时移除已经绑定的event、内部绑定的对象和HTML元素。</td>
+            </tr>
+            <tr>
+                <td>show</td>
+                <td>none</td>
+                <td>显示日期时间选择器。</td>
+            </tr>
+            <tr>
+                <td>update</td>
+                <td>none</td>
+                <td>使用当前输入框中的值更新日期时间选择器。</td>
+            </tr>
+            <tr>
+                <td>setStartDate</td>
+                <td>startDate (String)</td>
+                <td>给日期时间选择器设置一个新的起始日期。</td>
+            </tr>
+            <tr>
+                <td>setEndDate</td>
+                <td>endDate (String)</td>
+                <td>给日期时间选择器设置结束日期。</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--组件与布局基础样式-->
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/UI_css/demo.css">
+    <script type="text/javascript" src="../../../resources/js/UI_js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../resources/js/UI_js/jquery.easyui.min.js"></script>
+    <title></title>
+
+</head>
+<body>
+<h2>TreeGrid</h2>
+<div style="margin:20px 0;"></div>
+<table class="easyui-treegrid" style="width:693px;height:378px"
+       data-options="
+				url: '../../../resources/json/treegrid_data1.json',
+				method: 'get',
+				rownumbers: true,
+				idField: 'id',
+				treeField: 'name'
+			">
+    <thead>
+    <tr>
+        <th data-options="field:'inp'" width="40" align="center"><input type="checkbox"></th>
+        <th data-options="field:'name'" width="200">资源名称（中文）</th>
+        <th data-options="field:'type'" width="80" >资源类型</th>
+        <th data-options="field:'path'" width="220">路径</th>
+        <th data-options="field:'authority'" width="60">权限</th>
+        <th data-options="field:'rank'" width="60">排序</th>
+    </tr>
+    </thead>
+</table>
+
+</body>
+</html>

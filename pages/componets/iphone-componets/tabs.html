@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/tabs/tabs.js" type="text/javascript"></script>
+
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/tabs.css" rel="stylesheet" type="text/css">
+
+    <title></title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 230);
+            cursor: url('../../../resources/image/finger.png'), auto;
+
+        }
+        .top{
+            margin:20px;
+        }
+    </style>
+    <script>
+    $(function() {
+
+        window.tabs = one.ui.tabs(".one_tabs");
+
+        $(".one_tabs__item").each(function (index, item) {
+            $(item).off().on("click", function () {
+                $(".one_div").hide();
+                $($(".one_div")[index]).show();
+            })
+        })
+      });
+    </script>
+</head>
+<body>
+<div class="top">Tabs 标签页演示</div>
+
+    <div class="one_tabs" style="width:280px;margin:0 auto;">
+        <div class="one_tabs__item">
+            <input type="radio" name="segment-a" checked>
+            <button class="one_tabs__button">北京</button>
+        </div>
+        <div class="one_tabs__item">
+            <input type="radio" name="segment-a">
+            <button class="one_tabs__button">上海</button>
+        </div>
+        <div class="one_tabs__item">
+            <input type="radio" name="segment-a">
+            <button class="one_tabs__button">浙江</button>
+        </div>
+    </div>
+<div style="margin: 0 auto;width: 280px;">
+    <div class="one_div" style="display: block">
+        <ul>
+            <li>东城区</li>
+            <li>西城区</li>
+            <li>海定区</li>
+            <li>朝阳区</li>
+            <li>通州区</li>
+        </ul>
+    </div>
+    <div class="one_div">
+        <ul>
+            <li>浦东新区</li>
+            <li>黄浦区</li>
+            <li>杨浦区</li>
+            <li>青浦区</li>
+        </ul>
+    </div>
+    <div class="one_div">
+        <ul>
+            <li>杭州市</li>
+            <li>宁波市</li>
+            <li>温州市</li>
+            <li>金华市</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

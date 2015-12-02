@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Bar</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">说明</a></li>
+                <li><a uri="#doc_dialog_qztj">前置条件</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_yyzywj">页面引用CSS文件</a></li>
+                    </ul>
+                </li>
+                <li><a uri="#doc_dialog_syfs">使用方式</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_dyhtml">用法一</a></li>
+                        <li><a uri="#doc_dialog_syjs2">用法二</a></li>
+                    </ul>
+
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">说明</h4>
+    <p>
+        以卡片的方式显示内容，内部可以是任何其他的组件。
+    </p>
+    <h4 id="doc_dialog_qztj">前置条件</h4>
+
+    <p id="doc_dialog_yyzywj">页面引用JS与CSS文件</p>
+   <pre class="prettyprint">
+&lt;!--整个框架依赖的JS文件--&gt;
+&lt;!--当前组件依赖的CSS文件--&gt;
+&lt;link href="../../src/css/one.css" rel="stylesheet"&gt;
+&lt;link href="../../src/css/layout/cards.css" rel="stylesheet"&gt;
+      </pre>
+
+    <h4 id="doc_dialog_syfs">使用方式</h4>
+
+    <p id="doc_dialog_dyhtml">1.用法一</p>
+      <pre class="prettyprint">
+&lt;div class=&quot;one-card&quot;&gt;
+    &lt;div class=&quot;one-item one-item-text-wrap&quot;&gt;
+        这是一个最基础的卡片布局，包含的文字会自动换行
+    &lt;/div&gt;
+&lt;/div&gt;
+      </pre>
+
+    <p id="doc_dialog_syjs2">2.用法二</p>
+      <pre class="prettyprint">
+&lt;div class=&quot;one-card&quot;&gt;
+    &lt;div class=&quot;one-item one-item-divider&quot;&gt;
+        带标题的卡片
+    &lt;/div&gt;
+    &lt;div class=&quot;one-item one-item-text-wrap&quot;&gt;
+        卡片可以选择是否有标题，和标题的位置
+        卡片内可以放置其他任意元素或组件
+    &lt;/div&gt;
+    &lt;div class=&quot;one-item one-item-divider&quot;&gt;
+       带底部的卡片
+    &lt;/div&gt;
+&lt;/div&gt;
+     </pre>
+
+
+</div>
+
+</body>
+</html>

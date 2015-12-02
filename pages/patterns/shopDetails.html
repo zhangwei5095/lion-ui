@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--基础依赖js文件-->
+    <script src="../../src/js/zepto.min.js"></script>
+    <!--应用框架基础工具js文件-->
+    <script src="../../src/js/one.js"></script>
+    <!--对话框组件JS文件-->
+    <script src="../../src/js/ui/dialog/dialog.js"></script>
+    <!--广告轮播组件js文件-->
+    <script src="../../src/js/ui/slider/slider.js"></script>
+
+    <!--组件与布局基础样式-->
+    <link href="../../src/css/one.css" rel="stylesheet">
+    <!--当前演示页面布局需要的样式，与组件无关-->
+    <link href="../../src/css/patterns/patterns.css" rel="stylesheet">
+    <!--对话框样式-->
+    <link href="../../src/css/ui/dialog.css" rel="stylesheet">
+    <!--按钮样式-->
+    <link href="../../src/css/ui/button.css" rel="stylesheet">
+    <!--广告轮播组件CSS文件-->
+    <link href="../../src/css/ui/slider.css" rel="stylesheet">
+
+    <!--字体图片-->
+    <link href="../../src/plugin/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <style>
+
+        body{
+            /*border: 1px dashed red;*/
+            color:#74747C;
+            cursor: url('../../resources/image/finger.png'), auto;
+
+        }
+
+        header div.header-image{
+            width: 100%;
+            height: 18rem;
+
+        }
+
+        /*防止图片实际高度与设置的不一致*/
+        .header-image img{
+            width: 100%;
+            height: 18rem;
+        }
+
+        section.toolbar{
+            background-color: white;
+            width: 100%;
+            height: 4.8rem;
+        }
+
+        .toolbar ul{
+            list-style: none;
+            width:100%;
+            background-color: #ffffff;
+            padding: 0.2rem;
+        }
+
+        .toolbar ul li{
+            display: table;
+
+            float: left;
+            width: 25%;
+            text-align:center;
+            vertical-align: middle;
+        }
+
+        .toolbar .one_icon{
+            height: 2rem;
+            font-size: 2rem;
+        }
+
+        .toolbar .icon_txt{
+            margin-top: 0.2rem;
+        }
+
+        .toolbar li:active{
+            color:rgba(188, 188, 188, 0.4);
+        }
+
+        .toolbar-star{
+            position: relative;
+            text-align: center;
+            bottom:0;
+            height: 0;
+            display: inherit;
+        }
+
+        .toolbar-star-div{
+            position: relative;
+            top: -2.5rem;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            border-radius: 0.4rem 0.4rem 0 0;
+            padding: 0 0.6rem;
+            background-color: #EB482F;
+            color: #FFF;
+            width: auto;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        .toolbar-star-div div {
+            float: left;
+            height: 1rem;
+            width: 14%;
+            color: #FFF;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .toolbar-star-div div:last-of-type{
+            width: 26%;
+        }
+
+        section.detail{
+            margin-top: 0.8rem;
+        }
+        .detail .one_list{
+            margin: 0;
+            background-color: white;
+        }
+
+        .detail .one_item{
+            padding: 0.3rem;
+            line-height: 3rem;
+        }
+
+        .detail .item_text span{
+            padding-right: 0.5rem;
+        }
+
+        /*点击列表，按钮没放开之前的样式，为用户提供点击反馈*/
+        .detail .one_item:active{
+           background:rgba(188, 188, 188, 0.4);
+        }
+
+
+        /*底部*/
+        .footer{
+            height:auto;
+        }
+
+        .footer ul{
+            background-color: #000000;
+            list-style: none;
+            float: left;
+            padding: 0 0 0.4rem 0;
+            margin: 0;
+            width: 100%;
+            height:auto;
+        }
+        .footer ul li{
+            display: table;
+            text-align:center;
+            vertical-align: middle;
+            float:left;
+            width:33.33333%;
+            height:3rem;
+        }
+
+        .footer .one_icon{
+            font-size:1.8rem;
+        }
+
+        .footer .icon_txt{
+            font-size:0.3rem;
+        }
+
+        .footer .active{
+            color:#3598db;
+        }
+
+        .footer li:active{
+            color:#3598db;
+        }
+
+    </style>
+
+    <script>
+
+        $(function(){
+//            底部菜单点击事件
+            $(".footer li").click(function(){
+                $(".footer li").removeClass("active");
+                $(this).addClass("active");
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="header-image">
+        <img src="../../resources/image/patterns/sushi-bg.jpg">
+    </div>
+</header>
+
+<section class="toolbar-star">
+    <div class="toolbar-star-div">
+        <div class="ion-star"></div>
+        <div class="ion-star"></div>
+        <div class="ion-star"></div>
+        <div class="ion-star"></div>
+        <div class="ion-ios-star-half"></div>
+        <div>4.5</div>
+    </div>
+</section>
+<section class="toolbar">
+    <ul>
+        <li>
+            <div class="one_icon ion-ios-star-half"></div>
+            <div class="icon_txt">点评</div>
+        </li>
+
+        <li>
+            <div class="one_icon ion-bookmark"></div>
+            <div class="icon_txt">收藏</div>
+        </li>
+        <li>
+            <div class="one_icon ion-share"> </div>
+            <div class="icon_txt">分享</div>
+        </li>
+
+        <li>
+            <div class="one_icon ion-compose"></div>
+            <div class="icon_txt">订购</div>
+        </li>
+    </ul>
+
+    <div class="clear-both"></div>
+</section>
+
+<section class="detail">
+    <div class="one_list">
+        <div class="one_item one-g">
+            <div class="one-u-sm-11 item_text">
+                <span class="ion-android-home"></span>名称：One Sushi
+            </div>
+            <div class="one-u-sm-1"><div class="ion-ios-arrow-right"></div></div>
+        </div>
+        <div class="one_item one-g">
+            <div class="one-u-sm-11 item_text">
+                <span class="ion-android-call"></span>电话：021-66598888
+            </div>
+            <div class="one-u-sm-1"><div class="ion-ios-arrow-right"></div></div>
+        </div>
+        <div class="one_item one-g">
+            <div class="one-u-sm-11 item_text">
+                <span class="ion-ios-clock-outline"></span>营业时间：08:00-21:00
+            </div>
+            <div class="one-u-sm-1"><div class="ion-ios-arrow-right"></div></div>
+        </div>
+        <div class="one_item one-g">
+            <div class="one-u-sm-11 item_text">
+                <span class="ion-ios-location"></span>地址：上海市浦东新区陆家嘴软件园
+            </div>
+            <div class="one-u-sm-1"><div class="ion-ios-arrow-right"></div></div>
+        </div>
+
+    </div>
+    <!--用于防止固定的底部在内容少时跟随页面上移-->
+    <div class="bottom_push"></div>
+</section>
+
+<footer class="footer footer-fixed-bottom">
+
+    <ul>
+        <li class="active"> <div class="one_icon ion-search "></div>
+            <div class="icon_txt">查找</div></li>
+        <li> <div class="one_icon ion-android-favorite"></div>
+            <div class="icon_txt">收藏</div></li>
+        <li> <div class="one_icon ion-person"></div>
+            <div class="icon_txt">设置</div></li>
+    </ul>
+
+    <div class="clear-both"></div>
+
+</footer>
+
+</body>
+</html>

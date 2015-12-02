@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .tab{
+            border: 1px solid #988F8F;
+            width: 100%;
+            line-height: 35px;
+            text-align: center;
+        }
+        .tab td{border: 1px solid #988F8F;}
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Model 模态框</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">导入js、css库</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_yyzywj1">js库</a></li>
+                    <li><a uri="#doc_dialog_yyzywj2">css库</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_qztj">使用方法</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_syjs2">HTML</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_syfs">属性</a></li>
+                <li><a uri="#doc_dialog_gjsy">方法</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">导入js、css库</h4>
+    <p id="doc_dialog_yyzywj1">1.js库</p>
+    <pre class="prettyprint">
+&lt;script src="${base}/resources/global/plugins/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="${base}/resources/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"&gt;&lt;/script&gt;
+    </pre>
+    <p id="doc_dialog_yyzywj">2.css库</p>
+    <pre class="prettyprint">
+&lt;link href="${base}/resources/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" 
+      type="text/css"/&gt;
+    </pre>
+    <h4 id="doc_dialog_qztj">使用方法</h4>
+    <p id="doc_dialog_syjs2">HTML</p>
+    <pre class="prettyprint">
+&lt;div class="modal-header"&gt;&lt;h4 class="modal-title"&gt;
+    &lt;span&gt;创建模态框（Modal）&lt;/span&gt;
+&lt;/h4&gt;&lt;/div&gt;
+&lt;!-- 按钮触发模态框 --&gt;
+&lt;button class="btn btn-primary btn-lg" data-toggle="modal"
+        data-target="#myModal"&gt;
+    开始演示模态框
+&lt;/button&gt;
+        
+&lt;!-- 模态框（Modal） --&gt;
+&lt;div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true"&gt;
+                    &times;
+                &lt;/button&gt;
+                &lt;h4 class="modal-title" id="myModalLabel"&gt;
+                    模态框（Modal）标题
+                &lt;/h4&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                在这里添加一些文本
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;button type="button" class="btn btn-default"
+                        data-dismiss="modal"&gt;关闭
+                &lt;/button&gt;
+                &lt;button type="button" class="btn btn-primary"&gt;
+                    提交更改
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.modal-content --&gt;
+&lt;/div&gt;&lt;!-- /.modal --&gt;
+    </pre>
+    <h4 id="doc_dialog_syfs">属性</h4>
+    <table class="tab">
+        <tr>
+            <td>名称</td>
+            <td>描述</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>规定该数据表的唯一id。</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>规定该数据表的名称。</td>
+        </tr>
+        <tr>
+            <td>class</td>
+            <td>规定该数据表的样式。</td>
+        </tr>
+        <tr>
+            <td>data-backdrop</td>
+            <td>指定一个静态的背景，当用户点击模态框外部时不会关闭模态框。</td>
+        </tr>
+        <tr>
+            <td>data-keyboard</td>
+            <td>当按下 escape 键时关闭模态框，设置为 false 时则按键无效。</td>
+        </tr>
+        <tr>
+            <td>data-show</td>
+            <td>当初始化时显示模态框。</td>
+        </tr>
+        <tr>
+            <td>data-remote</td>
+            <td>使用 jQuery .load 方法，为模态框的主体注入内容。如果添加了一<br>个带有有效 URL 的 href，则会加载其中的
+                内容。如下面的实例所示：<br>&lt;a data-toggle="modal" href="remote.html" data-target="#modal"&gt;<br>请点击我&lt;/a&gt;</td>
+        </tr>
+    </table>
+    <div class="table2">
+        <h4 id="doc_dialog_gjsy" >方法</h4>
+        <table class="tab">
+            <tr>
+                <td>名称</td>
+                <td>参数</td>
+                <td>描述</td>
+            </tr>
+            <tr>
+                <td>modal(options)</td>
+                <td>options</td>
+                <td>把内容作为模态框激活。接受一个可选的选项对象。<br>$('#identifier').modal({keyboard: false})</td>
+            </tr>
+            <tr>
+                <td>modal('toggle')</td>
+                <td>toggle</td>
+                <td>手动切换模态框。<br>$('#identifier').modal('toggle')</td>
+            </tr>
+            <tr>
+                <td>modal('show')</td>
+                <td>show</td>
+                <td>手动打开模态框。<br>$('#identifier').modal('show')</td>
+            </tr>
+            <tr>
+                <td>modal('hide')</td>
+                <td>hide</td>
+                <td>手动隐藏模态框。<br>$('#identifier').modal('hide')</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/checkBox/checkBox.js" type="text/javascript"></script>
+
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/checkBox.css" rel="stylesheet" type="text/css">
+    <!--该文件为当前页面按钮所需，非本组件所需-->
+    <link href="../../../src/css/ui/button.css" rel="stylesheet">
+    <title></title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 230);
+            cursor: url('../../../resources/image/finger.png'), auto;
+
+        }
+        .top{
+            margin:20px;
+        }
+    </style>
+</head>
+<body>
+<div class="list_tip">
+    <label class="one-fs-5">Check Box演示</label>
+</div>
+<div class="one_list">
+    <label class="one_checkbox">
+        <input type="checkbox" value="banana">
+        <div class="one_checkbox__checkmark"></div>
+        <span>banana</span>
+    </label>
+    <label class="one_checkbox">
+        <input type="checkbox" value="apple">
+        <div class="one_checkbox__checkmark"></div>
+        <span>apple</span>
+    </label>
+    <label class="one_checkbox">
+        <input type="checkbox"  value="orange">
+        <div class="one_checkbox__checkmark"></div>
+        <span>orange</span>
+    </label>
+</div>
+
+
+
+<div class="list_tip">
+    <label class="one-fs-5">默认选中</label>
+</div>
+<div class="one_list">
+    <label class="one_checkbox">
+        <input type="checkbox" value="on" checked="checked">
+        <div class="one_checkbox__checkmark"></div>
+        <span>ON</span>
+    </label>
+</div>
+
+<div class="list_tip">
+    <label class="one-fs-5">默认不选中</label>
+</div>
+<div class="one_list">
+    <label class="one_checkbox">
+        <input type="checkbox" value="off">
+        <div class="one_checkbox__checkmark"></div>
+        <span>OFF</span>
+    </label>
+</div>
+
+<div class="list_tip">
+    <label class="one-fs-5">不可编辑</label>
+</div>
+<div class="one_list">
+    <label class="one_checkbox">
+        <input type="checkbox" disabled value="disable">
+        <div class="one_checkbox__checkmark"></div>
+        <span>Disabled</span>
+    </label>
+</div>
+</body>
+</html>

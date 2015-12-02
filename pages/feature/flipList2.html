@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Pad版本-卡式滑动效果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <!--基础依赖js文件-->
+    <script src="../../src/js/zepto.min.js"></script>
+    <!--应用框架基础工具js文件-->
+    <script src="../../src/js/one.js"></script>
+    <!--对话框组件JS文件-->
+    <script src="../../src/js/ui/dialog/dialog.js"></script>
+    <!--广告轮播组件js文件-->
+    <script src="../../src/js/ui/slider/slider.js"></script>
+    <!--滑动开关组件JS文件-->
+    <script src="../../src/js/ui/flipSwitch/flipSwitch.js"></script>
+
+
+    <!--组件与布局基础样式-->
+    <link href="../../src/css/one.css" rel="stylesheet">
+    <!--当前演示页面布局需要的样式，与组件无关-->
+    <link href="../../src/css/patterns/patterns.css" rel="stylesheet">
+    <!--对话框样式-->
+    <link href="../../src/css/ui/dialog.css" rel="stylesheet">
+    <!--按钮样式-->
+    <link href="../../src/css/ui/button.css" rel="stylesheet">
+    <!--广告轮播组件CSS文件-->
+    <link href="../../src/css/ui/slider.css" rel="stylesheet">
+    <!--滑动开关组件CSS文件-->
+    <link href="../../src/css/ui/flipSwitch.css" rel="stylesheet">
+
+    <!--字体图片-->
+    <link href="../../src/plugin/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <link href="flipList2.css" rel="stylesheet">
+
+    <script>
+
+        $(function () {
+            var cardList=[];//卡片排序
+            $("div.card").each(function (index) {
+                $(this).attr("id", "card_" + index);
+                cardList.push("card_"+index);
+            });
+
+            $("div.card_button").click(function () {
+                var selectId = $(this).parent().attr("id");
+                var isBefore = true;
+                var cardAntimate = {};
+                var beforeCard = [];
+                var afterCard=[];
+                var limtCount = 2;//两侧数量限制
+                var turnRight=true;//是否向右边滑动,用于设置每个卡片的z-index
+                var baseIndex = 4;//z-index参考值
+                $.each(cardList,function(index){
+                    var id = cardList[index];
+                    if (selectId == id) { //当前选中的卡片
+                        cardAntimate[id] = {"z-index":baseIndex+6,"left":"40%","transform":"scale(1)"};
+                        isBefore=false;
+                    } else {
+                        if (isBefore) { //位于选中的卡片前面的卡片
+                            beforeCard.push(id);
+                        } else { //位于选中的卡片后面的卡片
+                            afterCard.push(id);
+                        }
+                    }
+                });
+                var blength=beforeCard.length;
+                var alength = afterCard.length;
+                if(blength>limtCount){
+                    turnRight  = false;
+                    for(var i=0;i<blength-limtCount;i++){
+                        afterCard.push(beforeCard[i]);
+                    }
+                    beforeCard = beforeCard.slice(blength-limtCount);
+                }else if(alength>limtCount){
+                    for(var i=alength;i>limtCount;i--){
+                        beforeCard.splice(0,0,afterCard[i-1]);
+                    }
+                    afterCard = afterCard.slice(0,limtCount);
+                }
+
+
+                var size = beforeCard.length;
+                var left=[0,15,65,80];
+                var j = 0;
+                cardList=[];//清空原来的排序，重新排序
+                $.each(beforeCard,function(index){
+                    var deg = 90/size;//每个卡片旋转的角度
+                    var scale = 0.9-0.1*(size-index+1);//每个卡片缩放的大小
+                    var id = beforeCard[index];
+                    var l = left[j++];
+                    cardList.push(id);
+                    console.log("b:"+id);
+                    var zIndex = index+baseIndex;
+                    if(!turnRight){
+                        zIndex -=1;
+                    }
+                    cardAntimate[id]={"z-index":zIndex,"left":l+"%","transform":"scale("+scale+") perspective(1100px) rotateY("+deg+"deg)"};
+                });
+                cardList.push(selectId);
+                size = afterCard.length;
+                $.each(afterCard,function(index){
+                    var deg = 90/size;//每个卡片旋转的角度
+                    var scale = 0.9-0.1*(index+1);//每个卡片缩放的大小
+                    var id = afterCard[index];
+                    var l = left[j++];
+                    console.log("a:"+id);
+                    cardList.push(id);
+                    var zIndex = baseIndex-index;
+                    if(turnRight){
+                        zIndex -=1;
+                    }
+                    cardAntimate[id]={"z-index":zIndex,"left":l+"%","transform":"scale("+scale+") perspective(1100px) rotateY("+(-deg)+"deg)"};
+                });
+
+                for(var oo in cardAntimate){
+                    var animate = cardAntimate[oo];
+                    $("#"+oo).animate(animate,1000);
+                }
+
+//                for(var i in cardList){
+//                    console.log("#"+cardList[i]);
+//                }
+//                card.animate({transform: "scale(0.8) perspective(1100px) rotateY(100deg)"}, {
+//                    duration: 3000, easing: "ease-out", complete: function () {
+//                        console.log("ok");
+//                    }
+//                });
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+<header class="header-fixed-top header">
+    <ul class="one-g">
+        <li class="one-u-sm-1">
+            <div class="header-title-left">
+                <div class="one-icon ion-android-arrow-dropleft-circle"></div>
+            </div>
+        </li>
+        <li class="one-u-sm-10">
+            <div class="header-title-center">知心</div>
+        </li>
+        <li class="one-u-sm-1">
+            <div class="ion-power header-title-right"></div>
+        </li>
+    </ul>
+    <div class="clear-both"></div>
+</header>
+
+<section class="center">
+    <div class="center_main">
+        <div class="card card_left_1">
+            <div class="card_header card_header_color1">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访1</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+
+        <div class="card card_left_2">
+            <div class="card_header card_header_color3">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访2</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+
+        <div class="card card_center">
+            <div class="card_header card_header_color2">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访3</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+
+        <div class="card card_right_1">
+            <div class="card_header card_header_color1">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访4</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+
+        <div class="card card_right_2">
+            <div class="card_header card_header_color3">
+                <div class="card_header_image"></div>
+                <div class="card_header_txt">子女生日拜访5</div>
+            </div>
+            <div class="card_body">
+                <div class="card_body_fuwu">服务内容:赠送赠险</div>
+                <div class="card_body_fwfs">服务方式:拜访</div>
+                <div class="card_body_fwmd">服务目的:客户为子女加保</div>
+                <div class="card_body_fwsj">服务时间:2015-01-30</div>
+                <div class="card_body_yysj">预约时间:2015-01-25</div>
+            </div>
+            <div class="card_button">排入</div>
+        </div>
+        <div class="clear-both"></div>
+
+    </div>
+    <div class="clear-both"></div>
+</section>
+
+
+</body>
+</html>

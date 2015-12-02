@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/plugins/prettify/prettify.css"/>
+    <script src="../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .doc_dialog_ml{
+            font-size:16px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Tabs 标签页</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">说明</a></li>
+                <li><a uri="#doc_dialog_qztj">前置条件</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_yyzywj">页面引用JS与CSS文件</a></li>
+                    </ul>
+                </li>
+                <li><a uri="#doc_dialog_syfs">使用方式</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_dyhtml">定义HTML</a></li>
+                        <li><a uri="#doc_dialog_syjs2">使用JavaScript调用</a></li>
+                    </ul>
+
+                <li><a uri="#doc_dialog_gjsy">高级使用</a>
+                    <ul class="doc_toc-collapse">
+                        <li><a uri="#doc_dialog_mrkq">设置切换状态及索引列</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="doc_dialog_sm">说明</h4>
+    <p>
+        选项卡有不同的列，每个列下边都有自己的子目录，可以选择其中一项，打开此项的子目录。
+    </p>
+    <h4 id="doc_dialog_qztj">前置条件</h4>
+
+    <p id="doc_dialog_yyzywj">页面引用JS与CSS文件</p>
+   <pre class="prettyprint">
+&lt;!--整个框架依赖的JS文件--&gt;
+&lt;script src="../../src/js/zepto.min.js"&gt;&lt;/script&gt;
+&lt;!--当前组件依赖的JS文件--&gt;
+&lt;script src="../../src/js/one.js"&gt;&lt;/script&gt;
+&lt;!--当前组件JS文件--&gt;
+&lt;script src="../../src/js/ui/tabs/tabs.js"&gt;&lt;/script&gt;
+&lt;!--当前组件依赖的CSS文件--&gt;
+&lt;link href="../../src/css/one.css" rel="stylesheet"&gt;
+&lt;!--当前组件CSS文件--&gt;
+&lt;link href="../../src/css/ui/tabs.css" rel="stylesheet"&gt;
+      </pre>
+
+    <h4 id="doc_dialog_syfs">使用方式</h4>
+
+    <p id="doc_dialog_dyhtml">1.定义HTML</p>
+      <pre class="prettyprint">
+&lt;div class="one_tabs" style="width:280px;margin:0 auto;"&gt;
+    &lt;div class="one_tabs__item"&gt;
+        &lt;input type="radio" name="segment-a" checked&gt;
+        &lt;button class="one_tabs__button"&gt;One&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="one_tabs__item"&gt;
+        &lt;input type="radio" name="segment-a"&gt;
+        &lt;button class="one_tabs__button"&gt;Two&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="one_tabs__item"&gt;
+        &lt;input type="radio" name="segment-a"&gt;
+        &lt;button class="one_tabs__button"&gt;Three&lt;/button&gt;
+    &lt;/div&gt; &lt;/div&gt;
+   &lt;div class="one_div" style="display: block"&gt;
+       &lt;ul&gt;
+           &lt;li&gt;1&lt;/li&gt;
+           &lt;li&gt;1&lt;/li&gt;
+           &lt;li&gt;1&lt;/li&gt;
+           &lt;li&gt;1&lt;/li&gt;
+           &lt;li&gt;1&lt;/li&gt;
+       &lt;/ul&gt;
+   &lt;/div&gt;
+    &lt;div class="one_div"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;2&lt;/li&gt;
+            &lt;li&gt;2&lt;/li&gt;
+            &lt;li&gt;2&lt;/li&gt;
+            &lt;li&gt;2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="one_div"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;3&lt;/li&gt;
+            &lt;li&gt;3&lt;/li&gt;
+            &lt;li&gt;3&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+      </pre>
+
+    <p id="doc_dialog_syjs2">2.使用JavaScript调用</p>
+      <pre class="prettyprint">
+    $(function(){
+       //初始化组件
+        window.tabs = one.ui.tabs(".one_tabs");
+     })
+     </pre>
+    <h4 id="doc_dialog_gjsy">高级使用</h4>
+    <p id="doc_dialog_mrkq">1.设置切换状态及索引列</p>
+ <pre class="prettyprint">
+    $(function(){
+       //初始化组件
+        window.tabs = one.ui.tabs(".one_tabs");
+     
+       //设为不允许切换状态
+        tabs.isAllowChoose(false);
+     
+       //切换至索引三
+        tabs.changeTabsTo(3);
+
+     })
+     </pre>
+</div>
+
+</body>
+</html>

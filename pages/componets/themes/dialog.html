@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <script src="../../../src/js/zepto.min.js"></script>
+    <script src="../../../src/js/one.js"></script>
+    <script src="../../../src/js/ui/dialog/dialog.js"></script>
+    <link href="../../../src/css/one.css" rel="stylesheet">
+    <link href="../../../src/css/patterns/patterns.css" rel="stylesheet">
+    <link href="../../../src/css/ui/dialog.css" rel="stylesheet">
+
+    <!--该文件为当前页面按钮所需，非本组件所需-->
+    <link href="../../../src/css/ui/button.css" rel="stylesheet">
+
+
+    <title></title>
+    <style title="changeThemes">
+
+        .one_dialog{
+
+        }
+        .one_dialog_title h3{}
+
+        .one_dialog_content{
+
+        }
+
+        .one_dialog_btns .one_btn{
+            color: #574BDB;
+
+        }
+    </style>
+
+
+
+    <script>
+
+        //供父页面调用的方法，名字与参数不能变更
+        function changeStyle(key,value){
+            if(key=="highlight2"){//此处的key为父页面当中每个input的data-style值
+                //每个页面根据组件的情况进行调整
+                one.util.changeThemes({
+                    ".one_dialog_btns .one_btn":{"color":value}
+                });
+            }else if(key=="background"){
+                one.util.changeThemes({
+                    ".one_dialog":{"background":value},
+                    ".one_dialog_btns .one_btn":{"background":value}
+                });
+            }else if(key=="color"){
+                one.util.changeThemes({
+                    ".one_dialog_content":{"color":value}
+                });
+            }else if(key=="color2"){
+                one.util.changeThemes({
+                    ".one_dialog_title h3":{"color":value}
+                });
+            }
+        }
+
+
+        $(function () {
+            one.ui.dialog({
+                title: "请确认",
+                content: "确认这样操作吗？",
+                buttons: [
+                    {
+                        text: "取消",
+                        callback: function (dialog) {
+
+                        }
+                    },
+                    {
+                        text: "确认",
+                        clazz: "one_btn_primal",
+                        callback: function (dialog) {
+
+
+                        }
+                    }
+                ],
+                top:"0.5rem"
+            });
+
+            //通知父窗口当前页面已经加载完成，可以调用本页面的方法
+            if(window.parent.receiveFromIframe){
+                window.parent.receiveFromIframe();
+            }
+        })
+    </script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>

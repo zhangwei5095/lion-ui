@@ -1,0 +1,48 @@
+[
+  {
+    "type":"系统类型",
+    "nameEn":"ICON_TYPE",
+    "nameZh":"图标类型",
+    "codeLenLimit":"100",
+    "editable":"是",
+    "createdDate":"2015-03-30 11:19:54",
+	"updatedDate":"2015-03-30 11:30:17"
+  },
+  {
+    "type":"系统类型",
+    "nameEn":"sysInterface",
+    "nameZh":"接口管理",
+    "codeLenLimit":"1111",
+    "editable":"是",
+    "createdDate":"2014-06-01 21:47:51",
+    "updatedDate":"2014-06-01 21:47:51"
+  },
+  {
+    "type":"系统类型",
+    "nameEn":"datagrid_type",
+    "nameZh":"Datagrid类型",
+    "codeLenLimit":"1000",
+    "editable":"否",
+    "createdDate":"2014-04-08 23:08:45",
+    "updatedDate":"2015-03-06 09:39:36"
+  },
+  {
+    "type":"系统类型",
+    "nameEn":"PageList",
+    "nameZh":"PageList",
+    "codeLenLimit":"1000",
+    "editable":"是",
+    "createdDate":"2013-03-28 22:33:45",
+    "updatedDate":"2013-03-28 22:33:45"
+  }
+,
+  {
+    "type":"系统类型",
+    "nameEn":"PagePosition",
+    "nameZh":"PagePosition",
+    "codeLenLimit":"1000",
+    "editable":"是",
+    "createdDate":"2013-03-28 22:31:02",
+    "updatedDate":"2013-03-28 22:31:02"
+  }
+]

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../../resources/plugins/prettify/prettify.css"/>
+    <script src="../../resources/plugins/prettify/run_prettify.js"></script>
+    <style>
+        .tab{
+            border: 1px solid #988F8F;
+            width: 100%;
+            line-height: 35px;
+            text-align: center;
+        }
+        .tab td{border: 1px solid #988F8F;}
+    </style>
+    <script>
+        $(function(){
+            $(".md-toc a").click(function(){
+                var uri = $(this).attr("uri");
+                var offset = $(uri).offset();
+                $("body,html").animate({
+                    scrollTop:offset.top-60  //让body的scrollTop等于pos的top，就实现了滚动
+                },500);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="doc-body">
+    <h2>Lion LionUI核心库</h2>
+    <div class="doc-toc">
+        <h2><span>目录</span></h2>
+        <div class="doc-toc-bd">
+            <ul class="md-toc">
+                <li><a uri="#doc_dialog_sm">导入js库</a></li>
+                <li><a uri="#doc_dialog_qztj">使用方法</a></li>
+                <ul class="doc_toc-collapse">
+                    <li><a uri="#doc_dialog_dyhtml">导航栏</a></li>
+                    <li><a uri="#doc_dialog_syjs2">提示</a></li>
+                    <li><a uri="#doc_dialog_syjs3">数据提交</a></li>
+                </ul>
+                <li><a uri="#doc_dialog_gjsy">方法</a></li>
+            </ul>
+        </div>
+    </div>
+    <h4 id="doc_dialog_sm">导入js库</h4>
+    <pre class="prettyprint">
+&lt;script src="${base}/resources/global/plugins/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="${base}/resources/global/plugins/bootstrap-toastr/toastr.min.js"&gt;&lt;/script&gt;
+&lt;script src="${base}/resources/global/js/lion.js" type="text/javascript"&gt;&lt;/script&gt;
+    </pre>
+    <h4 id="doc_dialog_qztj">使用方法</h4>
+    <p id="doc_dialog_dyhtml">1.导航栏</p>
+    <pre class="prettyprint">
+//加载加载导航栏
+lion.util.menu();
+    </pre>
+    <p id="doc_dialog_syjs2">2.提示</p>
+    <pre class="prettyprint">
+//成功提示
+lion.util.success(‘提示’,‘成功’);
+//错误提示
+lion.util.error(‘提示’,‘错误’);
+//警告提示
+lion.util.warning(‘提示’,‘警告’);
+//提示
+lion.util.info(提示’,‘请选择要编辑的记录’);
+    </pre>
+    <p id="doc_dialog_syjs3">3.数据提交</p>
+    <pre class="prettyprint">
+html:
+&lt;form id="sysForm"&gt;
+    &lt;input type="text" id="name" name="username"/&gt;
+&lt;/form&gt;
+js:
+var param={'username':'demo'};
+lion.web.post({url:'add.json',data:param,success:successFrm});
+function successFrm(result,args){
+location.reload();}
+    </pre>
+    <div>
+        <h4 id="doc_dialog_gjsy" >方法</h4>
+        <table class="tab">
+            <tr>
+                <td>名称</td>
+                <td>参数</td>
+                <td>描述</td>
+            </tr>
+            <tr>
+                <td>tdon.util.isEmpty</td>
+                <td>o</td>
+                <td>判断对象是否为空</td>
+            </tr>
+            <tr>
+                <td>tdon.util.isNotEmpty</td>
+                <td>o</td>
+                <td>判断对象是否不为空</td>
+            </tr>
+            <tr>
+                <td>tdon.util.context</td>
+                <td>none</td>
+                <td>获取应用上下文根属性</td>
+            </tr>
+            <tr>
+                <td>tdon.util.hostname</td>
+                <td>none</td>
+                <td>获取域名</td>
+            </tr>
+            <tr>
+                <td>tdon.util.protocol</td>
+                <td>none</td>
+                <td>获取当前网络协议</td>
+            </tr>
+            <tr>
+                <td>tdon.util.httpurl</td>
+                <td>none</td>
+                <td>获取当前路径</td>
+            </tr>
+            <tr>
+                <td>tdon.util.menu</td>
+                <td>none</td>
+                <td>加载导航栏</td>
+            </tr>
+            <tr>
+                <td>tdon.util.success</td>
+                <td>title,content</td>
+                <td>成功提示框</td>
+            </tr>
+            <tr>
+                <td>tdon.util.error</td>
+                <td>title,content</td>
+                <td>错误提示框</td>
+            </tr>
+            <tr>
+                <td>tdon.util.warning</td>
+                <td>title,content</td>
+                <td>警告提示框</td>
+            </tr>
+            <tr>
+                <td>tdon.util.info</td>
+                <td>title,content</td>
+                <td>提示框</td>
+            </tr>
+            <tr>
+                <td>tdon.util.post</td>
+                <td>url,data,successfn,errorfn,arg</td>
+                <td>Ajax post请求(错误方法不传则使<br>用默认方法）</td>
+            </tr>
+            <tr>
+                <td>tdon.util.postasync</td>
+                <td>url,data,successfn,errorfn,arg</td>
+                <td>Ajax post同步请求(错误方法不传<br>则使用默认方法）</td>
+            </tr>
+            <tr>
+                <td>tdon.util.postjson</td>
+                <td>url,data,successfn,errorfn,arg</td>
+                <td>Ajax post json请求(错误方法不传<br>则使用默认方法）</td>
+            </tr>
+            <tr>
+                <td>tdon.util.get</td>
+                <td>url,successfn,errorfn,arg</td>
+                <td>Ajax get请求(错误方法不传则使<br>用默认方法）</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
